@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ngoding : MonoBehaviour
+public class KartuController : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
