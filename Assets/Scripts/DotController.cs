@@ -94,6 +94,8 @@ public class DotController : MonoBehaviour
             lineRenderer.SetPosition(0, new Vector3(transform.position.x, transform.position.y, 0));
             lineRenderer.SetPosition(1, new Vector3(transform.position.x, transform.position.y, 0));
         }
+
+        GameplayConnectingTheDot.instance.ChechDot();
     }
 
     Vector3 GetMousePos()
