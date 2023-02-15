@@ -15,9 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MetaGame.unity
     guid: 4f996e0aa17213e4d943cd867b01db49
   - enabled: 1
-    path: Assets/Scenes/Sound Memory.unity
+    path: Assets/Scenes/SoundMemory.unity
     guid: 0fafae02d22e48c499f16ad3de0a3813
   - enabled: 1
-    path: Assets/Scenes/Spelling Bee.unity
+    path: Assets/Scenes/SpellingBee.unity
     guid: 8f7549b02e69be6498ee33f5c09d4af2
   m_configObjects: {}
