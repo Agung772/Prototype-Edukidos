@@ -19,8 +19,16 @@ public class GameManager : MonoBehaviour
         notifTextUI.SetActive(true);
         notifTextUI.transform.GetChild(1).gameObject.GetComponent<Text>().text = text;
     }
-
-    public void PindahScene(string namaScene, float delay)
+    public void PindahScene(string namaScene)
+    {
+        StartCoroutine(Coroutine());
+        IEnumerator Coroutine()
+        {
+            yield return new WaitForSeconds(1);
+            SceneManager.LoadScene(namaScene);
+        }
+    }
+    public void PindahSceneDelay(string namaScene, float delay)
     {
         StartCoroutine(Coroutine());
         IEnumerator Coroutine()

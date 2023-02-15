@@ -9,6 +9,8 @@ public class GroundDeathSpellingBee : MonoBehaviour
         if (collision.collider.GetComponent<DragAndDrop3D>())
         {
             collision.transform.position = Vector3.up * 5;
+            collision.rigidbody.velocity = Vector3.zero;
+            collision.rigidbody.angularVelocity = Vector3.zero;
             print("death");
         }
     }

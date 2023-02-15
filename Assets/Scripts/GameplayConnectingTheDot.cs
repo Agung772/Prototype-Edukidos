@@ -41,7 +41,7 @@ public class GameplayConnectingTheDot : MonoBehaviour
         if (checkDot == dotController.Length)
         {
             GameManager.instance.NotifTextUI("Tugas Selesai !");
-            GameManager.instance.PindahScene("MetaGame", 2);
+            GameManager.instance.PindahSceneDelay("MetaGame", 2);
         }
     }
 }
