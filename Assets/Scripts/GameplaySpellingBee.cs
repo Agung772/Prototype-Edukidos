@@ -16,52 +16,61 @@ public class GameplaySpellingBee : MonoBehaviour
 
     public void CheckDragAndDrop3D()
     {
-        checkTotal = 0;
-        for (int i = 0; i < slotDragAndDrop3D.Length; i++)
+        StartCoroutine(CoroutineCheck());
+        IEnumerator CoroutineCheck()
         {
-            if (slotDragAndDrop3D[i].use)
-            {
-                checkTotal++;
-            }
-        }
+            yield return new WaitForSeconds(0.1f);
 
-        //Semua slot keisi
-        if (slotDragAndDrop3D.Length == checkTotal)
-        {
+            //CheckTotal yang ke use dan clear
+            checkTotal = 0;
             checkTotalClear = 0;
             for (int i = 0; i < slotDragAndDrop3D.Length; i++)
             {
+                print("Start object");
+                if (slotDragAndDrop3D[i].use)
+                {
+                    checkTotal++;
+                    print(slotDragAndDrop3D[i].gameObject.name);
+                }
                 if (slotDragAndDrop3D[i].clear)
                 {
                     checkTotalClear++;
                 }
             }
 
-            //Check benar semua
-            if (slotDragAndDrop3D.Length == checkTotalClear)
+            //Semua slot keisi
+            if (slotDragAndDrop3D.Length == checkTotal)
             {
-                print("Udah benar semua cuy");
-            }
-
-            //Reset karena salah
-            else
-            {
-                print("gagal, ngulang cuy");
-                for (int i = 0; i < slotDragAndDrop3D.Length; i++)
+                //Check benar semua
+                if (slotDragAndDrop3D.Length == checkTotalClear)
                 {
-                    slotDragAndDrop3D[i].gameObject.GetComponent<BoxCollider>().isTrigger = true;
+                    GameManager.instance.NotifTextUI("Tugas Selesai !");
+                    GameManager.instance.PindahSceneDelay("MetaGame", 2);
                 }
 
-                StartCoroutine(Coroutine());
-                IEnumerator Coroutine()
+                //Reset karena salah
+                else
                 {
-                    yield return new WaitForSeconds(0.5f);
+                    print("gagal, ngulang cuy");
                     for (int i = 0; i < slotDragAndDrop3D.Length; i++)
                     {
-                        slotDragAndDrop3D[i].gameObject.GetComponent<BoxCollider>().isTrigger = false;
+                        slotDragAndDrop3D[i].gameObject.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().isTrigger = true;
+                    }
+
+                    StartCoroutine(Coroutine());
+                    IEnumerator Coroutine()
+                    {
+                        yield return new WaitForSeconds(0.5f);
+                        for (int i = 0; i < slotDragAndDrop3D.Length; i++)
+                        {
+                            slotDragAndDrop3D[i].gameObject.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().isTrigger = false;
+                        }
                     }
                 }
             }
         }
+
+
+
     }
 }

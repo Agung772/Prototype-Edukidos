@@ -6,12 +6,39 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public enum NamaScene
+    {
+        kosong,
+        ConnectingTheDot,
+        SpellingBee,
+        PilihanGandaCepat,
+        DecisionRun,
+    }
+
+    public NamaScene namaScene;
+
+
     public static GameManager instance;
     public GameObject notifTextUI;
+    public OpeningTextMiniGame openingTextMiniGame;
     private void Awake()
     {
         instance = this;
         Application.targetFrameRate = 60;
+    }
+
+    private void Start()
+    {
+        if (namaScene == NamaScene.ConnectingTheDot)
+        {
+            openingTextMiniGame.gameObject.SetActive(true);
+            openingTextMiniGame.TextOpening("Pilih Jawaban Yang Benar !!!");
+        }
+        else if (namaScene == NamaScene.SpellingBee)
+        {
+            openingTextMiniGame.gameObject.SetActive(true);
+            openingTextMiniGame.TextOpening("Pilih Jawaban Yang Benar !!!");
+        }
     }
 
     public void NotifTextUI(string text)

@@ -8,41 +8,44 @@ public class SlotDragAndDrop3D : MonoBehaviour
     public bool use, clear;
     public GameObject objectPertama;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.collider.GetComponent<DragAndDrop3D>() && objectPertama == null)
+        if (other.GetComponent<DragAndDrop3D>())
         {
-            objectPertama = collision.gameObject;
-            use = true;
 
-            if (warna == collision.collider.GetComponent<DragAndDrop3D>().warna)
+            objectPertama = other.gameObject;
+            //Check Gameplay
+            GameplaySpellingBee.instance.CheckDragAndDrop3D();
+
+        }
+
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.GetComponent<DragAndDrop3D>())
+        {
+            use = true;
+            if (warna == other.GetComponent<DragAndDrop3D>().warna)
             {
                 clear = true;
             }
             else
             {
-                print("Warnanya salah");
+                //print("Warnanya salah");
             }
         }
-
-        //Check Gameplay
-        GameplaySpellingBee.instance.CheckDragAndDrop3D();
     }
 
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
-        print("Ada object");
-    }
 
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.collider.GetComponent<DragAndDrop3D>() && objectPertama.name == collision.gameObject.name)
+        if (other.GetComponent<DragAndDrop3D>())
         {
             objectPertama = null;
             use = false;
             clear = false;
             GameplaySpellingBee.instance.checkTotal--;
-            //OnCollisionEnter(collision);
         }
     }
 
