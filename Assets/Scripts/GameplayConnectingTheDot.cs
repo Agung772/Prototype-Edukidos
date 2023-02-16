@@ -39,6 +39,7 @@ public class GameplayConnectingTheDot : MonoBehaviour
         if (checkDot == dotController.Length)
         {
             ButtonManager.instance.CallScoreUI("Kamu menjawab semua soal dengan benar", batrai);
+
         }
     }
     public void SalahDot()
