@@ -6,7 +6,13 @@ using UnityEngine.UI;
 
 public class ButtonManager : MonoBehaviour
 {
-    public GameObject settingUI, pauseUI;
+    public static ButtonManager instance;
+    public GameObject settingUI, pauseUI, scoreUI;
+
+    private void Awake()
+    {
+        instance = this;
+    }
     public void SettingUI(bool active)
     {
         if (active) settingUI.SetActive(true);
@@ -45,5 +51,11 @@ public class ButtonManager : MonoBehaviour
             yield return new WaitForSeconds(delay);
             SceneManager.LoadScene(namaScene);
         }
+    }
+
+    public void CallScoreUI(string textTittle, int jumlahBintang)
+    {
+        scoreUI.SetActive(true);
+        scoreUI.GetComponent<ScoreUI>().CallScoreUI(textTittle, jumlahBintang);
     }
 }

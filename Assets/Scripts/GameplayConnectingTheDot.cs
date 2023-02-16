@@ -38,13 +38,13 @@ public class GameplayConnectingTheDot : MonoBehaviour
         }
         if (checkDot == dotController.Length)
         {
-            GameManager.instance.NotifTextUI("Tugas Selesai !");
-            GameManager.instance.PindahSceneDelay("MetaGame", 2);
+            ButtonManager.instance.CallScoreUI("Kamu menjawab semua soal dengan benar", batrai);
         }
     }
     public void SalahDot()
     {
         batrai--;
+
         if (batrai == 2)
         {
             batraiUI.transform.GetChild(1).gameObject.SetActive(true);
@@ -62,6 +62,9 @@ public class GameplayConnectingTheDot : MonoBehaviour
             batraiUI.transform.GetChild(1).gameObject.SetActive(false);
             batraiUI.transform.GetChild(2).gameObject.SetActive(false);
             batraiUI.transform.GetChild(3).gameObject.SetActive(false);
+
+            //Condition kalah
+
         }
 
     }
