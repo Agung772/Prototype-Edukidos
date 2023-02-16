@@ -6,6 +6,7 @@ public class DragAndDrop3D : MonoBehaviour
 {
     public string warna;
     public Vector3 mousePosition;
+    public bool up;
 
     Vector3 GetMousePos()
     {
@@ -14,6 +15,7 @@ public class DragAndDrop3D : MonoBehaviour
 
     private void OnMouseDown()
     {
+        up = false;
         mousePosition = Input.mousePosition - GetMousePos();
     }
 
@@ -21,5 +23,15 @@ public class DragAndDrop3D : MonoBehaviour
     {
         transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePosition);
         GetComponent<Rigidbody>().velocity = Vector3.zero;
+    }
+
+    private void OnMouseUp()
+    {
+        up = true;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        up = false;
     }
 }

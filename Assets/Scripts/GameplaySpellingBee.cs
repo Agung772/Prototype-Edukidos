@@ -26,11 +26,10 @@ public class GameplaySpellingBee : MonoBehaviour
             checkTotalClear = 0;
             for (int i = 0; i < slotDragAndDrop3D.Length; i++)
             {
-                print("Start object");
                 if (slotDragAndDrop3D[i].use)
                 {
                     checkTotal++;
-                    print(slotDragAndDrop3D[i].gameObject.name);
+
                 }
                 if (slotDragAndDrop3D[i].clear)
                 {
