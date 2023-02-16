@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
         if (namaScene == NamaScene.ConnectingTheDot)
         {
             openingTextMiniGame.gameObject.SetActive(true);
-            openingTextMiniGame.TextOpening("Pilih Jawaban Yang Benar !!!");
+            openingTextMiniGame.TextOpening("Hubungkan Teks dan Gambarnya!!!");
         }
         else if (namaScene == NamaScene.SpellingBee)
         {

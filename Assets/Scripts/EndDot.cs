@@ -24,6 +24,10 @@ public class EndDot : MonoBehaviour
         {
             GetComponent<MeshRenderer>().material.color = Color.green;
         }
+        else if (color == "cyan")
+        {
+            GetComponent<MeshRenderer>().material.color = Color.cyan;
+        }
         else
         {
             print("Isi warna objectnya cuy");

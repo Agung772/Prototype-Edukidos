@@ -67,6 +67,9 @@ public class GameplaySpellingBee : MonoBehaviour
                     }
                 }
             }
+
+            checkTotal = Mathf.Clamp(checkTotal, 0, slotDragAndDrop3D.Length);
+            checkTotalClear = Mathf.Clamp(checkTotalClear, 0, slotDragAndDrop3D.Length);
         }
 
 

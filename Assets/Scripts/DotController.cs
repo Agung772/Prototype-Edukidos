@@ -5,8 +5,9 @@ using UnityEngine;
 public class DotController : MonoBehaviour
 {
     public string color;
-    public bool useLine, clear;
+    public bool useLine, clear, salah;
     public Transform target;
+    public SetPositionEnd setPositionEnd;
 
     public LineRenderer lineRenderer;
     Vector3 mousePos, startMousePos;
@@ -14,6 +15,10 @@ public class DotController : MonoBehaviour
 
     private void Start()
     {
+        //Set coding warna untuk setPositionEnd
+        setPositionEnd.gameObject.GetComponent<SetPositionEnd>().color = color;
+
+
         //Mencari target
         EndDot[] endDots = FindObjectsOfType<EndDot>();
         for (int i = 0; i < endDots.Length; i++)
@@ -53,6 +58,12 @@ public class DotController : MonoBehaviour
             lineRenderer.startColor = Color.green;
             lineRenderer.endColor = Color.green;
         }
+        else if (color == "cyan")
+        {
+            GetComponent<MeshRenderer>().material.color = Color.cyan;
+            lineRenderer.startColor = Color.cyan;
+            lineRenderer.endColor = Color.cyan;
+        }
         else
         {
             print("Isi warna objectnya cuy");
@@ -66,17 +77,9 @@ public class DotController : MonoBehaviour
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition - startMousePos);
             lineRenderer.SetPosition(1, new Vector3(mousePos.x, mousePos.y, 0));
 
-            if (Vector3.Distance(mousePos, target.position) < 0.3f)
-            {
-                clear = true;
-            }
-            else
-            {
-                clear = false;
-            }
+            setPositionEnd.gameObject.transform.position = new Vector3(mousePos.x, mousePos.y, 0);
+
         }
-
-
     }
 
     private void OnMouseDown()
@@ -89,10 +92,26 @@ public class DotController : MonoBehaviour
     {
         useLine = false;
 
-        if (!clear)
+
+        if (setPositionEnd.condition == "benar")
         {
+            clear = true;
+        }
+        else if (setPositionEnd.condition == "salah")
+        {
+            GameplayConnectingTheDot.instance.SalahDot();
+
             lineRenderer.SetPosition(0, new Vector3(transform.position.x, transform.position.y, 0));
             lineRenderer.SetPosition(1, new Vector3(transform.position.x, transform.position.y, 0));
+            setPositionEnd.gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+        }
+        else if (setPositionEnd.condition == "null")
+        {
+            setPositionEnd.condition = "null";
+
+            lineRenderer.SetPosition(0, new Vector3(transform.position.x, transform.position.y, 0));
+            lineRenderer.SetPosition(1, new Vector3(transform.position.x, transform.position.y, 0));
+            setPositionEnd.gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         }
 
         GameplayConnectingTheDot.instance.ChechDot();

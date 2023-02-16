@@ -5,8 +5,8 @@ using UnityEngine;
 public class DragAndDrop3D : MonoBehaviour
 {
     public string warna;
-    public Vector3 mousePosition;
-    public bool up;
+    Vector3 mousePosition;
+    public bool up, click;
 
     Vector3 GetMousePos()
     {
@@ -16,6 +16,7 @@ public class DragAndDrop3D : MonoBehaviour
     private void OnMouseDown()
     {
         up = false;
+        click = true;
         mousePosition = Input.mousePosition - GetMousePos();
     }
 
@@ -28,6 +29,7 @@ public class DragAndDrop3D : MonoBehaviour
     private void OnMouseUp()
     {
         up = true;
+        click = false;
     }
 
     private void OnCollisionEnter(Collision collision)
