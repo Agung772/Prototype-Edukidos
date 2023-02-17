@@ -12,6 +12,9 @@ public class DotController : MonoBehaviour
     public LineRenderer lineRenderer;
     Vector3 mousePos, startMousePos;
 
+    public SpriteRenderer boxColor;
+    public Sprite red, blue, yellow, green, orange;
+
 
     private void Start()
     {
@@ -36,33 +39,34 @@ public class DotController : MonoBehaviour
         //Warna
         if (color == "red")
         {
-            GetComponent<MeshRenderer>().material.color = Color.red;
-            lineRenderer.startColor = Color.red;
-            lineRenderer.endColor = Color.red;
+            boxColor.sprite = red;
+            lineRenderer.startColor = InputColor.instance.red;
+            lineRenderer.endColor = InputColor.instance.red;
         }
         else if (color == "blue")
         {
-            GetComponent<MeshRenderer>().material.color = Color.blue;
-            lineRenderer.startColor = Color.blue;
-            lineRenderer.endColor = Color.blue;
+            boxColor.sprite = blue;
+            lineRenderer.startColor = InputColor.instance.blue;
+            lineRenderer.endColor = InputColor.instance.blue;
         }
         else if (color == "yellow")
         {
-            GetComponent<MeshRenderer>().material.color = Color.yellow;
-            lineRenderer.startColor = Color.yellow;
-            lineRenderer.endColor = Color.yellow;
+            boxColor.sprite = yellow;
+            lineRenderer.startColor = InputColor.instance.yellow;
+            lineRenderer.endColor = InputColor.instance.yellow;
         }
         else if (color == "green")
         {
-            GetComponent<MeshRenderer>().material.color = Color.green;
-            lineRenderer.startColor = Color.green;
-            lineRenderer.endColor = Color.green;
+            boxColor.sprite = green;
+            lineRenderer.startColor = InputColor.instance.green;
+            lineRenderer.endColor = InputColor.instance.green;
         }
-        else if (color == "cyan")
+        else if (color == "orange")
         {
-            GetComponent<MeshRenderer>().material.color = Color.cyan;
-            lineRenderer.startColor = Color.cyan;
-            lineRenderer.endColor = Color.cyan;
+            boxColor.sprite = orange;
+
+            lineRenderer.startColor = InputColor.instance.orange;
+            lineRenderer.endColor = InputColor.instance.orange;
         }
         else
         {

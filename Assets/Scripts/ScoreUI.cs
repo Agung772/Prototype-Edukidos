@@ -30,5 +30,11 @@ public class ScoreUI : MonoBehaviour
             bintang[1].SetActive(false);
             bintang[2].SetActive(false);
         }
+        else if (jumlahBintang == 0)
+        {
+            bintang[0].SetActive(false);
+            bintang[1].SetActive(false);
+            bintang[2].SetActive(false);
+        }
     }
 }

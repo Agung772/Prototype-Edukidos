@@ -38,8 +38,18 @@ public class GameplayConnectingTheDot : MonoBehaviour
         }
         if (checkDot == dotController.Length)
         {
-            ButtonManager.instance.CallScoreUI("Kamu menjawab semua soal dengan benar", batrai);
-
+            if (batrai == 3)
+            {
+                ButtonManager.instance.SpawnScoreUI("Hebat!", batrai);
+            }
+            else if (batrai == 2)
+            {
+                ButtonManager.instance.SpawnScoreUI("Keren!", batrai);
+            }
+            else if (batrai == 1)
+            {
+                ButtonManager.instance.SpawnScoreUI("Baik!", batrai);
+            }
         }
     }
     public void SalahDot()
@@ -48,23 +58,23 @@ public class GameplayConnectingTheDot : MonoBehaviour
 
         if (batrai == 2)
         {
-            batraiUI.transform.GetChild(1).gameObject.SetActive(true);
-            batraiUI.transform.GetChild(2).gameObject.SetActive(true);
-            batraiUI.transform.GetChild(3).gameObject.SetActive(false);
+            batraiUI.transform.GetChild(3).gameObject.SetActive(true);
+            batraiUI.transform.GetChild(4).gameObject.SetActive(true);
+            batraiUI.transform.GetChild(5).gameObject.SetActive(false);
         }
         else if (batrai == 1)
         {
-            batraiUI.transform.GetChild(1).gameObject.SetActive(true);
-            batraiUI.transform.GetChild(2).gameObject.SetActive(false);
-            batraiUI.transform.GetChild(3).gameObject.SetActive(false);
+            batraiUI.transform.GetChild(3).gameObject.SetActive(true);
+            batraiUI.transform.GetChild(4).gameObject.SetActive(false);
+            batraiUI.transform.GetChild(5).gameObject.SetActive(false);
         }
         else if (batrai == 0)
         {
-            batraiUI.transform.GetChild(1).gameObject.SetActive(false);
-            batraiUI.transform.GetChild(2).gameObject.SetActive(false);
             batraiUI.transform.GetChild(3).gameObject.SetActive(false);
+            batraiUI.transform.GetChild(4).gameObject.SetActive(false);
+            batraiUI.transform.GetChild(5).gameObject.SetActive(false);
 
-            //Condition kalah
+            ButtonManager.instance.SpawnScoreUI("Coba Lagi!", batrai);
 
         }
 

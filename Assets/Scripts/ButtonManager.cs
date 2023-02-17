@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ButtonManager : MonoBehaviour
 {
     public static ButtonManager instance;
-    public GameObject settingUI, pauseUI, scoreUI;
+    public GameObject settingUI, optionUI, scoreUI;
 
     private void Awake()
     {
@@ -19,19 +19,24 @@ public class ButtonManager : MonoBehaviour
         else if (!active) settingUI.SetActive(false);
 
     }
-    public void PauseUI(bool active)
+    public void OptionUI(bool active)
     {
         if (active)
         {
-            pauseUI.SetActive(true);
+            optionUI.SetActive(true);
             Time.timeScale = 0;
         }
         else if (!active)
         {
-            pauseUI.SetActive(false);
+            optionUI.SetActive(false);
             Time.timeScale = 1;
         }
 
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void PindahScene(string namaScene)
@@ -53,7 +58,7 @@ public class ButtonManager : MonoBehaviour
         }
     }
 
-    public void CallScoreUI(string textTittle, int jumlahBintang)
+    public void SpawnScoreUI(string textTittle, int jumlahBintang)
     {
         scoreUI.SetActive(true);
         scoreUI.GetComponent<ScoreUI>().CallScoreUI(textTittle, jumlahBintang);

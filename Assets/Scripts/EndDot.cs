@@ -6,27 +6,30 @@ public class EndDot : MonoBehaviour
 {
     public string color;
 
+    public SpriteRenderer boxColor;
+    public Sprite red, blue, yellow, green, orange;
+
     private void Start()
     {
         if (color == "red")
         {
-            GetComponent<MeshRenderer>().material.color = Color.red;
+            boxColor.sprite = red;
         }
         else if (color == "blue")
         {
-            GetComponent<MeshRenderer>().material.color = Color.blue;
+            boxColor.sprite = blue;
         }
         else if (color == "yellow")
         {
-            GetComponent<MeshRenderer>().material.color = Color.yellow;
+            boxColor.sprite = yellow;
         }
         else if (color == "green")
         {
-            GetComponent<MeshRenderer>().material.color = Color.green;
+            boxColor.sprite = green;
         }
-        else if (color == "cyan")
+        else if (color == "orange")
         {
-            GetComponent<MeshRenderer>().material.color = Color.cyan;
+            boxColor.sprite = orange;
         }
         else
         {

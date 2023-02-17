@@ -47,6 +47,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: yellow
+  boxColor: {fileID: 6448174588453754333}
+  red: {fileID: 21300000, guid: 42a0b59c4133bbd488ff0b6edfae7145, type: 3}
+  blue: {fileID: 21300000, guid: 029d7a4a09b787942a452dfb3c8b690b, type: 3}
+  yellow: {fileID: 21300000, guid: b9dfa5331ae2d324ba428cac3fe7e504, type: 3}
+  green: {fileID: 21300000, guid: f7958a14b501e9744855c3b04a0bc920, type: 3}
+  orange: {fileID: 21300000, guid: ac4fe7367df6f2a4f998c60e96f8666f, type: 3}
 --- !u!135 &22121275032598760
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -76,7 +82,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &311359188873197460
 Transform:
   m_ObjectHideFlags: 0
@@ -447,7 +453,7 @@ GameObject:
   - component: {fileID: 2635012034751128649}
   - component: {fileID: 6448174588453754333}
   m_Layer: 0
-  m_Name: blue
+  m_Name: BoxColor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
