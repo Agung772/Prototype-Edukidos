@@ -11,11 +11,28 @@ public class PlayerControllerMGPF : MonoBehaviour
     bool click;
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+
+
+
+        if (navMeshAgent.remainingDistance == 0)
+        {
+
+        }
+        else if (navMeshAgent.remainingDistance < 0.1f)
         {
             DestroyDestination();
         }
 
+    }
+    public void MouseDown()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            DestroyDestination();
+        }
+    }
+    public void MouseUp()
+    {
         if (Input.GetMouseButtonUp(0))
         {
 
@@ -25,18 +42,7 @@ public class PlayerControllerMGPF : MonoBehaviour
 
                 SpawndDestination();
             }
-
-
         }
-        else if (navMeshAgent.remainingDistance == 0)
-        {
-            print("Udah di tempat");
-        }
-        else if (navMeshAgent.remainingDistance < 0.1f)
-        {
-            DestroyDestination();
-        }
-
     }
 
     void SpawndDestination()
