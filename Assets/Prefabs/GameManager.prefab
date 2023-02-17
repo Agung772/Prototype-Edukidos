@@ -2894,7 +2894,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4703159505969631371
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4155,6 +4155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   namaScene: 0
+  GameSave: {fileID: 7117690224374340310}
   notifTextUI: {fileID: 3696031513091409268}
   openingTextMiniGame: {fileID: 1249249646334890948}
 --- !u!1 &7626331154545775473

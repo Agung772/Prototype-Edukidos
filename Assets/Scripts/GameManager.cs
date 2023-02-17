@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     public NamaScene namaScene;
 
+    public GameSave GameSave;
 
     public static GameManager instance;
     public GameObject notifTextUI;

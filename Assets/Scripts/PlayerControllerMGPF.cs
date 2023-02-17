@@ -7,13 +7,18 @@ public class PlayerControllerMGPF : MonoBehaviour
 {
     public GameObject destinationPrefab;
     public NavMeshAgent navMeshAgent;
+
+    public GameObject pria, wanita;
     RaycastHit hit;
-    bool click;
+
+
+    private void Start()
+    {
+        LoadData();
+
+    }
     void Update()
     {
-
-
-
         if (navMeshAgent.remainingDistance == 0)
         {
 
@@ -57,6 +62,22 @@ public class PlayerControllerMGPF : MonoBehaviour
             Destroy(distinationObject);
         }
 
+    }
+
+    //Load save an
+    public void LoadData()
+    {
+        //Ambil data jenis kelamin
+        if (GameManager.instance.GameSave.JenisKelamin == "Pria")
+        {
+            pria.SetActive(true);
+            wanita.SetActive(false);
+        }
+        else
+        {
+            pria.SetActive(false);
+            wanita.SetActive(true);
+        }
     }
 
 }
