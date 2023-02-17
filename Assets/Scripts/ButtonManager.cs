@@ -24,12 +24,10 @@ public class ButtonManager : MonoBehaviour
         if (active)
         {
             optionUI.SetActive(true);
-            Time.timeScale = 0;
         }
         else if (!active)
         {
             optionUI.SetActive(false);
-            Time.timeScale = 1;
         }
 
     }
