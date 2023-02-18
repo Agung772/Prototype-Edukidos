@@ -9,6 +9,7 @@ public class ButtonManager : MonoBehaviour
     public static ButtonManager instance;
     public GameObject settingUI, optionUI, scoreUI;
 
+
     private void Awake()
     {
         instance = this;
@@ -60,5 +61,10 @@ public class ButtonManager : MonoBehaviour
     {
         scoreUI.SetActive(true);
         scoreUI.GetComponent<ScoreUI>().CallScoreUI(textTittle, jumlahBintang);
+    }
+
+    public void NextPertanyaanPilihanGanda()
+    {
+        GameplayPilihanGanda.instance.NextPertanyaan();
     }
 }

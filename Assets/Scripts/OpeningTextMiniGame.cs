@@ -14,16 +14,12 @@ public class OpeningTextMiniGame : MonoBehaviour
         instance = this;
     }
 
-    private void Start()
-    {
-
-    }
     public void TextOpening(string textKedua)
     {
         StartCoroutine(Coroutine());
         IEnumerator Coroutine()
         {
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(2);
             textOpening.text = textKedua;
             clickTextKedua = true;
         }

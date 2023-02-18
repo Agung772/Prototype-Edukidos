@@ -8,6 +8,8 @@ public class GameSave : MonoBehaviour
     public string jenisKelamin;
     public string kelas;
 
+    public int bab;
+
     public int scoreConnectingTheDot;
     public int scoreSpellingBee;
     public int scoreDecisionRun;
@@ -17,6 +19,8 @@ public class GameSave : MonoBehaviour
     string _NamaPlayer = "NamaPlayer";
     string _JenisKelamin = "JenisKelamin";
     string _Kelas = "Kelas";
+
+    string _Bab = "Bab";
 
     string _ScoreConnectingTheDot = "ScoreConnectingTheDot";
     string _ScoreSpellingBee = "ScoreSpellingBee";
@@ -30,6 +34,8 @@ public class GameSave : MonoBehaviour
         namaPlayer = PlayerPrefs.GetString(_NamaPlayer);
         jenisKelamin = PlayerPrefs.GetString(_JenisKelamin);
         kelas = PlayerPrefs.GetString(_Kelas);
+
+        bab = PlayerPrefs.GetInt(_Bab);
 
         scoreConnectingTheDot = PlayerPrefs.GetInt(_ScoreConnectingTheDot);
         scoreSpellingBee = PlayerPrefs.GetInt(_ScoreSpellingBee);
