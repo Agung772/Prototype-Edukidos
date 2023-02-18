@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class PilihanGanda : MonoBehaviour
 {
+    public bool sudahDijawab;
     public Text soalText;
 
     public Image[] jawabanImage;
     public Text[] jawabanText;
-    public string jawabanYangBenar;
 
     public void SpawnPilihanGanda(string soal, string jawabanA, string jawabanB, string jawabanC)
     {
@@ -40,9 +40,11 @@ public class PilihanGanda : MonoBehaviour
         }
     }
 
-    public void Button(Image imageButton)
+    public void ClickButton(GameObject button)
     {
-        if (!imageButton.gameObject.GetComponent<ButtonScript>().hasClick)
+        if (sudahDijawab) return;
+
+        if (!button.GetComponent<ButtonScript>().hasClick)
         {
             for (int i = 0; i < jawabanImage.Length; i++)
             {
@@ -50,29 +52,27 @@ public class PilihanGanda : MonoBehaviour
                 jawabanImage[i].gameObject.GetComponent<ButtonScript>().hasClick = false;
             }
 
-            imageButton.gameObject.GetComponent<ButtonScript>().hasClick = true;
-            imageButton.color = InputColor.instance.blue;
+            button.GetComponent<ButtonScript>().hasClick = true;
+            button.GetComponent<Image>().color = InputColor.instance.blue;
         }
 
         //Benar salah jawaban
         else
         {
-            if (imageButton.gameObject.GetComponent<ButtonScript>().jawaban == "A")
+            if (button.GetComponent<ButtonScript>().jawaban == "A")
             {
-                print("Jawabannya benar " + imageButton.gameObject.GetComponent<ButtonScript>().jawaban);
+                button.GetComponent<Image>().color = InputColor.instance.green;
                 GameplayPilihanGanda.instance.benar++;
             }
             else
             {
-                print("Jawabannya salah " + imageButton.gameObject.GetComponent<ButtonScript>().jawaban);
+                button.GetComponent<Image>().color = InputColor.instance.red;
                 GameplayPilihanGanda.instance.salah++;
             }
 
+            sudahDijawab = true;
+            ButtonManager.instance.nextPertanyaan = true;
         }
 
-    }
-    public void Jawab(string jawab)
-    {
-        
     }
 }

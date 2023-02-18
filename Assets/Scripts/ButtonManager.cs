@@ -63,8 +63,14 @@ public class ButtonManager : MonoBehaviour
         scoreUI.GetComponent<ScoreUI>().CallScoreUI(textTittle, jumlahBintang);
     }
 
+    public bool nextPertanyaan;
     public void NextPertanyaanPilihanGanda()
     {
-        GameplayPilihanGanda.instance.NextPertanyaan();
+        if (nextPertanyaan)
+        {
+            nextPertanyaan = false;
+            GameplayPilihanGanda.instance.NextPertanyaan();
+        }
+
     }
 }

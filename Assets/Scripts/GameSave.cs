@@ -15,17 +15,18 @@ public class GameSave : MonoBehaviour
     public int scoreDecisionRun;
     public int scorePilihanGanda;
 
+    [Space]
     //Anti typo
-    string _NamaPlayer = "NamaPlayer";
-    string _JenisKelamin = "JenisKelamin";
-    string _Kelas = "Kelas";
+    public string _NamaPlayer = "NamaPlayer";
+    public string _JenisKelamin = "JenisKelamin";
+    public string _Kelas = "Kelas";
 
-    string _Bab = "Bab";
+    public string _Bab = "Bab";
 
-    string _ScoreConnectingTheDot = "ScoreConnectingTheDot";
-    string _ScoreSpellingBee = "ScoreSpellingBee";
-    string _ScoreDecisionRun = "ScoreDecisionRun";
-    string _ScorePilihanGanda = "ScorePilihanGanda";
+    public string _ScoreConnectingTheDot = "ScoreConnectingTheDot";
+    public string _ScoreSpellingBee = "ScoreSpellingBee";
+    public string _ScoreDecisionRun = "ScoreDecisionRun";
+    public string _ScorePilihanGanda = "ScorePilihanGanda";
 
     public int totalScore;
 
