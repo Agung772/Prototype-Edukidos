@@ -48,7 +48,7 @@ public class GameplayPilihanGanda : MonoBehaviour
             else if (benar == 3) ButtonManager.instance.SpawnScoreUI("Kamu benar 3 dari 5 soal", 2);
             else if (benar == 2) ButtonManager.instance.SpawnScoreUI("Kamu benar 2 dari 5 soal", 2);
             else if (benar == 1) ButtonManager.instance.SpawnScoreUI("Kamu benar 1 dari 5 soal", 1);
-            else if (benar == 0) ButtonManager.instance.SpawnScoreUI("Kamu benar 0 dari 5 soal", 0);
+            else if (benar == 0) ButtonManager.instance.SpawnScoreUI("Jawaban kamu salah semua", 0);
 
         }
         //Next pertanyaan
