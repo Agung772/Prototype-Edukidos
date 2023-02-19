@@ -12,6 +12,7 @@ public class DotController : MonoBehaviour
     public LineRenderer lineRenderer;
     Vector3 mousePos, startMousePos;
 
+    public SpriteRenderer boxGambar;
     public SpriteRenderer boxColor;
     public Sprite red, blue, yellow, green, orange;
 
