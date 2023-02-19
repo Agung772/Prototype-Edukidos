@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
         SpellingBee,
         PilihanGandaCepat,
         DecisionRun,
+        BenarSalah,
     }
 
     public NamaScene namaScene;

@@ -6,7 +6,7 @@ public class InputColor : MonoBehaviour
 {
     public static InputColor instance;
 
-    public Color red, blue, green, yellow, orange;
+    public Color red, blue, green, yellow, orange, greenTransparant ,redTranparant;
 
     private void Awake()
     {
