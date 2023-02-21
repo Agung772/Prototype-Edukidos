@@ -43,12 +43,12 @@ public class GameplayBenarSalah : MonoBehaviour
         //Saving score
         if (urutanPertanyaan == listPertanyaanBab1.Count - 1)
         {
-            if (benar == 5) ButtonManager.instance.SpawnScoreUI("Kamu menjawab semua soal dengan benar", 3);
-            else if (benar == 4) ButtonManager.instance.SpawnScoreUI("Kamu benar 4 dari 5 soal", 3);
-            else if (benar == 3) ButtonManager.instance.SpawnScoreUI("Kamu benar 3 dari 5 soal", 2);
-            else if (benar == 2) ButtonManager.instance.SpawnScoreUI("Kamu benar 2 dari 5 soal", 2);
-            else if (benar == 1) ButtonManager.instance.SpawnScoreUI("Kamu benar 1 dari 5 soal", 1);
-            else if (benar == 0) ButtonManager.instance.SpawnScoreUI("Jawaban kamu salah semua", 0);
+            if (benar == 5) ButtonManager.instance.SpawnScoreUI(3);
+            else if (benar == 4) ButtonManager.instance.SpawnScoreUI(3);
+            else if (benar == 3) ButtonManager.instance.SpawnScoreUI(2);
+            else if (benar == 2) ButtonManager.instance.SpawnScoreUI(2);
+            else if (benar == 1) ButtonManager.instance.SpawnScoreUI(1);
+            else if (benar == 0) ButtonManager.instance.SpawnScoreUI(0);
 
         }
         //Next pertanyaan

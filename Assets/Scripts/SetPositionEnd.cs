@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class SetPositionEnd : MonoBehaviour
 {
-    public string color;
+    public string codeDot;
     public string condition = "null";
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<EndDot>())
         {
-            if (other.GetComponent<EndDot>().color == color) condition = "benar";
-            else if (other.GetComponent<EndDot>().color != color) condition = "salah";
+            if (other.GetComponent<EndDot>().codeDot == codeDot) condition = "benar";
+            else if (other.GetComponent<EndDot>().codeDot != codeDot) condition = "salah";
             else condition = "null";
         }
-
     }
 
     private void OnTriggerExit(Collider other)

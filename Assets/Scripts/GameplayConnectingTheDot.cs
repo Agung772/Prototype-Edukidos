@@ -3,12 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[System.Serializable]
-public struct ListPertanyaan
-{
-    public Sprite startDot;
-    public Sprite EndDot;
-}
+
 public class GameplayConnectingTheDot : MonoBehaviour
 {
     public static GameplayConnectingTheDot instance;
@@ -17,15 +12,22 @@ public class GameplayConnectingTheDot : MonoBehaviour
 
     public GameObject batraiUI;
 
-    public List<ListPertanyaan> listPertanyaanBab1;
+    public GameObject[] Bab;
 
-    DotController[] dotController;
-    EndDot[] endDot;
+    public DotController[] dotController;
+    public EndDot[] endDot;
 
 
     private void Awake()
     {
         instance = this;
+
+        bab = GameManager.instance.GameSave.bab;
+        if (bab == 1)
+        {
+            Bab[1].SetActive(true);
+        }
+
         dotController = FindObjectsOfType<DotController>();
         endDot = FindObjectsOfType<EndDot>();
 
@@ -36,20 +38,8 @@ public class GameplayConnectingTheDot : MonoBehaviour
 
     private void Start()
     {
-        bab = GameManager.instance.GameSave.bab;
 
-        if (bab == 1)
-        {
-            for (int i = 0; i < dotController.Length; i++)
-            {
-                if (i == 0) dotController[randomSD].boxGambar.sprite = listPertanyaanBab1[0].startDot;
-                else if (i == 1) dotController[randomSD].boxGambar.sprite = listPertanyaanBab1[1].startDot;
-                else if (i == 2) dotController[randomSD].boxGambar.sprite = listPertanyaanBab1[2].startDot;
-                else if (i == 3) dotController[randomSD].boxGambar.sprite = listPertanyaanBab1[3].startDot;
-                else if (i == 4) dotController[randomSD].boxGambar.sprite = listPertanyaanBab1[4].startDot;
-                else if (i == 5) dotController[randomSD].boxGambar.sprite = listPertanyaanBab1[5].startDot;
-            }
-        }
+
     }
 
 
@@ -64,15 +54,15 @@ public class GameplayConnectingTheDot : MonoBehaviour
         {
             if (batrai == 3)
             {
-                ButtonManager.instance.SpawnScoreUI("Hebat!", batrai);
+                ButtonManager.instance.SpawnScoreUI(batrai);
             }
             else if (batrai == 2)
             {
-                ButtonManager.instance.SpawnScoreUI("Keren!", batrai);
+                ButtonManager.instance.SpawnScoreUI(batrai);
             }
             else if (batrai == 1)
             {
-                ButtonManager.instance.SpawnScoreUI("Baik!", batrai);
+                ButtonManager.instance.SpawnScoreUI(batrai);
             }
         }
     }
@@ -98,7 +88,7 @@ public class GameplayConnectingTheDot : MonoBehaviour
             batraiUI.transform.GetChild(4).gameObject.SetActive(false);
             batraiUI.transform.GetChild(5).gameObject.SetActive(false);
 
-            ButtonManager.instance.SpawnScoreUI("Coba Lagi!", batrai);
+            ButtonManager.instance.SpawnScoreUI(batrai);
 
         }
 
@@ -107,18 +97,21 @@ public class GameplayConnectingTheDot : MonoBehaviour
     //Random Start Dot
     int randomSD;
     bool[] randomSDBool;
+    public float[] positionYSD;
     void RandomSD()
     {
         randomSDBool = new bool[dotController.Length];
+        positionYSD = new float[dotController.Length];
+
+        for (int i = 0; i < randomSDBool.Length; i++)
+        {
+            positionYSD[i] = dotController[i].transform.position.y;
+        }
+
         for (int i = 0; i < randomSDBool.Length; i++)
         {
             RandomSDVoid();
-            if (i == 0) dotController[randomSD].color = "red";
-            else if (i == 1) dotController[randomSD].color = "green";
-            else if (i == 2) dotController[randomSD].color = "blue";
-            else if (i == 3) dotController[randomSD].color = "yellow";
-            else if (i == 4) dotController[randomSD].color = "orange";
-            else if (i == 5) dotController[randomSD].color = "yo ndak tau";
+            dotController[i].transform.localPosition = new Vector3(0, positionYSD[randomSD], 0);
         }
 
         void RandomSDVoid()
@@ -138,24 +131,25 @@ public class GameplayConnectingTheDot : MonoBehaviour
     //Random Start Dot
     int randomED;
     bool[] randomEDBool;
+    public float[] positionYED;
     void RandomED()
     {
         randomEDBool = new bool[endDot.Length];
+        positionYED = new float[endDot.Length];
+
+        for (int i = 0; i < randomEDBool.Length; i++)
+        {
+            positionYED[i] = endDot[i].transform.position.y;
+        }
+
         for (int i = 0; i < randomEDBool.Length; i++)
         {
             RandomEDVoid();
-            if (i == 0) endDot[randomED].color = "red";
-            else if (i == 1) endDot[randomED].color = "green";
-            else if (i == 2) endDot[randomED].color = "blue";
-            else if (i == 3) endDot[randomED].color = "yellow";
-            else if (i == 4) endDot[randomED].color = "orange";
-            else if (i == 5) endDot[randomED].color = "yo ndak tau";
-
+            endDot[i].transform.localPosition = new Vector3(0, positionYED[randomED], 0);
         }
 
         void RandomEDVoid()
         {
-            print(randomED);
             randomED = Random.Range(0, randomEDBool.Length);
             if (randomED == 0 && !randomEDBool[0]) randomEDBool[0] = true;
             else if (randomED == 1 && !randomEDBool[1]) randomEDBool[1] = true;

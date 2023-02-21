@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DotController : MonoBehaviour
 {
-    public string color;
+    public string codeDot;
+    public Color warnaLine;
     public bool useLine, clear, salah;
     public Transform target;
     public SetPositionEnd setPositionEnd;
@@ -12,67 +13,34 @@ public class DotController : MonoBehaviour
     public LineRenderer lineRenderer;
     Vector3 mousePos, startMousePos;
 
-    public SpriteRenderer boxGambar;
     public SpriteRenderer boxColor;
-    public Sprite red, blue, yellow, green, orange;
 
 
     private void Start()
     {
         //Set coding warna untuk setPositionEnd
-        setPositionEnd.gameObject.GetComponent<SetPositionEnd>().color = color;
+        setPositionEnd.gameObject.GetComponent<SetPositionEnd>().codeDot = codeDot;
 
 
         //Mencari target
         EndDot[] endDots = FindObjectsOfType<EndDot>();
         for (int i = 0; i < endDots.Length; i++)
         {
-            if (endDots[i].color == color)
+            if (endDots[i].codeDot == codeDot)
             {
                 target = endDots[i].gameObject.transform;
             }
         }
 
+
         lineRenderer.positionCount = 2;
         lineRenderer.SetPosition(0, new Vector3(transform.position.x, transform.position.y, 0));
         lineRenderer.SetPosition(1, new Vector3(transform.position.x, transform.position.y, 0));
 
-        //Warna
-        if (color == "red")
-        {
-            boxColor.sprite = red;
-            lineRenderer.startColor = InputColor.instance.red;
-            lineRenderer.endColor = InputColor.instance.red;
-        }
-        else if (color == "blue")
-        {
-            boxColor.sprite = blue;
-            lineRenderer.startColor = InputColor.instance.blue;
-            lineRenderer.endColor = InputColor.instance.blue;
-        }
-        else if (color == "yellow")
-        {
-            boxColor.sprite = yellow;
-            lineRenderer.startColor = InputColor.instance.yellow;
-            lineRenderer.endColor = InputColor.instance.yellow;
-        }
-        else if (color == "green")
-        {
-            boxColor.sprite = green;
-            lineRenderer.startColor = InputColor.instance.green;
-            lineRenderer.endColor = InputColor.instance.green;
-        }
-        else if (color == "orange")
-        {
-            boxColor.sprite = orange;
+        
+        lineRenderer.startColor = warnaLine;
+        lineRenderer.endColor = warnaLine;
 
-            lineRenderer.startColor = InputColor.instance.orange;
-            lineRenderer.endColor = InputColor.instance.orange;
-        }
-        else
-        {
-            print("Isi warna objectnya cuy");
-        }
     }
 
     private void Update()
@@ -101,6 +69,7 @@ public class DotController : MonoBehaviour
         if (setPositionEnd.condition == "benar")
         {
             clear = true;
+            target.GetComponent<EndDot>().boxColor.sprite = boxColor.sprite;
         }
         else if (setPositionEnd.condition == "salah")
         {

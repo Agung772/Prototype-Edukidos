@@ -57,10 +57,10 @@ public class ButtonManager : MonoBehaviour
         }
     }
 
-    public void SpawnScoreUI(string textTittle, int jumlahBintang)
+    public void SpawnScoreUI(int jumlahBintang)
     {
         scoreUI.SetActive(true);
-        scoreUI.GetComponent<ScoreUI>().CallScoreUI(textTittle, jumlahBintang);
+        scoreUI.GetComponent<ScoreUI>().CallScoreUI(jumlahBintang);
     }
 
     public bool nextPertanyaan;
