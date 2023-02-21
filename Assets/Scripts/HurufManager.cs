@@ -14,13 +14,16 @@ public class HurufManager : MonoBehaviour
 
     public int[] randomClue;
     public int maxClue = 1;
+    int totalnonClue;
+
+    public float[] posisiXNonClue;
 
     public Vector3[] positionHuruf;
 
-    private void Awake()
+    int j;
+    private void Start()
     {
         startX = -0.75f * (totalHuruf - 1);
-        print(startX);
         hurufController = new HurufController[totalHuruf];
         positionHuruf = new Vector3[totalHuruf];
 
@@ -43,11 +46,13 @@ public class HurufManager : MonoBehaviour
                 }
                 else
                 {
-                    randomClue[i] = -4;
+                    randomClue[i] = -2;
+                    totalnonClue++;
                 }
             }
         }
 
+        posisiXNonClue = new float[totalnonClue];
 
         for (int i = 0; i < totalHuruf; i++)
         {
@@ -58,10 +63,27 @@ public class HurufManager : MonoBehaviour
 
             //Set posisi huruf
             hurufController[i].transform.localPosition = new Vector3(startX, randomClue[i], 0);
-            positionHuruf[i] = hurufController[i].transform.localPosition;
+            if (randomClue[i] == -2)
+            {
+                print(i);
+                
+                posisiXNonClue[j] = startX;
+                j++;
+            }
+
+
             startX += 1.5f;
         }
+
+
+
+        for (int i = 0; i < totalHuruf; i++)
+        {
+            //Save posisi huruf
+            positionHuruf[i] = hurufController[i].transform.localPosition;
+        }
     }
+
 
     public void RestartHuruf()
     {

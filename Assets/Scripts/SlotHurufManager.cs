@@ -12,10 +12,9 @@ public class SlotHurufManager : MonoBehaviour
     int urutanHuruf;
     public float startX;
 
-    private void Awake()
+    private void Start()
     {
         startX = -0.75f * (totalSlotHuruf - 1);
-        print(startX);
         slotHurufController = new SlotHurufController[totalSlotHuruf];
         for (int i = 0; i < totalSlotHuruf; i++)
         {
@@ -28,6 +27,4 @@ public class SlotHurufManager : MonoBehaviour
             startX += 1.5f;
         }
     }
-
-
 }
