@@ -32,7 +32,7 @@ public class ScoreUI : MonoBehaviour
             bintang[1].SetActive(false);
             bintang[2].SetActive(false);
 
-            text[2].SetActive(true);
+            text[1].SetActive(true);
         }
         else if (jumlahBintang == 0)
         {

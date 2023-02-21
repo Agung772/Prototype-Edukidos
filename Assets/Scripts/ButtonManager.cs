@@ -20,15 +20,19 @@ public class ButtonManager : MonoBehaviour
         else if (!active) settingUI.SetActive(false);
 
     }
-    public void OptionUI(bool active)
+
+    bool option;
+    public void OptionUI()
     {
-        if (active)
+        if (!option)
         {
             optionUI.SetActive(true);
+            option = true;
         }
-        else if (!active)
+        else if (option)
         {
             optionUI.SetActive(false);
+            option = false;
         }
 
     }
