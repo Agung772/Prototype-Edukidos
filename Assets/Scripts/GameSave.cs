@@ -15,6 +15,10 @@ public class GameSave : MonoBehaviour
     public int scoreDecisionRun;
     public int scorePilihanGanda;
 
+    public int totalScore;
+
+    [Space]
+    [Space]
     [Space]
     //Anti typo
     public string _NamaPlayer = "NamaPlayer";
@@ -28,7 +32,7 @@ public class GameSave : MonoBehaviour
     public string _ScoreDecisionRun = "ScoreDecisionRun";
     public string _ScorePilihanGanda = "ScorePilihanGanda";
 
-    public int totalScore;
+
 
     private void Awake()
     {
