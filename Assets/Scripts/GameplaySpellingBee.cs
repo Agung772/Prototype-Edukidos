@@ -1,20 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameplaySpellingBee : MonoBehaviour
 {
+
+    public int baterai = 2, checkTotal, checkTotalClear;
+    public Text bateraiText;
+
     public static GameplaySpellingBee instance;
-    public SlotDragAndDrop3D[] slotDragAndDrop3D;
-    public int checkTotal, checkTotalClear;
+    public SlotHurufController[] slotHurufController;
+
 
     private void Awake()
     {
         instance = this;
-        slotDragAndDrop3D = FindObjectsOfType<SlotDragAndDrop3D>();
+        slotHurufController = FindObjectsOfType<SlotHurufController>();
     }
 
-    public void CheckDragAndDrop3D()
+    private void Start()
+    {
+        BateraiUI();
+    }
+
+    public void CheckHuruf()
     {
         StartCoroutine(CoroutineCheck());
         IEnumerator CoroutineCheck()
@@ -24,24 +34,24 @@ public class GameplaySpellingBee : MonoBehaviour
             //CheckTotal yang ke use dan clear
             checkTotal = 0;
             checkTotalClear = 0;
-            for (int i = 0; i < slotDragAndDrop3D.Length; i++)
+            for (int i = 0; i < slotHurufController.Length; i++)
             {
-                if (slotDragAndDrop3D[i].use)
+                if (slotHurufController[i].use)
                 {
                     checkTotal++;
 
                 }
-                if (slotDragAndDrop3D[i].clear)
+                if (slotHurufController[i].clear)
                 {
                     checkTotalClear++;
                 }
             }
 
             //Semua slot keisi
-            if (slotDragAndDrop3D.Length == checkTotal)
+            if (slotHurufController.Length == checkTotal)
             {
                 //Check benar semua
-                if (slotDragAndDrop3D.Length == checkTotalClear)
+                if (slotHurufController.Length == checkTotalClear)
                 {
                     GameManager.instance.NotifTextUI("Tugas Selesai !");
                     GameManager.instance.PindahSceneDelay("MetaGame", 2);
@@ -51,28 +61,34 @@ public class GameplaySpellingBee : MonoBehaviour
                 else
                 {
                     print("gagal, ngulang cuy");
-                    for (int i = 0; i < slotDragAndDrop3D.Length; i++)
+                    //Update untuk UI Baterai
+                    baterai--;
+                    BateraiUI();
+
+                    for (int i = 0; i < slotHurufController.Length; i++)
                     {
-                        slotDragAndDrop3D[i].gameObject.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().isTrigger = true;
+                        slotHurufController[i].gameObject.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().isTrigger = true;
                     }
 
                     StartCoroutine(Coroutine());
                     IEnumerator Coroutine()
                     {
                         yield return new WaitForSeconds(0.5f);
-                        for (int i = 0; i < slotDragAndDrop3D.Length; i++)
+                        for (int i = 0; i < slotHurufController.Length; i++)
                         {
-                            slotDragAndDrop3D[i].gameObject.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().isTrigger = false;
+                            slotHurufController[i].gameObject.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().isTrigger = false;
                         }
                     }
                 }
             }
 
-            checkTotal = Mathf.Clamp(checkTotal, 0, slotDragAndDrop3D.Length);
-            checkTotalClear = Mathf.Clamp(checkTotalClear, 0, slotDragAndDrop3D.Length);
+            checkTotal = Mathf.Clamp(checkTotal, 0, slotHurufController.Length);
+            checkTotalClear = Mathf.Clamp(checkTotalClear, 0, slotHurufController.Length);
         }
+    }
 
-
-
+    void BateraiUI()
+    {
+        bateraiText.text = baterai + "/" + 5;
     }
 }

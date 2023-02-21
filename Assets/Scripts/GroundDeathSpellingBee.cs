@@ -6,12 +6,12 @@ public class GroundDeathSpellingBee : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.GetComponent<DragAndDrop3D>())
+        if (collision.collider.GetComponent<HurufController>())
         {
             collision.transform.position = Vector3.up * 5;
             collision.rigidbody.velocity = Vector3.zero;
             collision.rigidbody.angularVelocity = Vector3.zero;
-            print("death");
+            print("Huruf keluar layar");
         }
     }
 }

@@ -1,13 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class DragAndDrop3D : MonoBehaviour
+public class HurufController : MonoBehaviour
 {
-    public string warna;
+    public string huruf;
     Vector3 mousePosition;
     public bool up, click;
+    public Text hurufText;
 
+    private void Start()
+    {
+        hurufText.text = huruf;
+    }
     Vector3 GetMousePos()
     {
         return Camera.main.WorldToScreenPoint(transform.position);
