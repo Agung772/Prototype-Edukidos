@@ -347,7 +347,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.1
+    widthMultiplier: 0.3
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -473,5 +473,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.99
-  m_Center: {x: -0.83, y: 0, z: 0}
+  m_Radius: 0.7670903
+  m_Center: {x: -0.79, y: -0.050480366, z: 0}
