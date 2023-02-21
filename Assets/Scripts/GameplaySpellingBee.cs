@@ -1,12 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using UnityEngine.UI;
 
+[Serializable]
+public struct Bab
+{
+    public GameObject[] soal;
+}
 public class GameplaySpellingBee : MonoBehaviour
 {
+    public int bab, urutanSoal;
+    public int baterai = 2;
+    
+    public int checkTotal, checkTotalClear;
 
-    public int baterai = 2, checkTotal, checkTotalClear;
+    public List<Bab> babList;
+
     public Text bateraiText;
 
     public static GameplaySpellingBee instance;
@@ -16,12 +27,13 @@ public class GameplaySpellingBee : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        slotHurufController = FindObjectsOfType<SlotHurufController>();
+
     }
 
     private void Start()
     {
         BateraiUI();
+        slotHurufController = FindObjectsOfType<SlotHurufController>();
     }
 
     public void CheckHuruf()
