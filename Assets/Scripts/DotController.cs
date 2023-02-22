@@ -69,7 +69,7 @@ public class DotController : MonoBehaviour
         if (setPositionEnd.condition == "benar")
         {
             clear = true;
-            target.GetComponent<EndDot>().boxColor.sprite = boxColor.sprite;
+            target.GetComponent<EndDot>().DotClear();
         }
         else if (setPositionEnd.condition == "salah")
         {
