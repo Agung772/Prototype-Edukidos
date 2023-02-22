@@ -1,7 +1,13 @@
 fileFormatVersion: 2
 guid: 726347ade33aa1c49906c0694736c707
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -8545028503498181139
+    second: gray-long_0
+  - first:
+      213: 4285052878795646997
+    second: gray-long_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -125,7 +131,49 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: gray-long_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 20
+        width: 83
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de5376d79d5f96980800000000000000
+      internalID: -8545028503498181139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gray-long_1
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 0
+        width: 243
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 518216cd3e0977b30800000000000000
+      internalID: 4285052878795646997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
