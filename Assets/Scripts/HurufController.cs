@@ -5,14 +5,16 @@ using UnityEngine.UI;
 
 public class HurufController : MonoBehaviour
 {
-    public string huruf;
+    public string codeHuruf;
     Vector3 mousePosition;
-    public bool up, click;
+    public bool hurufAktif;
+
+    public bool use, up, click;
     public Text hurufText;
 
     private void Start()
     {
-        hurufText.text = huruf;
+        hurufText.text = codeHuruf;
     }
     Vector3 GetMousePos()
     {
@@ -40,6 +42,10 @@ public class HurufController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        up = false;
+        if (collision.collider.gameObject.name == "Ground")
+        {
+            up = false;
+        }
+
     }
 }

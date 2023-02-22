@@ -59,7 +59,7 @@ public class HurufManager : MonoBehaviour
             Instantiate(hurufPrefab, transform);
             hurufController[i] = transform.GetChild(i).GetComponent<HurufController>();
             urutanHuruf++;
-            hurufController[i].huruf = urutanHuruf.ToString();
+            hurufController[i].codeHuruf = urutanHuruf.ToString();
 
             //Set posisi huruf
             hurufController[i].transform.localPosition = new Vector3(startX, randomClue[i], 0);

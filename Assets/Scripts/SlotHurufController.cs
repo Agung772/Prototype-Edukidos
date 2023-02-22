@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class SlotHurufController : MonoBehaviour
 {
-    public string huruf;
-    public bool use, use1x, clear;
+    public string codeSlotHuruf;
+    public string codeHuruf;
+    public bool slotHurufAktif;
+    public bool use, clear;
 
     private void OnTriggerStay(Collider other)
     {
         if (other.GetComponent<HurufController>())
         {
-            use = true;
-
-            if (huruf == other.GetComponent<HurufController>().huruf)
+            if (codeSlotHuruf == other.GetComponent<HurufController>().codeHuruf && !use && other.GetComponent<HurufController>().up && !other.GetComponent<HurufController>().use)
             {
                 clear = true;
             }
@@ -22,9 +22,13 @@ public class SlotHurufController : MonoBehaviour
                 //print("Warnanya salah");
             }
 
-            if (!other.GetComponent<HurufController>().click && !use1x)
+            if (other.GetComponent<HurufController>() && !use && other.GetComponent<HurufController>().up && !other.GetComponent<HurufController>().use)
             {
-                use1x = true;
+                use = true;
+                other.GetComponent<HurufController>().use = true;
+                other.GetComponent<HurufController>().up = false;
+                
+                codeHuruf = other.GetComponent<HurufController>().codeHuruf;
                 GameplaySpellingBee.instance.CheckHuruf();
             }
         }
@@ -33,11 +37,12 @@ public class SlotHurufController : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
 
-        if (other.GetComponent<HurufController>())
+        if (other.GetComponent<HurufController>().codeHuruf == codeHuruf)
         {
-            use = false;
             clear = false;
-            use1x = false;
+            use = false;
+            codeHuruf = null;
+            other.GetComponent<HurufController>().use = false;
 
             if (other.GetComponent<HurufController>().click)
             {

@@ -21,7 +21,7 @@ public class SlotHurufManager : MonoBehaviour
             Instantiate(slotHurufPrefab, transform);
             slotHurufController[i] = transform.GetChild(i).GetComponent<SlotHurufController>();
             urutanHuruf++;
-            slotHurufController[i].huruf = urutanHuruf.ToString();
+            slotHurufController[i].codeSlotHuruf = urutanHuruf.ToString();
 
             slotHurufController[i].transform.localPosition = new Vector3(startX, 0, 0);
             startX += 1.5f;

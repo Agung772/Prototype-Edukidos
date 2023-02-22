@@ -27,13 +27,13 @@ public class GameplaySpellingBee : MonoBehaviour
     private void Awake()
     {
         instance = this;
-
+        slotHurufController = FindObjectsOfType<SlotHurufController>();
     }
 
     private void Start()
     {
         BateraiUI();
-        slotHurufController = FindObjectsOfType<SlotHurufController>();
+
     }
 
     public void CheckHuruf()
@@ -101,6 +101,6 @@ public class GameplaySpellingBee : MonoBehaviour
 
     void BateraiUI()
     {
-        bateraiText.text = baterai + "/" + 5;
+        bateraiText.text = baterai + "/" + 2;
     }
 }
