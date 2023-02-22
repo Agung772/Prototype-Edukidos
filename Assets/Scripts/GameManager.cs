@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
         else if (namaScene == NamaScene.SpellingBee)
         {
             openingTextMiniGame.gameObject.SetActive(true);
-            openingTextMiniGame.TextOpening("Pilih Jawaban Yang Benar !!!");
+            openingTextMiniGame.TextOpening("Isi garis yang kosong dengan huruf sesuai gambar!!!");
         }
     }
 

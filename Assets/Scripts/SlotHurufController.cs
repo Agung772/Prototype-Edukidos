@@ -5,15 +5,17 @@ using UnityEngine;
 public class SlotHurufController : MonoBehaviour
 {
     public string codeSlotHuruf;
+    public bool slotHurufAktif = true;
+
+    [Space]
     public string codeHuruf;
-    public bool slotHurufAktif;
     public bool use, clear;
 
     private void OnTriggerStay(Collider other)
     {
         if (other.GetComponent<HurufController>())
         {
-            if (codeSlotHuruf == other.GetComponent<HurufController>().codeHuruf && !use && other.GetComponent<HurufController>().up && !other.GetComponent<HurufController>().use)
+            if (codeSlotHuruf == other.GetComponent<HurufController>().codeHuruf && !use && !other.GetComponent<HurufController>().click && !other.GetComponent<HurufController>().use)
             {
                 clear = true;
             }
@@ -22,11 +24,11 @@ public class SlotHurufController : MonoBehaviour
                 //print("Warnanya salah");
             }
 
-            if (other.GetComponent<HurufController>() && !use && other.GetComponent<HurufController>().up && !other.GetComponent<HurufController>().use)
+            if (other.GetComponent<HurufController>() && !use && !other.GetComponent<HurufController>().click && !other.GetComponent<HurufController>().use)
             {
                 use = true;
                 other.GetComponent<HurufController>().use = true;
-                other.GetComponent<HurufController>().up = false;
+
                 
                 codeHuruf = other.GetComponent<HurufController>().codeHuruf;
                 GameplaySpellingBee.instance.CheckHuruf();
