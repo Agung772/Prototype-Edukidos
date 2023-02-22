@@ -2406,6 +2406,7 @@ MonoBehaviour:
   scoreSpellingBee: 0
   scoreDecisionRun: 0
   scorePilihanGanda: 0
+  totalScore: 0
   _NamaPlayer: NamaPlayer
   _JenisKelamin: JenisKelamin
   _Kelas: Kelas
@@ -2414,7 +2415,6 @@ MonoBehaviour:
   _ScoreSpellingBee: ScoreSpellingBee
   _ScoreDecisionRun: ScoreDecisionRun
   _ScorePilihanGanda: ScorePilihanGanda
-  totalScore: 0
 --- !u!1 &1400194855573151351
 GameObject:
   m_ObjectHideFlags: 0
@@ -4638,7 +4638,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 136}
-  m_SizeDelta: {x: 480, y: 150}
+  m_SizeDelta: {x: 356, y: 107}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8199199463213443715
 CanvasRenderer:
@@ -5207,7 +5207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2317757050384642358
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5608,7 +5608,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6527003611269909780
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6072,7 +6072,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 136}
-  m_SizeDelta: {x: 360, y: 150}
+  m_SizeDelta: {x: 241, y: 113}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4643414020675857895
 CanvasRenderer:
@@ -6478,7 +6478,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 19, y: 159.00002}
-  m_SizeDelta: {x: 300, y: 226}
+  m_SizeDelta: {x: 512, y: 217}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7441954911340716650
 CanvasRenderer:
