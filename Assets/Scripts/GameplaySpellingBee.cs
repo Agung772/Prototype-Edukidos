@@ -11,6 +11,8 @@ public struct Bab
 }
 public class GameplaySpellingBee : MonoBehaviour
 {
+    public static GameplaySpellingBee instance;
+
     public int bab, urutanSoal;
     public int baterai = 2;
     
@@ -19,21 +21,76 @@ public class GameplaySpellingBee : MonoBehaviour
     public List<Bab> babList;
 
     public Text bateraiText;
+    public GameObject bateraiUI1, bateraiUI2;
+    public GameObject benarUI;
 
-    public static GameplaySpellingBee instance;
+    public Transform slotHurufParent;
     public SlotHurufController[] slotHurufController;
+    public SlotHurufController[] AwalslotHurufController;
 
 
     private void Awake()
     {
         instance = this;
-        slotHurufController = FindObjectsOfType<SlotHurufController>();
+
+        NextSoal(bab);
     }
 
     private void Start()
     {
         BateraiUI();
+        UrutanSoalUI();
+    }
 
+    public void NextSoal(int bab)
+    {
+        //Soal udah habis
+        if (urutanSoal == babList[bab].soal.Length - 1)
+        {
+            if (baterai == 2) ButtonManager.instance.SpawnScoreUI(3);
+            else if (baterai == 1) ButtonManager.instance.SpawnScoreUI(2);
+
+        }
+        //Lanjut soal berikutnya
+        else
+        {
+            //Nonaktifkan soal sebelumnya
+            for (int i = 0; i < babList[bab].soal.Length; i++)
+            {
+                if (i != 0) babList[bab].soal[i].SetActive(false);
+
+            }
+
+            urutanSoal++;
+            UrutanSoalUI();
+            babList[bab].soal[urutanSoal].SetActive(true);
+
+            
+            AwalslotHurufController = FindObjectsOfType<SlotHurufController>();
+
+            int slotHurufAktif = 0;
+            for (int i = 0; i < AwalslotHurufController.Length; i++)
+            {
+                if (AwalslotHurufController[i].slotHurufAktif)
+                {
+                    slotHurufAktif++;
+                    print(slotHurufAktif);
+                }
+            }
+
+            slotHurufController = new SlotHurufController[slotHurufAktif];
+            int j = 0;
+            for (int i = 0; i < AwalslotHurufController.Length; i++)
+            {
+                if (AwalslotHurufController[i].slotHurufAktif)
+                {
+                    slotHurufController[j] = AwalslotHurufController[i];
+                    j++;
+                }
+            }
+        }
+
+ 
     }
 
     public void CheckHuruf()
@@ -65,8 +122,9 @@ public class GameplaySpellingBee : MonoBehaviour
                 //Check benar semua
                 if (slotHurufController.Length == checkTotalClear)
                 {
-                    GameManager.instance.NotifTextUI("Tugas Selesai !");
-                    GameManager.instance.PindahSceneDelay("MetaGame", 2);
+                    NextSoal(bab);
+                    BenarUI();
+                    print("Next");
                 }
 
                 //Reset karena salah
@@ -77,6 +135,13 @@ public class GameplaySpellingBee : MonoBehaviour
                     baterai--;
                     BateraiUI();
 
+                    //Semua baterai habis
+                    if (baterai == 0)
+                    {
+                        ButtonManager.instance.SpawnScoreUI(0);
+                    }
+
+                    //Reset
                     for (int i = 0; i < slotHurufController.Length; i++)
                     {
                         slotHurufController[i].gameObject.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().isTrigger = true;
@@ -101,6 +166,36 @@ public class GameplaySpellingBee : MonoBehaviour
 
     void BateraiUI()
     {
-        bateraiText.text = baterai + "/" + 2;
+        if (baterai == 2)
+        {
+            bateraiUI1.SetActive(true);
+            bateraiUI2.SetActive(true);
+        }
+        else if (baterai == 1)
+        {
+            bateraiUI1.SetActive(true);
+            bateraiUI2.SetActive(false);
+        }
+        else if (baterai == 0)
+        {
+            bateraiUI1.SetActive(false);
+            bateraiUI2.SetActive(false);
+        }
+    }
+
+    void UrutanSoalUI()
+    {
+        bateraiText.text = urutanSoal + "/" + 5;
+    }
+
+    void BenarUI()
+    {
+        StartCoroutine(Coroutine());
+        IEnumerator Coroutine()
+        {
+            benarUI.SetActive(true);
+            yield return new WaitForSeconds(1);
+            benarUI.SetActive(false);
+        }
     }
 }

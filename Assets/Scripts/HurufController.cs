@@ -6,16 +6,37 @@ using UnityEngine.UI;
 public class HurufController : MonoBehaviour
 {
     public string codeHuruf;
-    Vector3 mousePosition;
-    public bool hurufAktif;
+    //public bool hurufAktif = true;
 
-    public bool use, up, click;
+    [Space]
+    public bool use;
+    public bool click;
+    public bool back;
     public Text hurufText;
+    Vector3 mousePosition, savePosisi;
 
     private void Start()
     {
-        hurufText.text = codeHuruf;
+        savePosisi = transform.position;
     }
+
+    private void Update()
+    {
+        if (back)
+        {
+            GetComponent<BoxCollider>().isTrigger = true;
+            GetComponent<Rigidbody>().useGravity = false;
+            transform.position = Vector3.Lerp(transform.position, savePosisi, 5 * Time.deltaTime);
+
+            if (Vector3.Distance(transform.position, savePosisi) < 0.1)
+            {
+                back = false;
+                GetComponent<BoxCollider>().isTrigger = false;
+                GetComponent<Rigidbody>().useGravity = true;
+            }
+        }
+    }
+
     Vector3 GetMousePos()
     {
         return Camera.main.WorldToScreenPoint(transform.position);
@@ -23,7 +44,6 @@ public class HurufController : MonoBehaviour
 
     private void OnMouseDown()
     {
-        up = false;
         click = true;
         mousePosition = Input.mousePosition - GetMousePos();
     }
@@ -36,16 +56,6 @@ public class HurufController : MonoBehaviour
 
     private void OnMouseUp()
     {
-        up = true;
         click = false;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.gameObject.name == "Ground")
-        {
-            up = false;
-        }
-
     }
 }
