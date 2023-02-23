@@ -402,7 +402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff7c63ddd031e44f8ff96fc9c9dffdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bab: 0
+  bab: 2
   urutanPertanyaan: 0
   benar: 0
   salah: 0
@@ -452,7 +452,7 @@ MonoBehaviour:
     b: Nabi Muhammad SAW
     c: Orang tua
   - pertanyaan: Siapakah utusan Allah SWT?
-    a: Rasullullah
+    a: Rasulullah
     b: Jin
     c: Manusia
   - pertanyaan: Apa yang akan aku lakukan jika temanku terjatuh dari perosotan
@@ -495,20 +495,20 @@ MonoBehaviour:
     c: Sesungguhnya
   - pertanyaan: apa arti syahadat?
     a: Kesaksian
-    b: 
-    c: 
-  - pertanyaan: 
-    a: 
-    b: 
-    c: 
-  - pertanyaan: 
-    a: 
-    b: 
-    c: 
-  - pertanyaan: 
-    a: 
-    b: 
-    c: 
+    b: Utusan Allah
+    c: Sesungguhnya
+  - pertanyaan: Syahadat tauhid menyatakan?
+    a: Tidak ada tuhan selain Allah
+    b: Nabi Muhammad SAW adalah utusan Allah
+    c: Kesaksian
+  - pertanyaan: Kewajiban paling utama seorang muslim adalah?
+    a: Shalat
+    b: Zakat
+    c: Haji
+  - pertanyaan: Berapa kali kita shalat semalam? (Sebutkan shalat apa saja ke gurumu!)
+    a: 5
+    b: 3
+    c: 4
 --- !u!4 &1131906744
 Transform:
   m_ObjectHideFlags: 0
