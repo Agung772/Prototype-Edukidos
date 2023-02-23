@@ -11,8 +11,8 @@ public class MiniGame : MonoBehaviour
     {
         ConnectingTheDot,
         SpellingBee,
-        PilihanGandaCepat,
-        DecisionRun,
+        PilihanGanda,
+        BenarSalah,
     }
 
     public string namaText;
@@ -28,7 +28,7 @@ public class MiniGame : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             textCanva.SetActive(true);
-            textCanva.transform.GetChild(0).gameObject.GetComponent<Text>().text = "Tekan Tombol dibawah untuk masuk ke game " + namaMiniGame;
+            textCanva.transform.GetChild(0).gameObject.GetComponent<Text>().text = "Tekan Tombol dibawah untuk masuk ke game " + namaText;
             ButtonInteract.instance.gameObject.SetActive(true);
             ButtonInteract.instance.SceneMiniGame(namaMiniGame.ToString());
 
