@@ -55,7 +55,7 @@ public class GameplayPilihanGanda : MonoBehaviour
             if (benar == 5) ButtonManager.instance.SpawnScoreUI(3);
             else if (benar == 4) ButtonManager.instance.SpawnScoreUI(3);
             else if (benar == 3) ButtonManager.instance.SpawnScoreUI(2);
-            else if (benar == 2) ButtonManager.instance.SpawnScoreUI(2);
+            else if (benar == 2) ButtonManager.instance.SpawnScoreUI(1);
             else if (benar == 1) ButtonManager.instance.SpawnScoreUI(1);
             else if (benar == 0) ButtonManager.instance.SpawnScoreUI(0);
 

@@ -138,6 +138,10 @@ PrefabInstance:
       propertyPath: codeDot
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
+      propertyPath: berwarnaDiawal
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883350, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -243,6 +247,10 @@ PrefabInstance:
     - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: warnaLine.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
+      propertyPath: berwarnaDiawal
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883350, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: m_RootOrder
@@ -491,6 +499,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
+      propertyPath: warnaLine.b
+      value: 0.909804
+      objectReference: {fileID: 0}
+    - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
+      propertyPath: warnaLine.g
+      value: 0.67058825
+      objectReference: {fileID: 0}
+    - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
+      propertyPath: warnaLine.r
+      value: 0.03137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
+      propertyPath: boxColorDefault
+      value: 
+      objectReference: {fileID: 21300000, guid: 726347ade33aa1c49906c0694736c707, type: 3}
     - target: {fileID: 1123340157378883350, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -501,7 +525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883350, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.34
+      value: 3.09
       objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883350, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: m_LocalPosition.z
@@ -543,6 +567,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: f26d3fcab50b93a439d4f6c68d617647, type: 3}
+    - target: {fileID: 7967531342789440784, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f6fefb11de367a24783d814a86a41d5e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
 --- !u!4 &131094272 stripped
@@ -716,16 +744,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: warnaLine.b
-      value: 0.16078432
+      value: 0.93725497
       objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: warnaLine.g
-      value: 0.3529412
+      value: 0.68235296
       objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: warnaLine.r
-      value: 0.9450981
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
+      propertyPath: boxColorDefault
+      value: 
+      objectReference: {fileID: 21300000, guid: 726347ade33aa1c49906c0694736c707, type: 3}
     - target: {fileID: 1123340157378883350, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -736,7 +768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883350, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.04
+      value: -1.29
       objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883350, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: m_LocalPosition.z
@@ -781,7 +813,7 @@ PrefabInstance:
     - target: {fileID: 7967531342789440784, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 50bb49b68db37db41807d1dc267b0d84, type: 3}
+      objectReference: {fileID: 21300000, guid: f6fefb11de367a24783d814a86a41d5e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
 --- !u!4 &337814067 stripped
@@ -925,6 +957,10 @@ PrefabInstance:
     - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: warnaLine.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
+      propertyPath: berwarnaDiawal
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883350, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: m_RootOrder
@@ -1136,7 +1172,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 507362952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.86, y: -0.31, z: 0}
+  m_LocalPosition: {x: -4.86, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 131094272}
@@ -1390,6 +1426,10 @@ PrefabInstance:
       propertyPath: warnaLine.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8914092167546262559, guid: fd5d5d9ef9dbbe043b0807a1424ecd4a, type: 3}
+      propertyPath: berwarnaDiawal
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd5d5d9ef9dbbe043b0807a1424ecd4a, type: 3}
 --- !u!1 &618102422
@@ -1440,16 +1480,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: warnaLine.b
-      value: 0.54901963
+      value: 0.31764707
       objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: warnaLine.g
-      value: 0
+      value: 0.6509804
       objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: warnaLine.r
-      value: 0.92549026
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
+      propertyPath: boxColorDefault
+      value: 
+      objectReference: {fileID: 21300000, guid: 726347ade33aa1c49906c0694736c707, type: 3}
     - target: {fileID: 1123340157378883350, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1460,7 +1504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883350, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.49
+      value: -2.74
       objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883350, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1505,7 +1549,7 @@ PrefabInstance:
     - target: {fileID: 7967531342789440784, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1d82089281182464c8d71833adccb7f9, type: 3}
+      objectReference: {fileID: 21300000, guid: 8819f3f63242a4840bb3c5dcbbf1f349, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
 --- !u!4 &684915362 stripped
@@ -1741,6 +1785,10 @@ PrefabInstance:
       propertyPath: warnaLine.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8914092167546262559, guid: fd5d5d9ef9dbbe043b0807a1424ecd4a, type: 3}
+      propertyPath: berwarnaDiawal
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd5d5d9ef9dbbe043b0807a1424ecd4a, type: 3}
 --- !u!4 &858297582 stripped
@@ -1915,6 +1963,10 @@ PrefabInstance:
       propertyPath: warnaLine.r
       value: 0.9450981
       objectReference: {fileID: 0}
+    - target: {fileID: 8914092167546262559, guid: fd5d5d9ef9dbbe043b0807a1424ecd4a, type: 3}
+      propertyPath: berwarnaDiawal
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd5d5d9ef9dbbe043b0807a1424ecd4a, type: 3}
 --- !u!4 &1101180836 stripped
@@ -1952,14 +2004,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   batrai: 3
-  bab: 0
+  bab: 3
   batraiUI: {fileID: 219903383}
-  Bab:
+  soalBab:
   - {fileID: 0}
+  - {fileID: 1845465997}
   - {fileID: 437955799}
-  - {fileID: 1845465997}
-  - {fileID: 1845465997}
-  - {fileID: 1845465997}
+  - {fileID: 1382964812}
+  - {fileID: 1499951472}
   dotController: []
   endDot: []
   positionYSD: []
@@ -2044,6 +2096,10 @@ PrefabInstance:
     - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: warnaLine.r
       value: 0.9450981
+      objectReference: {fileID: 0}
+    - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
+      propertyPath: berwarnaDiawal
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883350, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: m_RootOrder
@@ -2141,6 +2197,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: warnaLine.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
+      propertyPath: berwarnaDiawal
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883350, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
@@ -2307,7 +2367,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1382964813
 Transform:
   m_ObjectHideFlags: 0
@@ -2585,6 +2645,10 @@ PrefabInstance:
       propertyPath: warnaLine.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
+      propertyPath: berwarnaDiawal
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883350, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2830,6 +2894,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9104726147485753540, guid: 211138621da3d3c4396f3d8e1db7916d, type: 3}
+      propertyPath: berwarnaDiawal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9104726147485753540, guid: 211138621da3d3c4396f3d8e1db7916d, type: 3}
       propertyPath: boxColorDefault
       value: 
       objectReference: {fileID: 21300000, guid: 0a122a3cd23f3554494d1e816d2e15c9, type: 3}
@@ -2862,6 +2930,10 @@ PrefabInstance:
     - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: warnaLine.r
       value: 0.92549026
+      objectReference: {fileID: 0}
+    - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
+      propertyPath: berwarnaDiawal
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883350, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: m_RootOrder
@@ -2948,6 +3020,10 @@ PrefabInstance:
     - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: warnaLine.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
+      propertyPath: berwarnaDiawal
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883350, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: m_RootOrder
@@ -3211,6 +3287,10 @@ PrefabInstance:
       propertyPath: warnaLine.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
+      propertyPath: boxColorDefault
+      value: 
+      objectReference: {fileID: 21300000, guid: 726347ade33aa1c49906c0694736c707, type: 3}
     - target: {fileID: 1123340157378883350, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -3221,7 +3301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883350, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.42
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883350, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3367,7 +3447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1845465998
 Transform:
   m_ObjectHideFlags: 0
@@ -3489,6 +3569,10 @@ PrefabInstance:
       propertyPath: warnaLine.r
       value: 0.9450981
       objectReference: {fileID: 0}
+    - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
+      propertyPath: berwarnaDiawal
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883350, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -3574,6 +3658,10 @@ PrefabInstance:
     - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: warnaLine.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
+      propertyPath: berwarnaDiawal
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883350, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: m_RootOrder
@@ -4162,6 +4250,10 @@ PrefabInstance:
       propertyPath: warnaLine.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8914092167546262559, guid: fd5d5d9ef9dbbe043b0807a1424ecd4a, type: 3}
+      propertyPath: berwarnaDiawal
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd5d5d9ef9dbbe043b0807a1424ecd4a, type: 3}
 --- !u!4 &2127132281 stripped
@@ -4182,16 +4274,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: warnaLine.b
-      value: 0.93725497
+      value: 0.31764707
       objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: warnaLine.g
-      value: 0.68235296
+      value: 0.6509804
       objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: warnaLine.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
+      propertyPath: boxColorDefault
+      value: 
+      objectReference: {fileID: 21300000, guid: 726347ade33aa1c49906c0694736c707, type: 3}
     - target: {fileID: 1123340157378883350, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4202,7 +4298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883350, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.88
+      value: 1.6300001
       objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883350, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4247,7 +4343,7 @@ PrefabInstance:
     - target: {fileID: 7967531342789440784, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f6fefb11de367a24783d814a86a41d5e, type: 3}
+      objectReference: {fileID: 21300000, guid: 8819f3f63242a4840bb3c5dcbbf1f349, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
 --- !u!4 &2145966597 stripped
@@ -4401,6 +4497,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9104726147485753540, guid: 211138621da3d3c4396f3d8e1db7916d, type: 3}
+      propertyPath: berwarnaDiawal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9104726147485753540, guid: 211138621da3d3c4396f3d8e1db7916d, type: 3}
       propertyPath: boxColorDefault
       value: 
       objectReference: {fileID: 21300000, guid: 0a122a3cd23f3554494d1e816d2e15c9, type: 3}
@@ -4416,6 +4516,10 @@ PrefabInstance:
     - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: codeDot
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1123340157378883345, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
+      propertyPath: berwarnaDiawal
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1123340157378883350, guid: 95cd326400c7e554f85105859f2f5275, type: 3}
       propertyPath: m_RootOrder
@@ -4556,6 +4660,10 @@ PrefabInstance:
       objectReference: {fileID: 397778889}
     - target: {fileID: 8914092167546262559, guid: fd5d5d9ef9dbbe043b0807a1424ecd4a, type: 3}
       propertyPath: codeDot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8914092167546262559, guid: fd5d5d9ef9dbbe043b0807a1424ecd4a, type: 3}
+      propertyPath: berwarnaDiawal
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

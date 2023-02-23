@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EndDot : MonoBehaviour
 {
+    public bool berwarnaDiawal;
+
     public string codeDot;
     public Sprite boxColorDefault;
     Sprite boxColorClear;
@@ -11,12 +13,20 @@ public class EndDot : MonoBehaviour
     public SpriteRenderer boxColor;
     private void Start()
     {
-        boxColorClear = boxColor.sprite;
-        boxColor.sprite = boxColorDefault;
+        if (!berwarnaDiawal)
+        {
+            boxColorClear = boxColor.sprite;
+            boxColor.sprite = boxColorDefault;
+        }
+
     }
 
     public void DotClear()
     {
-        boxColor.sprite = boxColorClear;
+        if (!berwarnaDiawal)
+        {
+            boxColor.sprite = boxColorClear;
+        }
+
     }
 }

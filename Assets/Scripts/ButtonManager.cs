@@ -14,6 +14,14 @@ public class ButtonManager : MonoBehaviour
     {
         instance = this;
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            OptionUI();
+        }
+    }
     public void SettingUI(bool active)
     {
         if (active) settingUI.SetActive(true);
@@ -63,8 +71,14 @@ public class ButtonManager : MonoBehaviour
 
     public void SpawnScoreUI(int jumlahBintang)
     {
-        scoreUI.SetActive(true);
-        scoreUI.GetComponent<ScoreUI>().CallScoreUI(jumlahBintang);
+        StartCoroutine(Coroutine());
+        IEnumerator Coroutine()
+        {
+            yield return new WaitForSeconds(2);
+            scoreUI.SetActive(true);
+            scoreUI.GetComponent<ScoreUI>().CallScoreUI(jumlahBintang);
+        }
+
     }
 
     public bool nextPertanyaan;

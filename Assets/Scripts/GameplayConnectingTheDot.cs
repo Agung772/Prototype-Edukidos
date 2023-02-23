@@ -12,7 +12,7 @@ public class GameplayConnectingTheDot : MonoBehaviour
 
     public GameObject batraiUI;
 
-    public GameObject[] Bab;
+    public GameObject[] soalBab;
 
     public DotController[] dotController;
     public EndDot[] endDot;
@@ -22,11 +22,8 @@ public class GameplayConnectingTheDot : MonoBehaviour
     {
         instance = this;
 
-        bab = GameManager.instance.GameSave.bab;
-        if (bab == 1)
-        {
-            Bab[1].SetActive(true);
-        }
+        //bab = GameManager.instance.GameSave.bab;
+        LoadBab();
 
         dotController = FindObjectsOfType<DotController>();
         endDot = FindObjectsOfType<EndDot>();
@@ -36,8 +33,48 @@ public class GameplayConnectingTheDot : MonoBehaviour
         RandomED();
     }
 
-    private void Start()
+    void LoadBab()
     {
+        for (int i = 0; i < soalBab.Length; i++)
+        {
+            if (i != 0)
+            {
+                soalBab[i].SetActive(false);
+            }
+        }
+
+        if (bab == 1)
+        {
+            soalBab[1].SetActive(true);
+        }
+        else if (bab == 2)
+        {
+            soalBab[2].SetActive(true);
+        }
+        else if (bab == 3)
+        {
+            soalBab[3].SetActive(true);
+        }
+        else if (bab == 4)
+        {
+            soalBab[4].SetActive(true);
+        }
+        else if (bab == 5)
+        {
+            soalBab[5].SetActive(true);
+        }
+        else if (bab == 6)
+        {
+            soalBab[6].SetActive(true);
+        }
+        else if (bab == 7)
+        {
+            soalBab[7].SetActive(true);
+        }
+        else if (bab == 8)
+        {
+            soalBab[8].SetActive(true);
+        }
 
 
     }

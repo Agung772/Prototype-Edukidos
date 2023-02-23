@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DotController : MonoBehaviour
 {
+    public bool berwarnaDiawal;
+
     public string codeDot;
     public Color warnaLine;
     public bool useLine, clear, salah;
@@ -12,12 +14,16 @@ public class DotController : MonoBehaviour
 
     public LineRenderer lineRenderer;
     Vector3 mousePos, startMousePos;
-
+    public Sprite boxColorDefault;
+    Sprite boxColorClear;
     public SpriteRenderer boxColor;
 
 
     private void Start()
     {
+
+
+        
         //Set coding warna untuk setPositionEnd
         setPositionEnd.gameObject.GetComponent<SetPositionEnd>().codeDot = codeDot;
 
@@ -37,9 +43,21 @@ public class DotController : MonoBehaviour
         lineRenderer.SetPosition(0, new Vector3(transform.position.x, transform.position.y, 0));
         lineRenderer.SetPosition(1, new Vector3(transform.position.x, transform.position.y, 0));
 
-        
-        lineRenderer.startColor = warnaLine;
-        lineRenderer.endColor = warnaLine;
+
+        if (!berwarnaDiawal)
+        {
+            boxColorClear = boxColor.sprite;
+            boxColor.sprite = boxColorDefault;
+
+            lineRenderer.startColor = InputColor.instance.grey;
+            lineRenderer.endColor = InputColor.instance.grey;
+        }
+        else
+        {
+            lineRenderer.startColor = warnaLine;
+            lineRenderer.endColor = warnaLine;
+        }
+
 
     }
 
@@ -70,6 +88,7 @@ public class DotController : MonoBehaviour
         {
             clear = true;
             target.GetComponent<EndDot>().DotClear();
+            DotClear();
         }
         else if (setPositionEnd.condition == "salah")
         {
@@ -94,5 +113,17 @@ public class DotController : MonoBehaviour
     Vector3 GetMousePos()
     {
         return Camera.main.WorldToScreenPoint(transform.position);
+    }
+
+    public void DotClear()
+    {
+        if (!berwarnaDiawal)
+        {
+            boxColor.sprite = boxColorClear;
+
+            lineRenderer.startColor = warnaLine;
+            lineRenderer.endColor = warnaLine;
+        }
+
     }
 }
