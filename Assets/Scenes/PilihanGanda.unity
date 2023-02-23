@@ -495,20 +495,20 @@ MonoBehaviour:
     c: Sesungguhnya
   - pertanyaan: apa arti syahadat?
     a: Kesaksian
-    b: 
-    c: 
-  - pertanyaan: 
-    a: 
-    b: 
-    c: 
-  - pertanyaan: 
-    a: 
-    b: 
-    c: 
-  - pertanyaan: 
-    a: 
-    b: 
-    c: 
+    b: Utusan Allah
+    c: Sesungguhnya
+  - pertanyaan: Syahadat tauhid menyatakan?
+    a: Tidak ada tuhan selain Allah
+    b: Nabi Muhammad SAW adalah utusan Allah
+    c: Kesaksian
+  - pertanyaan: Kewajiban paling utama seorang muslim adalah?
+    a: Shalat
+    b: Zakat
+    c: Haji
+  - pertanyaan: Berapa kali kita shalat semalam? (Sebutkan shalat apa saja ke gurumu!)
+    a: 5
+    b: 3
+    c: 4
 --- !u!4 &1131906744
 Transform:
   m_ObjectHideFlags: 0
