@@ -35,7 +35,7 @@ public class GameplayPilihanGanda : MonoBehaviour
     {
         PlayerPrefs.SetInt(GameManager.instance.GameSave._Bab, 1);
 
-        bab = GameManager.instance.GameSave.bab;
+        //bab = GameManager.instance.GameSave.bab;
 
         NextPertanyaan();
     }
@@ -73,7 +73,8 @@ public class GameplayPilihanGanda : MonoBehaviour
             }
             else if (bab == 2)
             {
-
+                SpawnPilihanGanda(listPertanyaanBab2[urutanPertanyaan].pertanyaan,
+                   listPertanyaanBab2[urutanPertanyaan].a, listPertanyaanBab2[urutanPertanyaan].b, listPertanyaanBab2[urutanPertanyaan].c);
             }
 
         }

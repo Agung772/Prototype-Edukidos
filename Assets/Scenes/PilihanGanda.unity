@@ -402,7 +402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff7c63ddd031e44f8ff96fc9c9dffdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bab: 0
+  bab: 2
   urutanPertanyaan: 0
   benar: 0
   salah: 0
@@ -452,7 +452,7 @@ MonoBehaviour:
     b: Nabi Muhammad SAW
     c: Orang tua
   - pertanyaan: Siapakah utusan Allah SWT?
-    a: Rasullullah
+    a: Rasulullah
     b: Jin
     c: Manusia
   - pertanyaan: Apa yang akan aku lakukan jika temanku terjatuh dari perosotan
