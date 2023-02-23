@@ -434,6 +434,81 @@ MonoBehaviour:
     a: Agar disayang Allah
     b: Agar mendapat nilai bagus
     c: Agar dipuji teman
+  listPertanyaanBab2:
+  - pertanyaan: 
+    a: 
+    b: 
+    c: 
+  - pertanyaan: Berapa jumlah rukun iman?
+    a: 6
+    b: 5
+    c: 4
+  - pertanyaan: Apa rukun iman ke 6?
+    a: Beriman kepada qada dan qadar
+    b: Beriman kepada hari kiamat
+    c: Bersyukur
+  - pertanyaan: Siapakah pencipta alam semesta dan seisinya
+    a: Allah SWT
+    b: Nabi Muhammad SAW
+    c: Orang tua
+  - pertanyaan: Siapakah utusan Allah SWT?
+    a: Rasullullah
+    b: Jin
+    c: Manusia
+  - pertanyaan: Apa yang akan aku lakukan jika temanku terjatuh dari perosotan
+    a: Menolongnya
+    b: Meneterwakannya
+    c: Membiarkannya
+  listPertanyaanBab3:
+  - pertanyaan: 
+    a: 
+    b: 
+    c: 
+  - pertanyaan: Siapa yang selalu memberikan kita kenikmatan didunia?
+    a: Allah SWT
+    b: Orang tua
+    c: Rasulullah SAW
+  - pertanyaan: Ketika bersyukur kita mengucapkan?
+    a: Hamdalah
+    b: Basmalah
+    c: Takbir
+  - pertanyaan: Kepada siapa kita harus bersikap santun?
+    a: Semua orang
+    b: Keluarga saja
+    c: Teman-teman saja
+  - pertanyaan: Setiap mengawali kegiatan kita membaca?
+    a: Basmalah
+    b: Hamdalah
+    c: Takbir
+  - pertanyaan: Salah satu contoh sifat santun adalah?
+    a: Salim kepada orang tua sebelum berangkat sekolah
+    b: Berbicara keras kepada orang tua
+    c: Bertengkar dengan teman
+  listPertanyaanBab4:
+  - pertanyaan: 
+    a: 
+    b: 
+    c: 
+  - pertanyaan: Rasulullah artinya?
+    a: Utusan Allah
+    b: Tuhan
+    c: Sesungguhnya
+  - pertanyaan: apa arti syahadat?
+    a: Kesaksian
+    b: 
+    c: 
+  - pertanyaan: 
+    a: 
+    b: 
+    c: 
+  - pertanyaan: 
+    a: 
+    b: 
+    c: 
+  - pertanyaan: 
+    a: 
+    b: 
+    c: 
 --- !u!4 &1131906744
 Transform:
   m_ObjectHideFlags: 0
