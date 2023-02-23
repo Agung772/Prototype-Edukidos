@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HurufController : MonoBehaviour
 {
     public string codeHuruf;
-    //public bool hurufAktif = true;
+    public bool hurufAktif = true;
 
     [Space]
     public bool use;
@@ -14,6 +14,15 @@ public class HurufController : MonoBehaviour
     public bool back;
     public Text hurufText;
     Vector3 mousePosition, savePosisi;
+
+    private void Awake()
+    {
+        if (!hurufAktif)
+        {
+            Destroy(GetComponent<Rigidbody>());
+            Destroy(GetComponent<HurufController>());
+        }
+    }
 
     private void Start()
     {

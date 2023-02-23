@@ -11,6 +11,14 @@ public class SlotHurufController : MonoBehaviour
     public string codeHuruf;
     public bool use, clear;
 
+    private void Awake()
+    {
+        if (!slotHurufAktif)
+        {
+            Destroy(GetComponent<SlotHurufController>());
+        }
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.GetComponent<HurufController>())

@@ -24,20 +24,21 @@ public class GameplaySpellingBee : MonoBehaviour
     public GameObject bateraiUI1, bateraiUI2;
     public GameObject benarUI;
 
-    public Transform slotHurufParent;
+
     public SlotHurufController[] slotHurufController;
+    public HurufController[] hurufController;
+
     public SlotHurufController[] AwalslotHurufController;
 
 
     private void Awake()
     {
         instance = this;
-
-        NextSoal(bab);
     }
 
     private void Start()
     {
+        NextSoal(bab);
         BateraiUI();
         UrutanSoalUI();
     }
@@ -54,6 +55,11 @@ public class GameplaySpellingBee : MonoBehaviour
         //Lanjut soal berikutnya
         else
         {
+            //Reset baterai
+            baterai = 2;
+            BateraiUI();
+
+
             //Nonaktifkan soal sebelumnya
             for (int i = 0; i < babList[bab].soal.Length; i++)
             {
@@ -65,7 +71,18 @@ public class GameplaySpellingBee : MonoBehaviour
             UrutanSoalUI();
             babList[bab].soal[urutanSoal].SetActive(true);
 
-            
+
+            StartCoroutine(Coroutine());
+            IEnumerator Coroutine()
+            {
+                yield return new WaitForSeconds(0.1f);
+                slotHurufController = FindObjectsOfType<SlotHurufController>();
+                hurufController = FindObjectsOfType<HurufController>();
+            }
+
+
+            /*
+            //Cari slot huruf
             AwalslotHurufController = FindObjectsOfType<SlotHurufController>();
 
             int slotHurufAktif = 0;
@@ -88,6 +105,7 @@ public class GameplaySpellingBee : MonoBehaviour
                     j++;
                 }
             }
+            */
         }
 
  
@@ -155,6 +173,13 @@ public class GameplaySpellingBee : MonoBehaviour
                         {
                             slotHurufController[i].gameObject.transform.GetChild(0).gameObject.GetComponent<BoxCollider>().isTrigger = false;
                         }
+                    }
+
+                    //Kembalikan huruf tempat awal
+
+                    for (int i = 0; i < hurufController.Length; i++)
+                    {
+                        hurufController[i].back = true;
                     }
                 }
             }

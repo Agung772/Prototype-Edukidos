@@ -15,6 +15,7 @@ public class MiniGame : MonoBehaviour
         DecisionRun,
     }
 
+    public string namaText;
     public NamaMiniGame namaMiniGame;
     public GameObject textCanva;
 
