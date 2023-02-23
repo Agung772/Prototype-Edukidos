@@ -23,6 +23,7 @@ public class GameplayPilihanGanda : MonoBehaviour
         public string a, b, c;
     }
     public List<ListPertanyaan> listPertanyaanBab1;
+    public List<ListPertanyaan> listPertanyaanBab2;
     private void Awake()
     {
         instance = this;
