@@ -9,16 +9,14 @@ public class GameManager : MonoBehaviour
     public enum NamaScene
     {
         kosong,
+        MetaGame,
         ConnectingTheDot,
         SpellingBee,
         PilihanGandaCepat,
-        DecisionRun,
         BenarSalah,
     }
 
     public NamaScene namaScene;
-
-    public GameSave GameSave;
 
     public static GameManager instance;
     public GameObject notifTextUI;

@@ -7,7 +7,11 @@ using UnityEngine.UI;
 public class ButtonManager : MonoBehaviour
 {
     public static ButtonManager instance;
-    public GameObject settingUI, optionUI, scoreUI;
+    public GameObject optionUI, scoreUI;
+
+    public GameObject settingHomeUI;
+
+
 
 
     private void Awake()
@@ -21,13 +25,20 @@ public class ButtonManager : MonoBehaviour
         {
             OptionUI();
         }
+        if (Input.GetKeyUp(KeyCode.Delete))
+        {
+            PlayerPrefs.DeleteAll();
+
+        }
     }
     public void SettingUI(bool active)
     {
-        if (active) settingUI.SetActive(true);
-        else if (!active) settingUI.SetActive(false);
+        if (active) settingHomeUI.SetActive(true);
+        else if (!active) settingHomeUI.SetActive(false);
 
     }
+
+
 
     bool option;
     public void OptionUI()

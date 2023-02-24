@@ -30,9 +30,9 @@ public class GameplayBenarSalah : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.SetInt(GameManager.instance.GameSave._Bab, 1);
+        PlayerPrefs.SetInt(SaveManager.instance.GameSave._Bab, 1);
 
-        bab = GameManager.instance.GameSave.bab;
+        bab = SaveManager.instance.GameSave.bab;
 
         NextPertanyaan();
     }

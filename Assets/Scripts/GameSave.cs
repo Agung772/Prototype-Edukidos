@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameSave : MonoBehaviour
 {
+    public int codeSave;
+
     public string namaPlayer;
     public string jenisKelamin;
     public string kelas;
@@ -12,7 +14,7 @@ public class GameSave : MonoBehaviour
 
     public int scoreConnectingTheDot;
     public int scoreSpellingBee;
-    public int scoreDecisionRun;
+    public int scoreBenarSalah;
     public int scorePilihanGanda;
 
     public int totalScore;
@@ -29,35 +31,47 @@ public class GameSave : MonoBehaviour
 
     public string _ScoreConnectingTheDot = "ScoreConnectingTheDot";
     public string _ScoreSpellingBee = "ScoreSpellingBee";
-    public string _ScoreDecisionRun = "ScoreDecisionRun";
+    public string _ScoreBenarSalah = "ScoreBenarSalah";
     public string _ScorePilihanGanda = "ScorePilihanGanda";
 
 
+    //Type save, Nama savean +/ Bab + Code save;
 
     private void Awake()
     {
-        namaPlayer = PlayerPrefs.GetString(_NamaPlayer);
-        jenisKelamin = PlayerPrefs.GetString(_JenisKelamin);
-        kelas = PlayerPrefs.GetString(_Kelas);
+        LoadGameData();
+    }
 
-        bab = PlayerPrefs.GetInt(_Bab);
+    public void LoadGameData()
+    {
+        namaPlayer = PlayerPrefs.GetString(_NamaPlayer + codeSave);
+        jenisKelamin = PlayerPrefs.GetString(_JenisKelamin + codeSave);
+        kelas = PlayerPrefs.GetString(_Kelas + codeSave);
 
-        scoreConnectingTheDot = PlayerPrefs.GetInt(_ScoreConnectingTheDot);
-        scoreSpellingBee = PlayerPrefs.GetInt(_ScoreSpellingBee);
-        scoreDecisionRun = PlayerPrefs.GetInt(_ScoreDecisionRun);
-        scorePilihanGanda = PlayerPrefs.GetInt(_ScorePilihanGanda);
+        bab = PlayerPrefs.GetInt(_Bab + codeSave);
 
-        totalScore = scoreConnectingTheDot + scoreSpellingBee + scoreDecisionRun + scorePilihanGanda;
+        print("Berikut profil kamu " + namaPlayer + ", " + jenisKelamin + ", " + kelas);
+
+        scoreConnectingTheDot = PlayerPrefs.GetInt(_ScoreConnectingTheDot + bab + codeSave);
+        scoreSpellingBee = PlayerPrefs.GetInt(_ScoreSpellingBee + bab + codeSave);
+        scoreBenarSalah = PlayerPrefs.GetInt(_ScoreBenarSalah + bab + codeSave);
+        scorePilihanGanda = PlayerPrefs.GetInt(_ScorePilihanGanda + bab + codeSave);
+
+        totalScore = scoreConnectingTheDot + scoreSpellingBee + scoreBenarSalah + scorePilihanGanda;
     }
 
     public void SaveProfil(string nama, string jenisKelamin, string kelas)
     {
-        PlayerPrefs.SetString(_NamaPlayer, nama);
-        PlayerPrefs.SetString(_JenisKelamin, jenisKelamin);
-        PlayerPrefs.SetString(_Kelas, kelas);
+        PlayerPrefs.SetString(_NamaPlayer + codeSave, nama);
+        PlayerPrefs.SetString(_JenisKelamin + codeSave, jenisKelamin);
+        PlayerPrefs.SetString(_Kelas + codeSave, kelas);
+
+        LoadGameData();
     }
     public void SaveScoreMiniGame(string namaMiniGame, int score)
     {
-        PlayerPrefs.SetInt(namaMiniGame, score);
+        PlayerPrefs.SetInt(namaMiniGame + bab + codeSave, score);
+
+        LoadGameData();
     }
 }
