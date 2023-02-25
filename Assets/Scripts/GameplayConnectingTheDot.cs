@@ -22,7 +22,7 @@ public class GameplayConnectingTheDot : MonoBehaviour
     {
         instance = this;
 
-        //bab = GameManager.instance.GameSave.bab;
+        bab = SaveManager.instance.GameSave.bab;
         LoadBab();
 
         dotController = FindObjectsOfType<DotController>();

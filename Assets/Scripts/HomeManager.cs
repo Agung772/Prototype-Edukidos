@@ -12,6 +12,7 @@ public class HomeManager : MonoBehaviour
     public GameObject homeButton;
     public GameObject newGameButton;
     public GameObject loadGameButton;
+    public GameObject pilihBabButton;
 
     public GameObject loadButtonContent;
 
@@ -21,10 +22,12 @@ public class HomeManager : MonoBehaviour
         homeButton.SetActive(false);
         newGameButton.SetActive(false);
         loadGameButton.SetActive(false);
+        pilihBabButton.SetActive(false);
 
         if (namaButton == "Home") homeButton.SetActive(true);
         else if (namaButton == "NewGame") newGameButton.SetActive(true);
         else if (namaButton == "LoadGame") loadGameButton.SetActive(true);
+        else if (namaButton == "PilihBab") pilihBabButton.SetActive(true);
     }
 
     public void InputNama(string input)
@@ -46,6 +49,8 @@ public class HomeManager : MonoBehaviour
         print(jenisKelamin);
     }
 
+    //Pembuatan akun / profil baru
+    //Ketika load kosong maka akan diisi dengan yang baru dibuat
     public void SaveProfil()
     {
         if (SaveManager.instance.gameObject.transform.GetChild(0).GetComponent<GameSave>().namaPlayer == "")
@@ -73,5 +78,33 @@ public class HomeManager : MonoBehaviour
         {
             loadButtonContent.transform.GetChild(i).GetComponent<LoadButton>().LoadTextUI();
         }
+
+        HomeButton("PilihBab");
+    }
+
+    public void LoadProfil(int codeSave)
+    {
+        if (codeSave == 0)
+        {
+            SaveManager.instance.ChangeCodeSave(0);
+        }
+        else if (codeSave == 1)
+        {
+            SaveManager.instance.ChangeCodeSave(1);
+        }
+        else if (codeSave == 2)
+        {
+            SaveManager.instance.ChangeCodeSave(2);
+        }
+
+        HomeButton("PilihBab");
+    }
+
+    //Untuk pindah bab
+    public void SaveBab(int Bab)
+    {
+        SaveManager.instance.GameSave.SaveBab(Bab);
+
+        ButtonManager.instance.PindahSceneDelay("MetaGame", 2);
     }
 }

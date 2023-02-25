@@ -34,4 +34,22 @@ public class SaveManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public void ChangeCodeSave(int codeSave)
+    {
+        codeLoadSave = codeSave;
+
+        if (codeLoadSave == 0)
+        {
+            GameSave = transform.GetChild(0).GetComponent<GameSave>();
+        }
+        else if (codeLoadSave == 1)
+        {
+            GameSave = transform.GetChild(1).GetComponent<GameSave>();
+        }
+        else if (codeLoadSave == 2)
+        {
+            GameSave = transform.GetChild(2).GetComponent<GameSave>();
+        }
+    }
+
 }

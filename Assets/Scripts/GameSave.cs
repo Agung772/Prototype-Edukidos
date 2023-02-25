@@ -74,4 +74,11 @@ public class GameSave : MonoBehaviour
 
         LoadGameData();
     }
+
+    public void SaveBab(int Bab)
+    {
+        PlayerPrefs.SetInt(_Bab + codeSave, Bab);
+        print(Bab);
+        LoadGameData();
+    }
 }
