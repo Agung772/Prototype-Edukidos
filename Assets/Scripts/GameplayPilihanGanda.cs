@@ -39,7 +39,7 @@ public class GameplayPilihanGanda : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.SetInt(SaveManager.instance.GameSave._Bab, 1);
+        //PlayerPrefs.SetInt(SaveManager.instance.GameSave._Bab, 1);
 
         //bab = GameManager.instance.GameSave.bab;
 
