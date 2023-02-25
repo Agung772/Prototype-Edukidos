@@ -131,13 +131,15 @@ MonoBehaviour:
   volumeAudio: 1
   volumeSlider: {fileID: 1518505692}
   audioSource: {fileID: 62966262}
-  BGMConnectTheDots: {fileID: 0}
-  sfxScore: {fileID: 0}
-  sfxGameOver: {fileID: 0}
+  BGMConnectTheDots: {fileID: 8300000, guid: 7ea9aecdd73f8934095317b6497fd531, type: 3}
+  sfxScore: {fileID: 8300000, guid: 41f6f68b8e13caa498ca0867114976de, type: 3}
+  sfxGameOver: {fileID: 8300000, guid: 9261779a25cb4af4f94319e121ad63b9, type: 3}
   sfxHoldClick: {fileID: 8300000, guid: 2d18d727026e739449c1b549062212d5, type: 3}
-  sfxEnterMinigame: {fileID: 0}
-  sfxPause: {fileID: 0}
-  sfxUnpause: {fileID: 0}
+  sfxEnterMinigame: {fileID: 8300000, guid: 80dc64e5655ae9b4c8e643139ec7b26d, type: 3}
+  sfxPause: {fileID: 8300000, guid: 83bb8e20506938f4d9ca858d36f3c5ba, type: 3}
+  sfxUnpause: {fileID: 8300000, guid: 764d81e2b35c222459a496d3743e0e5e, type: 3}
+  sfxBenar: {fileID: 8300000, guid: 41f7593d92e3205488cfbb2de57cd841, type: 3}
+  sfxSalah: {fileID: 8300000, guid: fc1961cf157e6ad4abfdb574fc61ec83, type: 3}
 --- !u!82 &62966262
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1802,7 +1804,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -120, y: -146}
-  m_SizeDelta: {x: 150, y: 150}
+  m_SizeDelta: {x: 160, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8753971937815814918
 CanvasRenderer:
@@ -4252,7 +4254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   namaPlayer: 
-  jenisKelamin: 
+  karakter: 
   kelas: 
   homeButton: {fileID: 5382267284971822452}
   newGameButton: {fileID: 5218097695912313675}
@@ -6674,7 +6676,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 120, y: -146}
-  m_SizeDelta: {x: 150, y: 150}
+  m_SizeDelta: {x: 160, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4624238702414784300
 CanvasRenderer:

@@ -14,7 +14,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip BGMConnectTheDots;
 
-    public AudioClip sfxScore, sfxGameOver, sfxHoldClick, sfxEnterMinigame, sfxPause, sfxUnpause;
+    public AudioClip sfxScore, sfxGameOver, sfxHoldClick, sfxEnterMinigame, sfxPause, sfxUnpause ,sfxBenar, sfxSalah;
 
 
     private void Awake()
