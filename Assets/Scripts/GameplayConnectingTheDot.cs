@@ -79,7 +79,7 @@ public class GameplayConnectingTheDot : MonoBehaviour
 
     }
 
-
+    //Semua dot sudah terpasang
     public void ChechDot()
     {
         int checkDot = 0;
@@ -103,6 +103,8 @@ public class GameplayConnectingTheDot : MonoBehaviour
             }
         }
     }
+
+    //Baterai habis
     public void SalahDot()
     {
         batrai--;

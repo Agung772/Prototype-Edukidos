@@ -97,7 +97,7 @@ public class ButtonManager : MonoBehaviour
         StartCoroutine(Coroutine());
         IEnumerator Coroutine()
         {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
             scoreUI.SetActive(true);
             scoreUI.GetComponent<ScoreUI>().CallScoreUI(jumlahBintang);
         }

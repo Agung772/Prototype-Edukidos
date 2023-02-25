@@ -105,6 +105,9 @@ public class DotController : MonoBehaviour
             clear = true;
             target.GetComponent<EndDot>().DotClear();
             DotClear();
+
+            //Audio
+            AudioManager.instance.SfxBenar();
         }
         else if (setPositionEnd.condition == "salah")
         {
@@ -113,6 +116,9 @@ public class DotController : MonoBehaviour
             lineRenderer.SetPosition(0, new Vector3(transform.position.x, transform.position.y, 0));
             lineRenderer.SetPosition(1, new Vector3(transform.position.x, transform.position.y, 0));
             setPositionEnd.gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+
+            //Audio
+            AudioManager.instance.SfxSalah();
         }
         else if (setPositionEnd.condition == "null")
         {

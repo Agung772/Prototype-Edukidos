@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
         MetaGame,
         ConnectingTheDot,
         SpellingBee,
-        PilihanGandaCepat,
+        PilihanGanda,
         BenarSalah,
     }
 
@@ -25,20 +25,38 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         Application.targetFrameRate = 60;
-    }
 
-    private void Start()
-    {
+
         if (namaScene == NamaScene.ConnectingTheDot)
         {
             openingTextMiniGame.gameObject.SetActive(true);
             openingTextMiniGame.TextOpening("Hubungkan Teks dan Gambarnya!!!");
+
+            //Audio BGM
+            AudioManager.instance.BgmConnectTheDots();
         }
         else if (namaScene == NamaScene.SpellingBee)
         {
             openingTextMiniGame.gameObject.SetActive(true);
             openingTextMiniGame.TextOpening("Isi garis yang kosong dengan huruf sesuai gambar!!!");
         }
+        else if (namaScene == NamaScene.PilihanGanda)
+        {
+            openingTextMiniGame.gameObject.SetActive(true);
+            openingTextMiniGame.TextOpening("Pilih Jawaban Yang Benar!!!");
+        }
+        else if (namaScene == NamaScene.BenarSalah)
+        {
+            openingTextMiniGame.gameObject.SetActive(true);
+            openingTextMiniGame.TextOpening("Pilih Jawaban Yang Benar!!!");
+        }
+    }
+
+    
+
+    private void Start()
+    {
+
     }
 
     public void NotifTextUI(string text)
