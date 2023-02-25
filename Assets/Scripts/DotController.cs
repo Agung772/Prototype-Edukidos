@@ -60,7 +60,7 @@ public class DotController : MonoBehaviour
 
 
     }
-
+    bool cooldownSfxHoldClick;
     private void Update()
     {
         if (Input.GetMouseButton(0) && useLine)
@@ -70,6 +70,22 @@ public class DotController : MonoBehaviour
 
             setPositionEnd.gameObject.transform.position = new Vector3(mousePos.x, mousePos.y, 0);
 
+
+            StartCoroutine(Coroutine());
+            IEnumerator Coroutine()
+            {
+  
+                if (!cooldownSfxHoldClick)
+                {
+                    cooldownSfxHoldClick = true;
+                    AudioManager.instance.SfxHoldClick();
+                    print("HoldSFX");
+                    yield return new WaitForSeconds(0.5f);
+                    cooldownSfxHoldClick = false;
+
+                }
+
+            }
         }
     }
 

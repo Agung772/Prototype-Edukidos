@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HomeManager : MonoBehaviour
 {
     public string namaPlayer;
-    public string jenisKelamin;
+    public string karakter;
     public string kelas;
 
     public GameObject homeButton;
@@ -44,60 +44,74 @@ public class HomeManager : MonoBehaviour
     }
     public void InputJenisKelamin(Dropdown label)
     {
-        jenisKelamin = label.captionText.text;
+        karakter = label.captionText.text;
 
-        print(jenisKelamin);
+        print(karakter);
     }
 
     //Pembuatan akun / profil baru
     //Ketika load kosong maka akan diisi dengan yang baru dibuat
     public void SaveProfil()
     {
-        if (SaveManager.instance.gameObject.transform.GetChild(0).GetComponent<GameSave>().namaPlayer == "")
+        if (namaPlayer != "" && karakter != "" && kelas != "")
         {
-            SaveManager.instance.GameSave = SaveManager.instance.gameObject.transform.GetChild(0).GetComponent<GameSave>();
-            SaveManager.instance.GameSave.SaveProfil(namaPlayer, jenisKelamin, kelas);
+            if (SaveManager.instance.gameObject.transform.GetChild(0).GetComponent<GameSave>().namaPlayer == "")
+            {
+                SaveManager.instance.GameSave = SaveManager.instance.gameObject.transform.GetChild(0).GetComponent<GameSave>();
+                SaveManager.instance.GameSave.SaveProfil(namaPlayer, karakter, kelas);
 
+            }
+            else if (SaveManager.instance.gameObject.transform.GetChild(1).GetComponent<GameSave>().namaPlayer == "")
+            {
+                SaveManager.instance.GameSave = SaveManager.instance.gameObject.transform.GetChild(1).GetComponent<GameSave>();
+                SaveManager.instance.GameSave.SaveProfil(namaPlayer, karakter, kelas);
+            }
+            else if (SaveManager.instance.gameObject.transform.GetChild(2).GetComponent<GameSave>().namaPlayer == "")
+            {
+                SaveManager.instance.GameSave = SaveManager.instance.gameObject.transform.GetChild(2).GetComponent<GameSave>();
+                SaveManager.instance.GameSave.SaveProfil(namaPlayer, karakter, kelas);
+            }
+            else
+            {
+                Debug.LogWarning("Penyimpanan full");
+            }
+
+            for (int i = 0; i < loadButtonContent.transform.childCount; i++)
+            {
+                loadButtonContent.transform.GetChild(i).GetComponent<LoadButton>().LoadTextUI();
+            }
+
+            HomeButton("PilihBab");
         }
-        else if (SaveManager.instance.gameObject.transform.GetChild(1).GetComponent<GameSave>().namaPlayer == "")
-        {
-            SaveManager.instance.GameSave = SaveManager.instance.gameObject.transform.GetChild(1).GetComponent<GameSave>();
-            SaveManager.instance.GameSave.SaveProfil(namaPlayer, jenisKelamin, kelas);
-        }
-        else if (SaveManager.instance.gameObject.transform.GetChild(2).GetComponent<GameSave>().namaPlayer == "")
-        {
-            SaveManager.instance.GameSave = SaveManager.instance.gameObject.transform.GetChild(2).GetComponent<GameSave>();
-            SaveManager.instance.GameSave.SaveProfil(namaPlayer, jenisKelamin, kelas);
-        }
+
+        //Ada data yang belum diisi
         else
         {
-            Debug.LogWarning("Penyimpanan full");
+            Debug.LogWarning("Ada data yang belum diisi");
         }
 
-        for (int i = 0; i < loadButtonContent.transform.childCount; i++)
-        {
-            loadButtonContent.transform.GetChild(i).GetComponent<LoadButton>().LoadTextUI();
-        }
 
-        HomeButton("PilihBab");
     }
 
     public void LoadProfil(int codeSave)
     {
-        if (codeSave == 0)
+        if (codeSave == 0 && SaveManager.instance.gameObject.transform.GetChild(0).GetComponent<GameSave>().namaPlayer != "")
         {
             SaveManager.instance.ChangeCodeSave(0);
+            HomeButton("PilihBab");
         }
-        else if (codeSave == 1)
+        else if (codeSave == 1 && SaveManager.instance.gameObject.transform.GetChild(1).GetComponent<GameSave>().namaPlayer != "")
         {
             SaveManager.instance.ChangeCodeSave(1);
+            HomeButton("PilihBab");
         }
-        else if (codeSave == 2)
+        else if (codeSave == 2 && SaveManager.instance.gameObject.transform.GetChild(2).GetComponent<GameSave>().namaPlayer != "")
         {
             SaveManager.instance.ChangeCodeSave(2);
+            HomeButton("PilihBab");
         }
 
-        HomeButton("PilihBab");
+
     }
 
     //Untuk pindah bab

@@ -42,5 +42,9 @@ public class ScoreUI : MonoBehaviour
 
             text[0].SetActive(true);
         }
+
+        //Audio
+        if (jumlahBintang != 0) AudioManager.instance.SfxScore();
+        else AudioManager.instance.SfxGameOver();
     }
 }

@@ -7,6 +7,7 @@ public class LoadButton : MonoBehaviour
 {
     public int codeSave;
     public Text namaPlayer, kelas, jenisKelamin;
+    public Button button;
 
     private void Start()
     {
@@ -17,21 +18,49 @@ public class LoadButton : MonoBehaviour
     {
         if (codeSave == 0)
         {
-            namaPlayer.text = "Nama : " + SaveManager.instance.gameObject.transform.GetChild(0).GetComponent<GameSave>().namaPlayer;
-            kelas.text = "Kelas : " + SaveManager.instance.gameObject.transform.GetChild(0).GetComponent<GameSave>().kelas;
-            jenisKelamin.text = SaveManager.instance.gameObject.transform.GetChild(0).GetComponent<GameSave>().jenisKelamin;
+            if (SaveManager.instance.gameObject.transform.GetChild(0).GetComponent<GameSave>().namaPlayer != "")
+            {
+                namaPlayer.text = "Nama : " + SaveManager.instance.gameObject.transform.GetChild(0).GetComponent<GameSave>().namaPlayer;
+                kelas.text = "Kelas : " + SaveManager.instance.gameObject.transform.GetChild(0).GetComponent<GameSave>().kelas;
+                jenisKelamin.text = "Karakter : " + SaveManager.instance.gameObject.transform.GetChild(0).GetComponent<GameSave>().karakter;
+
+                button.interactable = true;
+            }
+            else
+            {
+                button.interactable = false;
+            }
+
         }
         else if (codeSave == 1)
         {
-            namaPlayer.text = "Nama : " + SaveManager.instance.gameObject.transform.GetChild(1).GetComponent<GameSave>().namaPlayer;
-            kelas.text = "Kelas : " + SaveManager.instance.gameObject.transform.GetChild(1).GetComponent<GameSave>().kelas;
-            jenisKelamin.text = SaveManager.instance.gameObject.transform.GetChild(1).GetComponent<GameSave>().jenisKelamin;
+            if (SaveManager.instance.gameObject.transform.GetChild(1).GetComponent<GameSave>().namaPlayer != "")
+            {
+                namaPlayer.text = "Nama : " + SaveManager.instance.gameObject.transform.GetChild(1).GetComponent<GameSave>().namaPlayer;
+                kelas.text = "Kelas : " + SaveManager.instance.gameObject.transform.GetChild(1).GetComponent<GameSave>().kelas;
+                jenisKelamin.text = "Karakter : " + SaveManager.instance.gameObject.transform.GetChild(1).GetComponent<GameSave>().karakter;
+
+                button.interactable = true;
+            }
+            else
+            {
+                button.interactable = false;
+            }
         }
         else if (codeSave == 2)
         {
-            namaPlayer.text = "Nama : " + SaveManager.instance.gameObject.transform.GetChild(2).GetComponent<GameSave>().namaPlayer;
-            kelas.text = "Kelas : " + SaveManager.instance.gameObject.transform.GetChild(2).GetComponent<GameSave>().kelas;
-            jenisKelamin.text = SaveManager.instance.gameObject.transform.GetChild(2).GetComponent<GameSave>().jenisKelamin;
+            if (SaveManager.instance.gameObject.transform.GetChild(2).GetComponent<GameSave>().namaPlayer != "")
+            {
+                namaPlayer.text = "Nama : " + SaveManager.instance.gameObject.transform.GetChild(2).GetComponent<GameSave>().namaPlayer;
+                kelas.text = "Kelas : " + SaveManager.instance.gameObject.transform.GetChild(2).GetComponent<GameSave>().kelas;
+                jenisKelamin.text = "Karakter : " + SaveManager.instance.gameObject.transform.GetChild(2).GetComponent<GameSave>().karakter;
+
+                button.interactable = true;
+            }
+            else
+            {
+                button.interactable = false;
+            }
         }
     }
 }

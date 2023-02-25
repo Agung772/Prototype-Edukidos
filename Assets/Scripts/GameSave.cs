@@ -7,7 +7,7 @@ public class GameSave : MonoBehaviour
     public int codeSave;
 
     public string namaPlayer;
-    public string jenisKelamin;
+    public string karakter;
     public string kelas;
 
     public int bab;
@@ -24,7 +24,7 @@ public class GameSave : MonoBehaviour
     [Space]
     //Anti typo
     public string _NamaPlayer = "NamaPlayer";
-    public string _JenisKelamin = "JenisKelamin";
+    public string _Karakter = "Karakter";
     public string _Kelas = "Kelas";
 
     public string _Bab = "Bab";
@@ -45,12 +45,12 @@ public class GameSave : MonoBehaviour
     public void LoadGameData()
     {
         namaPlayer = PlayerPrefs.GetString(_NamaPlayer + codeSave);
-        jenisKelamin = PlayerPrefs.GetString(_JenisKelamin + codeSave);
+        karakter = PlayerPrefs.GetString(_Karakter + codeSave);
         kelas = PlayerPrefs.GetString(_Kelas + codeSave);
 
         bab = PlayerPrefs.GetInt(_Bab + codeSave);
 
-        print("Berikut profil kamu " + namaPlayer + ", " + jenisKelamin + ", " + kelas);
+        //print("Berikut profil kamu " + namaPlayer + ", " + jenisKelamin + ", " + kelas);
 
         scoreConnectingTheDot = PlayerPrefs.GetInt(_ScoreConnectingTheDot + bab + codeSave);
         scoreSpellingBee = PlayerPrefs.GetInt(_ScoreSpellingBee + bab + codeSave);
@@ -63,7 +63,7 @@ public class GameSave : MonoBehaviour
     public void SaveProfil(string nama, string jenisKelamin, string kelas)
     {
         PlayerPrefs.SetString(_NamaPlayer + codeSave, nama);
-        PlayerPrefs.SetString(_JenisKelamin + codeSave, jenisKelamin);
+        PlayerPrefs.SetString(_Karakter + codeSave, jenisKelamin);
         PlayerPrefs.SetString(_Kelas + codeSave, kelas);
 
         LoadGameData();

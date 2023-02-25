@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Kelas
+  m_Text: Masih kosong
 --- !u!1 &2000344651057429031
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,6 +231,7 @@ MonoBehaviour:
   namaPlayer: {fileID: 3563227177718439663}
   kelas: {fileID: 3806387191939446502}
   jenisKelamin: {fileID: 6720455749747897873}
+  button: {fileID: 733204178987440709}
 --- !u!1 &3150477110125482372
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,7 +310,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Cowok / Cewek
+  m_Text: -------------------
 --- !u!1 &3411743655272297004
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,4 +389,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Nama player
+  m_Text: -------------------

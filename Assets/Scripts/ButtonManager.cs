@@ -11,7 +11,12 @@ public class ButtonManager : MonoBehaviour
 
     public GameObject settingHomeUI;
 
-
+    [Space]
+    [Space]
+    public Text namaPlayer;
+    public Text kelas;
+    public Text namaKarakter;
+    public Text bab;
 
 
     private void Awake()
@@ -19,6 +24,13 @@ public class ButtonManager : MonoBehaviour
         instance = this;
     }
 
+    private void Start()
+    {
+        namaPlayer.text = "Nama player : " + SaveManager.instance.GameSave.namaPlayer;
+        kelas.text = "Kelas : " + SaveManager.instance.GameSave.kelas;
+        namaKarakter.text = "Nama karakter : " + SaveManager.instance.GameSave.karakter;
+        bab.text = "Bab : " + SaveManager.instance.GameSave.bab;
+    }
     private void Update()
     {
         if (Input.GetKeyUp(KeyCode.Escape))

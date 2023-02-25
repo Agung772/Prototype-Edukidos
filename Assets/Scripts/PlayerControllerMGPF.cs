@@ -68,7 +68,7 @@ public class PlayerControllerMGPF : MonoBehaviour
     public void LoadData()
     {
         //Ambil data jenis kelamin
-        if (SaveManager.instance.GameSave.jenisKelamin == "Pria")
+        if (SaveManager.instance.GameSave.karakter == "Cowok")
         {
             pria.SetActive(true);
             wanita.SetActive(false);

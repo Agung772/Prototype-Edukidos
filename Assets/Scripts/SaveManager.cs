@@ -12,7 +12,20 @@ public class SaveManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (SaveManager.instance == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            print("Delete save manager");
+        }
+
+
+
+
 
         if (codeLoadSave == 0)
         {
@@ -29,10 +42,7 @@ public class SaveManager : MonoBehaviour
 
 
     }
-    private void Start()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
+
 
     public void ChangeCodeSave(int codeSave)
     {
