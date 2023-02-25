@@ -402,7 +402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff7c63ddd031e44f8ff96fc9c9dffdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bab: 2
+  bab: 5
   urutanPertanyaan: 0
   benar: 0
   salah: 0
@@ -509,6 +509,36 @@ MonoBehaviour:
     a: 5
     b: 3
     c: 4
+  listPertanyaanBab5:
+  - pertanyaan: 
+    a: 
+    b: 
+    c: 
+  - pertanyaan: Apa arti dari Ululazmi?
+    a: Ketabahan yang luar biasa pada rasul
+    b: Ketabahan nabi
+    c: Perkara yang luar biasa
+  - pertanyaan: Siapa yang mendapatkan Mukjizat?
+    a: Nabi dan Rasul
+    b: Nabi
+    c: Rasul
+  - pertanyaan: Apa arti Mukjizat
+    a: Perkara luar biasa
+    b: Ketabahan Yang luar biasa
+    c: Perkara biasa saja
+  - pertanyaan: Berapa jumlah nabi dan rasul yang wajib diketahui?
+    a: 25
+    b: 26
+    c: 24
+  - pertanyaan: Contoh cara meneladani nabi dan rasul adalah?
+    a: Hidup sederhana
+    b: Berfoya foya
+    c: Membuat kapal
+  listPertanyaanBab6: []
+  listPertanyaanBab7: []
+  listPertanyaanBab8: []
+  listPertanyaanBab9: []
+  listPertanyaanBab10: []
 --- !u!4 &1131906744
 Transform:
   m_ObjectHideFlags: 0
