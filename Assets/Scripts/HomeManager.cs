@@ -34,20 +34,14 @@ public class HomeManager : MonoBehaviour
     public void InputNama(string input)
     {
         namaPlayer = input;
-
-        print(namaPlayer);
     }
     public void InputKelas(string input)
     {
         kelas = input;
-
-        print(kelas);
     }
     public void InputJenisKelamin(Dropdown label)
     {
         karakter = label.captionText.text;
-
-        print(karakter);
     }
 
     //Pembuatan akun / profil baru

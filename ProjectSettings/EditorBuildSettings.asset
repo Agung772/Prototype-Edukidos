@@ -23,4 +23,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BenarSalah.unity
     guid: b9813a39d38863f4ea6e495abeb92355
-  m_configObjects: {}
+  m_configObjects:
+    Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 06f0f424786eae745b85dbdfd4e77b77, type: 2}
