@@ -35,6 +35,9 @@ public class GameplayPilihanGanda : MonoBehaviour
     private void Awake()
     {
         instance = this;
+
+
+        print(listPertanyaanBab1.Count / 2);
     }
 
     private void Start()
@@ -50,12 +53,26 @@ public class GameplayPilihanGanda : MonoBehaviour
         //Saving score
         if (urutanPertanyaan == listPertanyaanBab1.Count - 1)
         {
-            if (benar == 5) ButtonManager.instance.SpawnScoreUI(3);
-            else if (benar == 4) ButtonManager.instance.SpawnScoreUI(2);
-            else if (benar == 3) ButtonManager.instance.SpawnScoreUI(2);
-            else if (benar == 2) ButtonManager.instance.SpawnScoreUI(1);
-            else if (benar == 1) ButtonManager.instance.SpawnScoreUI(1);
-            else if (benar == 0) ButtonManager.instance.SpawnScoreUI(0);
+            if (benar == 0)
+            {
+                ButtonManager.instance.SpawnScoreUI(0);
+                SaveManager.instance.GameSave.SaveScoreMiniGame(SaveManager.instance.GameSave._ScorePilihanGanda, 0);
+            }
+            else if (benar < listPertanyaanBab1.Count / 2)
+            {
+                ButtonManager.instance.SpawnScoreUI(1);
+                SaveManager.instance.GameSave.SaveScoreMiniGame(SaveManager.instance.GameSave._ScorePilihanGanda, 1);
+            }
+            else if (benar < listPertanyaanBab1.Count - 2)
+            {
+                ButtonManager.instance.SpawnScoreUI(2);
+                SaveManager.instance.GameSave.SaveScoreMiniGame(SaveManager.instance.GameSave._ScorePilihanGanda, 2);
+            }
+            else if (benar == listPertanyaanBab1.Count - 1)
+            {
+                ButtonManager.instance.SpawnScoreUI(3);
+                SaveManager.instance.GameSave.SaveScoreMiniGame(SaveManager.instance.GameSave._ScorePilihanGanda, 3);
+            }
 
         }
         //Next pertanyaan

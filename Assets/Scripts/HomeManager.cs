@@ -15,6 +15,7 @@ public class HomeManager : MonoBehaviour
     public GameObject pilihBabButton;
 
     public GameObject loadButtonContent;
+    public GameObject loadBabContent;
 
 
     public void HomeButton(string namaButton)
@@ -58,18 +59,24 @@ public class HomeManager : MonoBehaviour
             if (SaveManager.instance.gameObject.transform.GetChild(0).GetComponent<GameSave>().namaPlayer == "")
             {
                 SaveManager.instance.GameSave = SaveManager.instance.gameObject.transform.GetChild(0).GetComponent<GameSave>();
+                SaveManager.instance.ChangeCodeSave(0);
                 SaveManager.instance.GameSave.SaveProfil(namaPlayer, karakter, kelas);
+                HomeButton("PilihBab");
 
             }
             else if (SaveManager.instance.gameObject.transform.GetChild(1).GetComponent<GameSave>().namaPlayer == "")
             {
                 SaveManager.instance.GameSave = SaveManager.instance.gameObject.transform.GetChild(1).GetComponent<GameSave>();
+                SaveManager.instance.ChangeCodeSave(1);
                 SaveManager.instance.GameSave.SaveProfil(namaPlayer, karakter, kelas);
+                HomeButton("PilihBab");
             }
             else if (SaveManager.instance.gameObject.transform.GetChild(2).GetComponent<GameSave>().namaPlayer == "")
             {
                 SaveManager.instance.GameSave = SaveManager.instance.gameObject.transform.GetChild(2).GetComponent<GameSave>();
+                SaveManager.instance.ChangeCodeSave(2);
                 SaveManager.instance.GameSave.SaveProfil(namaPlayer, karakter, kelas);
+                HomeButton("PilihBab");
             }
             else
             {
@@ -81,7 +88,7 @@ public class HomeManager : MonoBehaviour
                 loadButtonContent.transform.GetChild(i).GetComponent<LoadButton>().LoadTextUI();
             }
 
-            HomeButton("PilihBab");
+
         }
 
         //Ada data yang belum diisi
@@ -111,6 +118,10 @@ public class HomeManager : MonoBehaviour
             HomeButton("PilihBab");
         }
 
+        for (int i = 0; i < loadBabContent.transform.childCount; i++)
+        {
+            loadBabContent.transform.GetChild(i).GetComponent<LoadDataBab>().LoadBabText();
+        }
 
     }
 

@@ -101,6 +101,9 @@ public class GameplayConnectingTheDot : MonoBehaviour
             {
                 ButtonManager.instance.SpawnScoreUI(batrai);
             }
+
+            //Save score
+            SaveManager.instance.GameSave.SaveScoreMiniGame(SaveManager.instance.GameSave._ScoreConnectingTheDot, batrai);
         }
     }
 

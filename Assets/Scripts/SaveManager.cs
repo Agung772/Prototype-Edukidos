@@ -20,7 +20,6 @@ public class SaveManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
-            print("Delete save manager");
         }
 
 
