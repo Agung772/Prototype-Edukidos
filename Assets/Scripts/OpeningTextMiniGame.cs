@@ -9,6 +9,7 @@ public class OpeningTextMiniGame : MonoBehaviour
     public Text textOpening;
     bool clickTextKedua;
 
+
     private void Awake()
     {
         instance = this;
@@ -29,7 +30,11 @@ public class OpeningTextMiniGame : MonoBehaviour
     {
         if (Input.anyKeyDown && clickTextKedua)
         {
+            AnimasiManager.instance.AnimasiScreenCTD(false);
+
             gameObject.SetActive(false);
+
+
         }
     }
 }

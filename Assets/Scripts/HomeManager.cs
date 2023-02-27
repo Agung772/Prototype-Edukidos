@@ -72,6 +72,13 @@ public class HomeManager : MonoBehaviour
                 SaveManager.instance.GameSave.SaveProfil(namaPlayer, karakter, kelas);
                 HomeButton("PilihBab");
             }
+            else if (SaveManager.instance.gameObject.transform.GetChild(3).GetComponent<GameSave>().namaPlayer == "")
+            {
+                SaveManager.instance.GameSave = SaveManager.instance.gameObject.transform.GetChild(3).GetComponent<GameSave>();
+                SaveManager.instance.ChangeCodeSave(3);
+                SaveManager.instance.GameSave.SaveProfil(namaPlayer, karakter, kelas);
+                HomeButton("PilihBab");
+            }
             else
             {
                 Debug.LogWarning("Penyimpanan full");
@@ -110,6 +117,15 @@ public class HomeManager : MonoBehaviour
         {
             SaveManager.instance.ChangeCodeSave(2);
             HomeButton("PilihBab");
+        }
+        else if (codeSave == 3 && SaveManager.instance.gameObject.transform.GetChild(3).GetComponent<GameSave>().namaPlayer != "")
+        {
+            SaveManager.instance.ChangeCodeSave(3);
+            HomeButton("PilihBab");
+        }
+        else
+        {
+            Debug.LogWarning("Code save belom di ditambah di Home Manager (Perlu 2 di Load Profil dan Save Profil)");
         }
 
         for (int i = 0; i < loadBabContent.transform.childCount; i++)

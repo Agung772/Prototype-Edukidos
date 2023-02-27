@@ -11,6 +11,7 @@ public class EndDot : MonoBehaviour
     Sprite boxColorClear;
 
     public SpriteRenderer boxColor;
+    public GameObject animasiTutupKotak;
     private void Start()
     {
         if (!berwarnaDiawal)
@@ -27,6 +28,6 @@ public class EndDot : MonoBehaviour
         {
             boxColor.sprite = boxColorClear;
         }
-
+        animasiTutupKotak.SetActive(true);
     }
 }

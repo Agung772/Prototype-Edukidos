@@ -17,6 +17,7 @@ public class DotController : MonoBehaviour
     public Sprite boxColorDefault;
     Sprite boxColorClear;
     public SpriteRenderer boxColor;
+    public GameObject animasiTutupKotak;
 
 
     private void Start()
@@ -63,7 +64,7 @@ public class DotController : MonoBehaviour
     bool cooldownSfxHoldClick;
     private void Update()
     {
-        if (Input.GetMouseButton(0) && useLine)
+        if (Input.GetMouseButton(0) && useLine && !clear)
         {
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition - startMousePos);
             lineRenderer.SetPosition(1, new Vector3(mousePos.x, mousePos.y, 0));
@@ -79,7 +80,6 @@ public class DotController : MonoBehaviour
                 {
                     cooldownSfxHoldClick = true;
                     AudioManager.instance.SfxHoldClick();
-                    print("HoldSFX");
                     yield return new WaitForSeconds(0.5f);
                     cooldownSfxHoldClick = false;
 
@@ -91,12 +91,16 @@ public class DotController : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (clear) return;
+
         useLine = true;
         startMousePos = Input.mousePosition - GetMousePos();
     }
 
     private void OnMouseUp()
     {
+        if (clear) return;
+
         useLine = false;
 
 
@@ -105,6 +109,8 @@ public class DotController : MonoBehaviour
             clear = true;
             target.GetComponent<EndDot>().DotClear();
             DotClear();
+
+            animasiTutupKotak.SetActive(true);
 
             //Audio
             AudioManager.instance.SfxBenar();

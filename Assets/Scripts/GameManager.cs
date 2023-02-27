@@ -27,6 +27,11 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 60;
 
 
+    }
+
+    private void Start()
+    {
+
         if (namaScene == NamaScene.ConnectingTheDot)
         {
             openingTextMiniGame.gameObject.SetActive(true);
@@ -51,8 +56,6 @@ public class GameManager : MonoBehaviour
             openingTextMiniGame.TextOpening("Pilih Jawaban Yang Benar!!!");
         }
     }
-
-
 
     public void NotifTextUI(string text)
     {

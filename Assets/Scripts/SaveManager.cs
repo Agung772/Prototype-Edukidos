@@ -38,7 +38,14 @@ public class SaveManager : MonoBehaviour
         {
             GameSave = transform.GetChild(2).GetComponent<GameSave>();
         }
-
+        else if (codeLoadSave == 3)
+        {
+            GameSave = transform.GetChild(3).GetComponent<GameSave>();
+        }
+        else
+        {
+            Debug.LogWarning("Code load save belom di tambah di Save Manager");
+        }
 
     }
 
@@ -58,6 +65,14 @@ public class SaveManager : MonoBehaviour
         else if (codeLoadSave == 2)
         {
             GameSave = transform.GetChild(2).GetComponent<GameSave>();
+        }
+        else if (codeLoadSave == 3)
+        {
+            GameSave = transform.GetChild(3).GetComponent<GameSave>();
+        }
+        else
+        {
+            Debug.LogWarning("Code load save belom di ganti di Save Manager");
         }
     }
 

@@ -75,8 +75,14 @@ public class GameplayConnectingTheDot : MonoBehaviour
         {
             soalBab[8].SetActive(true);
         }
-
-
+        else if (bab == 9)
+        {
+            soalBab[9].SetActive(true);
+        }
+        else if (bab == 10)
+        {
+            soalBab[10].SetActive(true);
+        }
     }
 
     //Semua dot sudah terpasang

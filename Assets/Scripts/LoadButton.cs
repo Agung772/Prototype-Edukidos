@@ -62,5 +62,24 @@ public class LoadButton : MonoBehaviour
                 button.interactable = false;
             }
         }
+        else if (codeSave == 3)
+        {
+            if (SaveManager.instance.gameObject.transform.GetChild(3).GetComponent<GameSave>().namaPlayer != "")
+            {
+                namaPlayer.text = "Nama : " + SaveManager.instance.gameObject.transform.GetChild(3).GetComponent<GameSave>().namaPlayer;
+                kelas.text = "Kelas : " + SaveManager.instance.gameObject.transform.GetChild(3).GetComponent<GameSave>().kelas;
+                jenisKelamin.text = "Karakter : " + SaveManager.instance.gameObject.transform.GetChild(3).GetComponent<GameSave>().karakter;
+
+                button.interactable = true;
+            }
+            else
+            {
+                button.interactable = false;
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Code save belom di ditambah di Load Button");
+        }
     }
 }
