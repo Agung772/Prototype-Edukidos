@@ -110,6 +110,7 @@ public class GameplayConnectingTheDot : MonoBehaviour
 
             //Save score
             SaveManager.instance.GameSave.SaveScoreMiniGame(SaveManager.instance.GameSave._ScoreConnectingTheDot, batrai);
+            AnimasiManager.instance.AnimasiScreenCTD(true);
         }
     }
 
@@ -137,6 +138,7 @@ public class GameplayConnectingTheDot : MonoBehaviour
             batraiUI.transform.GetChild(5).gameObject.SetActive(false);
 
             ButtonManager.instance.SpawnScoreUI(batrai);
+            AnimasiManager.instance.AnimasiScreenCTD(true);
 
         }
 

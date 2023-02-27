@@ -17,17 +17,16 @@ public class AnimasiManager : MonoBehaviour
     {
         if (!condition)
         {
-            animasiScreenCTD.SetBool("Close", false);
-        }
-        else
-        {
             StartCoroutine(Coroutine());
             IEnumerator Coroutine()
             {
-                yield return new WaitForSeconds(4);
-                animasiScreenCTD.SetBool("Close", true);
+                yield return new WaitForSeconds(1);
+                animasiScreenCTD.SetBool("Close", false);
             }
-
+        }
+        else
+        {
+            animasiScreenCTD.SetBool("Close", true);
         }
     }
 }
