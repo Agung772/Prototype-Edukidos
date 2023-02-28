@@ -7,6 +7,9 @@ public class EndDot : MonoBehaviour
     public bool berwarnaDiawal;
 
     public string codeDot;
+    public int perluBerapaLine = 1;
+    int totalClear;
+
     public Sprite boxColorDefault;
     Sprite boxColorClear;
 
@@ -24,10 +27,19 @@ public class EndDot : MonoBehaviour
 
     public void DotClear()
     {
-        if (!berwarnaDiawal)
+        totalClear++;
+        if (totalClear == perluBerapaLine)
         {
-            boxColor.sprite = boxColorClear;
+
+            if (!berwarnaDiawal)
+            {
+                boxColor.sprite = boxColorClear;
+            }
+
+            animasiTutupKotak.SetActive(true);
+
         }
-        animasiTutupKotak.SetActive(true);
+
+
     }
 }
