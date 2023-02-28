@@ -497,6 +497,86 @@ MonoBehaviour:
     jawaban: BENAR
   - pertanyaan: Membaca Al-quran dibenci Allah
     jawaban: SALAH
+  listPertanyaanBab2:
+  - pertanyaan: 
+    jawaban: 
+  - pertanyaan: Kita harus memercayai Allah SWT
+    jawaban: BENAR
+  - pertanyaan: Rukun iman berjumlah 4
+    jawaban: SALAH
+  - pertanyaan: Seluruh alam semesta cipataan Allah SWT
+    jawaban: BENAR
+  - pertanyaan: Kita boleh merusak tumbuhan
+    jawaban: SALAH
+  - pertanyaan: Rasulullah SAW adalah panutan kita
+    jawaban: BENAR
+  listPertanyaanBab3:
+  - pertanyaan: 
+    jawaban: 
+  - pertanyaan: Memulai kegiatan dengan mambaca hamdalah
+    jawaban: SALAH
+  - pertanyaan: Kita harus sopan santun kepada semua orang
+    jawaban: BENAR
+  - pertanyaan: Kita tidak boleh memilih milih dalam berteman
+    jawaban: BENAR
+  - pertanyaan: Sebelum berangkat sekolah aku salim dan meminta do'a restu kepada
+      orang tua ku
+    jawaban: BENAR
+  - pertanyaan: Bersyukur mengucapkan basmalah
+    jawaban: SALAH
+  listPertanyaanBab4:
+  - pertanyaan: 
+    jawaban: 
+  - pertanyaan: Waasyhadu artinya "dan aku bersaksi"
+    jawaban: BENAR
+  - pertanyaan: Jika kita tidak sholat maka akan mendapat pahala
+    jawaban: SALAH
+  - pertanyaan: Rukun islam wajib dilaksanakan orang islam
+    jawaban: BENAR
+  - pertanyaan: Puasa yang wajib adalah ketika bulan ramadhan
+    jawaban: BENAR
+  - pertanyaan: Haji adalah rukun islam ke 4
+    jawaban: SALAH
+  - pertanyaan: Ibadah haji dilaksanakan di kota Mekkah
+    jawaban: BENAR
+  - pertanyaan: Puasa adalah rukun iman ke 5
+    jawaban: SALAH
+  - pertanyaan: Anak muslim harus berbuat jahat ke semua orang
+    jawaban: SALAH
+  - pertanyaan: Syahadat ada 2 yaitu syahadat tauhid dan syahadat rasul
+    jawaban: BENAR
+  - pertanyaan: Orang yang masuk isalm tidak diwajibkan membaca syahadat
+    jawaban: SALAH
+  listPertanyaanBab5:
+  - pertanyaan: 
+    jawaban: 
+  - pertanyaan: Nabi dan rasul tidak mendapatkan wahyu
+    jawaban: SALAH
+  - pertanyaan: Nabi tidak wajib menyampaikan mukjizatnya kepada manusia
+    jawaban: BENAR
+  - pertanyaan: Kita harus menyisihkan uang jajan untuk ditabung
+    jawaban: BENAR
+  - pertanyaan: Mukjizat Nabi Nuh adalah Al-Quran
+    jawaban: SALAH
+  - pertanyaan: Ada 5 Rasul yang mendapatkan gelar ululazmi
+    jawaban: BENAR
+  listPertanyaanBab6:
+  - pertanyaan: 
+    jawaban: 
+  - pertanyaan: Allah SWT adalah tempat kita berlindung
+    jawaban: BENAR
+  - pertanyaan: Allah SWT memiliki ayah dan ibu
+    jawaban: SALAH
+  - pertanyaan: Allah SWT tidak mempunyai anak
+    jawaban: BENAR
+  - pertanyaan: Tidak ada tuhan selain Allahh SWT
+    jawaban: BENAR
+  - pertanyaan: Allah SWT bukan tempat kita memohon
+    jawaban: SALAH
+  listPertanyaanBab7: []
+  listPertanyaanBab8: []
+  listPertanyaanBab9: []
+  listPertanyaanBab10: []
 --- !u!1 &1850229028
 GameObject:
   m_ObjectHideFlags: 0
