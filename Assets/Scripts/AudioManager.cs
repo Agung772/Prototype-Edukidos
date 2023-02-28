@@ -7,16 +7,22 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
  
-    public float volumeAudio;
+    public float volumeAudioBgm;
+    public float volumeAudioSfx;
 
-    public Slider volumeSlider;
-    public AudioSource audioSource;
+    public Slider volumeSliderBgm;
+    public Slider volumeSliderSfx;
 
+    public AudioSource audioSourceBgm;
+    public AudioSource audioSourceSfx;
+
+    //Input Audio
     public AudioClip bgmConnectTheDots;
 
     public AudioClip sfxScore, sfxGameOver, sfxHoldClick, sfxEnterMinigame, sfxPause, sfxUnpause ,sfxBenar, sfxSalah;
 
-
+    string SaveBgm = "SaveBgm";
+    string SaveSfx = "SaveSfx";
     private void Awake()
     {
         instance = this;
@@ -24,23 +30,52 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        
+        volumeAudioBgm = PlayerPrefs.GetFloat(SaveBgm);
+        volumeAudioSfx = PlayerPrefs.GetFloat(SaveSfx);
+
+        audioSourceBgm.volume = volumeAudioBgm;
+        audioSourceSfx.volume = volumeAudioSfx;
+
+
+
     }
 
-    public void VolumeValue(float value)
+    public void VolumeValueBgm(float value)
     {
-        volumeAudio = value;
-        audioSource.volume = value;
+        volumeAudioBgm = value;
+        audioSourceBgm.volume = value;
+        PlayerPrefs.SetFloat(SaveBgm, volumeAudioBgm);
+    }
+    public void RefrensBgm(Slider slider)
+    {
+        volumeSliderBgm = slider;
+        volumeSliderBgm.value = volumeAudioBgm;
     }
 
-    public void BgmConnectTheDots() { audioSource.clip = bgmConnectTheDots; audioSource.Play(); }
-    public void SfxScore() { if (sfxScore != null) audioSource.PlayOneShot(sfxScore); }
-    public void SfxGameOver() { if (sfxGameOver != null) audioSource.PlayOneShot(sfxGameOver); }
-    public void SfxHoldClick() { if (sfxHoldClick != null) audioSource.PlayOneShot(sfxHoldClick); }
-    public void SfxEnterMinigame() { if (sfxEnterMinigame != null) audioSource.PlayOneShot(sfxEnterMinigame); }
-    public void SfxPause() { if (sfxPause != null) audioSource.PlayOneShot(sfxPause); }
-    public void SfxUnpause() { if (sfxUnpause != null) audioSource.PlayOneShot(sfxUnpause); }
-    public void SfxBenar() { if (sfxBenar != null) audioSource.PlayOneShot(sfxBenar); }
-    public void SfxSalah() { if (sfxSalah != null) audioSource.PlayOneShot(sfxSalah); }
+    public void VolumeValueSfx(float value)
+    {
+        volumeAudioSfx = value;
+        audioSourceSfx.volume = value;
+        PlayerPrefs.SetFloat(SaveSfx, volumeAudioSfx);
+    }
+    public void RefrensSfx(Slider slider)
+    {
+        volumeSliderSfx = slider;
+        volumeSliderSfx.value = volumeAudioSfx;
+    }
+
+
+
+    public void BgmConnectTheDots() { audioSourceBgm.clip = bgmConnectTheDots; audioSourceBgm.Play(); }
+
+
+    public void SfxScore() { if (sfxScore != null) audioSourceSfx.PlayOneShot(sfxScore); }
+    public void SfxGameOver() { if (sfxGameOver != null) audioSourceSfx.PlayOneShot(sfxGameOver); }
+    public void SfxHoldClick() { if (sfxHoldClick != null) audioSourceSfx.PlayOneShot(sfxHoldClick); }
+    public void SfxEnterMinigame() { if (sfxEnterMinigame != null) audioSourceSfx.PlayOneShot(sfxEnterMinigame); }
+    public void SfxPause() { if (sfxPause != null) audioSourceSfx.PlayOneShot(sfxPause); }
+    public void SfxUnpause() { if (sfxUnpause != null) audioSourceSfx.PlayOneShot(sfxUnpause); }
+    public void SfxBenar() { if (sfxBenar != null) audioSourceSfx.PlayOneShot(sfxBenar); }
+    public void SfxSalah() { if (sfxSalah != null) audioSourceSfx.PlayOneShot(sfxSalah); }
 
 }
