@@ -71,7 +71,7 @@ public class PilihanGanda : MonoBehaviour
             }
 
             sudahDijawab = true;
-            ButtonManager.instance.nextPertanyaan = true;
+            ButtonManager.instance.nextPertanyaanPilihanGanda = true;
         }
 
     }

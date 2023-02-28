@@ -84,13 +84,23 @@ public class ButtonManager : MonoBehaviour
 
     }
 
-    public bool nextPertanyaan;
+    public bool nextPertanyaanPilihanGanda;
     public void NextPertanyaanPilihanGanda()
     {
-        if (nextPertanyaan)
+        if (nextPertanyaanPilihanGanda)
         {
-            nextPertanyaan = false;
+            nextPertanyaanPilihanGanda = false;
             GameplayPilihanGanda.instance.NextPertanyaan();
+        }
+
+    }
+    public bool nextPertanyaanBenarSalah;
+    public void NextPertanyaanBenarSalah()
+    {
+        if (nextPertanyaanBenarSalah)
+        {
+            nextPertanyaanBenarSalah = false;
+            GameplayBenarSalah.instance.NextPertanyaan();
         }
 
     }

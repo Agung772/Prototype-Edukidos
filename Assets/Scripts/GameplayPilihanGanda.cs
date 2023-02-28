@@ -32,12 +32,15 @@ public class GameplayPilihanGanda : MonoBehaviour
     public List<ListPertanyaan> listPertanyaanBab8;
     public List<ListPertanyaan> listPertanyaanBab9;
     public List<ListPertanyaan> listPertanyaanBab10;
+
+
     private void Awake()
     {
         instance = this;
 
-
         print(listPertanyaanBab1.Count / 2);
+
+
     }
 
     private void Start()

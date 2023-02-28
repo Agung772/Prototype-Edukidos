@@ -56,14 +56,18 @@ public class BenarSalah : MonoBehaviour
             }
 
             sudahDijawab = true;
+            ButtonManager.instance.nextPertanyaanBenarSalah = true;
+
 
             //Next pertanyaan
+            /*
             StartCoroutine(Coroutine());
             IEnumerator Coroutine()
             {
                 yield return new WaitForSeconds(2);
                 GameplayBenarSalah.instance.NextPertanyaan();
             }
+            */
         }
 
     }

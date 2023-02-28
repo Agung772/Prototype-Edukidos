@@ -32,6 +32,8 @@ public class GameplayBenarSalah : MonoBehaviour
     public List<ListPertanyaan> listPertanyaanBab8;
     public List<ListPertanyaan> listPertanyaanBab9;
     public List<ListPertanyaan> listPertanyaanBab10;
+
+    public int jumlahSoal;
     private void Awake()
     {
         instance = this;
@@ -43,6 +45,9 @@ public class GameplayBenarSalah : MonoBehaviour
 
         bab = SaveManager.instance.GameSave.bab;
 
+        if (bab == 1 || bab == 2 || bab == 3 || bab == 5 || bab == 6 || bab == 7 || bab == 8 || bab == 9 || bab == 10) jumlahSoal = 5;
+        else if (bab == 4) jumlahSoal = 10;
+
         NextPertanyaan();
     }
     //Memunculkan pertanyaan berdasarkan bab
@@ -50,14 +55,29 @@ public class GameplayBenarSalah : MonoBehaviour
     {
         //Pertanyaan sudah habis 
         //Saving score
-        if (urutanPertanyaan == listPertanyaanBab1.Count - 1)
+        if (urutanPertanyaan == jumlahSoal)
         {
-            if (benar == 5) ButtonManager.instance.SpawnScoreUI(3);
-            else if (benar == 4) ButtonManager.instance.SpawnScoreUI(3);
-            else if (benar == 3) ButtonManager.instance.SpawnScoreUI(2);
-            else if (benar == 2) ButtonManager.instance.SpawnScoreUI(2);
-            else if (benar == 1) ButtonManager.instance.SpawnScoreUI(1);
-            else if (benar == 0) ButtonManager.instance.SpawnScoreUI(0);
+            if (benar == 0)
+            {
+                ButtonManager.instance.SpawnScoreUI(0);
+                SaveManager.instance.GameSave.SaveScoreMiniGame(SaveManager.instance.GameSave._ScoreBenarSalah, 0);
+            }
+            else if (benar < (jumlahSoal / 2) + 1)
+            {
+                ButtonManager.instance.SpawnScoreUI(1);
+                SaveManager.instance.GameSave.SaveScoreMiniGame(SaveManager.instance.GameSave._ScoreBenarSalah, 1);
+            }
+            else if (benar < jumlahSoal)
+            {
+                ButtonManager.instance.SpawnScoreUI(2);
+                SaveManager.instance.GameSave.SaveScoreMiniGame(SaveManager.instance.GameSave._ScoreBenarSalah, 2);
+            }
+            else if (benar == jumlahSoal)
+            {
+                ButtonManager.instance.SpawnScoreUI(3);
+                SaveManager.instance.GameSave.SaveScoreMiniGame(SaveManager.instance.GameSave._ScoreBenarSalah, 3);
+            }
+
 
         }
         //Next pertanyaan
@@ -70,7 +90,7 @@ public class GameplayBenarSalah : MonoBehaviour
             }
 
             urutanPertanyaan++;
-            totalPertanyaanText.text = urutanPertanyaan + "/" + (listPertanyaanBab1.Count - 1);
+            totalPertanyaanText.text = urutanPertanyaan + "/" + jumlahSoal;
 
             if (bab == 1)
             {
