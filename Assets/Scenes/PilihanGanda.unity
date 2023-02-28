@@ -591,7 +591,31 @@ MonoBehaviour:
     a: Hidup sederhana
     b: Berfoya foya
     c: Membuat kapal
-  listPertanyaanBab6: []
+  listPertanyaanBab6:
+  - pertanyaan: 
+    a: 
+    b: 
+    c: 
+  - pertanyaan: Surah Al-Ikhlas artinya?
+    a: Keesaan Allah SWT
+    b: Bersih pikiran
+    c: Bersih hati
+  - pertanyaan: Berapa jumlah ayat surah Al-Ikhlas?
+    a: 4
+    b: 5
+    c: 6
+  - pertanyaan: Surah Al-Ikhlas berisi tentang?
+    a: Keesaan Allah SWT
+    b: Kota Makkah
+    c: Bersih hati
+  - pertanyaan: apa arti dari kata Esa?
+    a: Satu
+    b: Allah SWT
+    c: Bersih hati
+  - pertanyaan: Al-Ikhlas adalah surat ke?
+    a: 112
+    b: 4
+    c: 111
   listPertanyaanBab7: []
   listPertanyaanBab8: []
   listPertanyaanBab9: []
