@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ButtonManager : MonoBehaviour
 {
     public static ButtonManager instance;
-    public GameObject optionUI, scoreUI;
+    public GameObject scoreUI;
 
     public GameObject settingHomeUI;
 
@@ -33,10 +33,6 @@ public class ButtonManager : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
-        {
-            OptionUI();
-        }
         if (Input.GetKeyUp(KeyCode.Delete))
         {
             PlayerPrefs.DeleteAll();
@@ -51,22 +47,6 @@ public class ButtonManager : MonoBehaviour
     }
 
 
-
-    bool option;
-    public void OptionUI()
-    {
-        if (!option)
-        {
-            optionUI.SetActive(true);
-            option = true;
-        }
-        else if (option)
-        {
-            optionUI.SetActive(false);
-            option = false;
-        }
-
-    }
 
     public void RestartGame()
     {

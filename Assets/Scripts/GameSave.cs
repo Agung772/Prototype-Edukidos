@@ -78,7 +78,7 @@ public class GameSave : MonoBehaviour
     public void SaveBab(int Bab)
     {
         PlayerPrefs.SetInt(_Bab + codeSave, Bab);
-        print(Bab);
+        print("Bab yang dipilih : " + Bab);
         LoadGameData();
     }
 

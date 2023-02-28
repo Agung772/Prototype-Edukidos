@@ -5,10 +5,16 @@ using UnityEngine.UI;
 
 public class OptionManager : MonoBehaviour
 {
-    public ButtonManager buttonManager;
     public GameObject restartUI, quitUI, optionUI;
     bool restart, quit;
 
+    public Slider sliderBgm;
+    public Slider sliderSfx;
+    private void Start()
+    {
+        RefrensBgm(sliderBgm);
+        RefrensSfx(sliderSfx);
+    }
     public void RestartUI()
     {
         restartUI.SetActive(true);
@@ -37,5 +43,22 @@ public class OptionManager : MonoBehaviour
             quit = false;
         }
 
+    }
+
+    public void VolumeValueBgm(float value)
+    {
+        AudioManager.instance.VolumeValueBgm(value);
+    }
+    public void RefrensBgm(Slider slider)
+    {
+        AudioManager.instance.RefrensBgm(slider);
+    }
+    public void VolumeValueSfx(float value)
+    {
+        AudioManager.instance.VolumeValueSfx(value);
+    }
+    public void RefrensSfx(Slider slider)
+    {
+        AudioManager.instance.RefrensSfx(slider);
     }
 }
