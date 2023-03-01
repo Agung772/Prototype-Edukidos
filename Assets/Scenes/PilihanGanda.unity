@@ -616,8 +616,52 @@ MonoBehaviour:
     a: 112
     b: 4
     c: 111
-  listPertanyaanBab7: []
-  listPertanyaanBab8: []
+  listPertanyaanBab7:
+  - pertanyaan: 
+    a: 
+    b: 
+    c: 
+  - pertanyaan: Apa arti Ar-Rahman?
+    a: Maha pengasih
+    b: Maha pemberi
+    c: Maha penyayang
+  - pertanyaan: Apa arti dari Ar-rahim?
+    a: Maha penyayang
+    b: Maha pengasih
+    c: maha mulia
+  - pertanyaan: Apa arti dari Asmaulhusna?
+    a: Nama-nama Allah SWT yang baik
+    b: Nama baik
+    c: Nama-nama Allah SWT yang indah
+  - pertanyaan: Berapa jumlah Asmaulhusna?
+    a: 99
+    b: 77
+    c: 88
+  - pertanyaan: Siapakah teladan kita?
+    a: Nabi Muhammad SAW
+    b: Allah SWT
+    c: Youtuber
+  listPertanyaanBab8:
+  - pertanyaan: 
+    a: 
+    b: 
+    c: 
+  - pertanyaan: 
+    a: 
+    b: 
+    c: 
+  - pertanyaan: 
+    a: 
+    b: 
+    c: 
+  - pertanyaan: 
+    a: 
+    b: 
+    c: 
+  - pertanyaan: 
+    a: 
+    b: 
+    c: 
   listPertanyaanBab9: []
   listPertanyaanBab10: []
 --- !u!4 &1131906744

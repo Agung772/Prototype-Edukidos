@@ -573,10 +573,23 @@ MonoBehaviour:
     jawaban: BENAR
   - pertanyaan: Allah SWT bukan tempat kita memohon
     jawaban: SALAH
-  listPertanyaanBab7: []
+  listPertanyaanBab7:
+  - pertanyaan: 
+    jawaban: 
+  - pertanyaan: Nabi Muhammad SAW tidak mencintai umatnya
+    jawaban: SALAH
+  - pertanyaan: KIta harus membenci seluruh teman kita
+    jawaban: SALAH
+  - pertanyaan: Asmaulhusna dibaca ketika berdo'a
+    jawaban: BENAR
+  - pertanyaan: Yang mendapatkan ksaih sayang dari Allah SWT adalah mahkluknya
+    jawaban: BENAR
+  - pertanyaan: Allah SWT Menyayangi orang yang beriman
+    jawaban: BENAR
   listPertanyaanBab8: []
   listPertanyaanBab9: []
   listPertanyaanBab10: []
+  jumlahSoal: 0
 --- !u!1 &1850229028
 GameObject:
   m_ObjectHideFlags: 0
