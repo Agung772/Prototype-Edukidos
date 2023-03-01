@@ -586,7 +586,19 @@ MonoBehaviour:
     jawaban: BENAR
   - pertanyaan: Allah SWT Menyayangi orang yang beriman
     jawaban: BENAR
-  listPertanyaanBab8: []
+  listPertanyaanBab8:
+  - pertanyaan: 
+    jawaban: 
+  - pertanyaan: Berjabat tangan harus menggunakan tangan kanan
+    jawaban: BENAR
+  - pertanyaan: Manusia bukan mkhluk sosial
+    jawaban: SALAH
+  - pertanyaan: Ketika berterima kasih kita hrus senyum
+    jawaban: BENAR
+  - pertanyaan: Pramuka tidak melatih hidup disiplin
+    jawaban: SALAH
+  - pertanyaan: Tertib shalat 5 waktu termasuk perilaku sikap disiplin
+    jawaban: BENAR
   listPertanyaanBab9: []
   listPertanyaanBab10: []
   jumlahSoal: 0

@@ -646,22 +646,26 @@ MonoBehaviour:
     a: 
     b: 
     c: 
-  - pertanyaan: 
-    a: 
-    b: 
+  - pertanyaan: Apa yang harus kita lakukan ketika seseorang yang menolong kita?
+    a: Berterima kasih
+    b: Diam saja
+    c: Pergi
+  - pertanyaan: Disiplin adalah patuh dan taat pada
+    a: Peraturan
+    b: 6
     c: 
-  - pertanyaan: 
-    a: 
-    b: 
-    c: 
-  - pertanyaan: 
-    a: 
-    b: 
-    c: 
-  - pertanyaan: 
-    a: 
-    b: 
-    c: 
+  - pertanyaan: Ketika ada teman yang kesusahan, sebaiknya kita
+    a: Menolongnya
+    b: Melihat saja
+    c: Mengabaikan
+  - pertanyaan: Bangun tidur tepat waktu menunjukan disiplin
+    a: Waktu
+    b: Ilmu
+    c: Sosial
+  - pertanyaan: Anak yang dsiplin akan menjadi anak yang
+    a: Percaya diri
+    b: Pemalu
+    c: Lalai
   listPertanyaanBab9: []
   listPertanyaanBab10: []
 --- !u!4 &1131906744
