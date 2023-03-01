@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour
             openingTextMiniGame.gameObject.SetActive(true);
             openingTextMiniGame.TextOpening("Hubungkan Teks dan Gambarnya!!!");
 
+            AnimasiManager.instance.AnimasiScreenCTD(true);
+
             //Audio BGM
             AudioManager.instance.BgmConnectTheDots();
         }

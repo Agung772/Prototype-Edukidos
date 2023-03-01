@@ -19,6 +19,7 @@ public class DotController : MonoBehaviour
     public SpriteRenderer boxColor;
     public GameObject animasiTutupKotak;
 
+    public ParticleSystem particleSalah;
 
     private void Start()
     {
@@ -87,6 +88,7 @@ public class DotController : MonoBehaviour
 
             }
         }
+
     }
 
     private void OnMouseDown()
@@ -96,7 +98,7 @@ public class DotController : MonoBehaviour
         useLine = true;
         startMousePos = Input.mousePosition - GetMousePos();
     }
-
+    
     private void OnMouseUp()
     {
         if (clear) return;
@@ -119,9 +121,17 @@ public class DotController : MonoBehaviour
         {
             GameplayConnectingTheDot.instance.SalahDot();
 
-            lineRenderer.SetPosition(0, new Vector3(transform.position.x, transform.position.y, 0));
-            lineRenderer.SetPosition(1, new Vector3(transform.position.x, transform.position.y, 0));
-            setPositionEnd.gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+            //Particle
+            particleSalah.Play();
+
+            StartCoroutine(Coroutine());
+            IEnumerator Coroutine()
+            {
+                yield return new WaitForSeconds(0.1f);
+                lineRenderer.SetPosition(0, new Vector3(transform.position.x, transform.position.y, 0));
+                lineRenderer.SetPosition(1, new Vector3(transform.position.x, transform.position.y, 0));
+                setPositionEnd.gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+            }
 
             //Audio
             AudioManager.instance.SfxSalah();

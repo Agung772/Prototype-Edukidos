@@ -30,7 +30,7 @@ public class GameplayConnectingTheDot : MonoBehaviour
 
         //Random color di Dot
         RandomSD();
-        RandomED();
+        if (!endDot[0].tidakDiAcak) RandomED();
     }
 
     void LoadBab()

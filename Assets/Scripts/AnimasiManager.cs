@@ -26,6 +26,7 @@ public class AnimasiManager : MonoBehaviour
         }
         else
         {
+            animasiScreenCTD.gameObject.SetActive(true);
             animasiScreenCTD.SetBool("Close", true);
         }
     }

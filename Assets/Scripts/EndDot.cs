@@ -5,6 +5,7 @@ using UnityEngine;
 public class EndDot : MonoBehaviour
 {
     public bool berwarnaDiawal;
+    public bool tidakDiAcak;
 
     public string codeDot;
     public int perluBerapaLine = 1;
