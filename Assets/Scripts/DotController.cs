@@ -19,7 +19,9 @@ public class DotController : MonoBehaviour
     public SpriteRenderer boxColor;
     public GameObject animasiTutupKotak;
 
+    [Space]
     public ParticleSystem particleSalah;
+    public ParticleSystem particleBenar;
 
     private void Start()
     {
@@ -98,7 +100,8 @@ public class DotController : MonoBehaviour
         useLine = true;
         startMousePos = Input.mousePosition - GetMousePos();
     }
-    
+
+    [System.Obsolete]
     private void OnMouseUp()
     {
         if (clear) return;
@@ -114,15 +117,17 @@ public class DotController : MonoBehaviour
 
             animasiTutupKotak.SetActive(true);
 
+            //Particle
+            particleBenar.startColor = warnaLine;
+            particleBenar.Play();
+
+
             //Audio
             AudioManager.instance.SfxBenar();
         }
         else if (setPositionEnd.condition == "salah")
         {
             GameplayConnectingTheDot.instance.SalahDot();
-
-            //Particle
-            particleSalah.Play();
 
             StartCoroutine(Coroutine());
             IEnumerator Coroutine()
@@ -132,6 +137,9 @@ public class DotController : MonoBehaviour
                 lineRenderer.SetPosition(1, new Vector3(transform.position.x, transform.position.y, 0));
                 setPositionEnd.gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, 0);
             }
+
+            //Particle
+            particleSalah.Play();
 
             //Audio
             AudioManager.instance.SfxSalah();
