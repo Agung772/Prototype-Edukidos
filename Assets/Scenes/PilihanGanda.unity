@@ -650,10 +650,10 @@ MonoBehaviour:
     a: Berterima kasih
     b: Diam saja
     c: Pergi
-  - pertanyaan: Disiplin adalah patuh dan taat pada
-    a: Peraturan
-    b: 6
-    c: 
+  - pertanyaan: Sikap disiplin harus dimulai sejak?
+    a: Kecil
+    b: Dewasa
+    c: Remaja
   - pertanyaan: Ketika ada teman yang kesusahan, sebaiknya kita
     a: Menolongnya
     b: Melihat saja
