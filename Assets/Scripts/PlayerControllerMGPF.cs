@@ -9,6 +9,8 @@ public class PlayerControllerMGPF : MonoBehaviour
     public NavMeshAgent navMeshAgent;
 
     public GameObject pria, wanita;
+
+    public Transform cameraMetaGame;
     RaycastHit hit;
 
 
@@ -19,6 +21,8 @@ public class PlayerControllerMGPF : MonoBehaviour
     }
     void Update()
     {
+        if (navMeshAgent == null) return;
+
         if (navMeshAgent.remainingDistance == 0)
         {
 
@@ -78,6 +82,12 @@ public class PlayerControllerMGPF : MonoBehaviour
             pria.SetActive(false);
             wanita.SetActive(true);
         }
+
+        //PosisiPlayer
+        navMeshAgent.enabled = false;
+        transform.position = SaveManager.instance.GameSave.posisiPlayer;
+        cameraMetaGame.position = transform.position + cameraMetaGame.gameObject.GetComponent<CameraFollow>().offset;
+        navMeshAgent.enabled = true;
     }
 
 }

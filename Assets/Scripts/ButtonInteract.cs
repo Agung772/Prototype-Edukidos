@@ -8,14 +8,21 @@ public class ButtonInteract : MonoBehaviour
     public static ButtonInteract instance;
     public string NamaScene;
 
+    GameObject playerMetaGame;
+
     private void Awake()
     {
         instance = this;
         gameObject.SetActive(false);
+
+        playerMetaGame = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void CallButton()
     {
+        //Save posisi player
+        SaveManager.instance.GameSave.SavePosisiPlayer(playerMetaGame.transform.position);
+
         SceneManager.LoadScene(NamaScene);
     }
 
