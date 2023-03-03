@@ -9,7 +9,7 @@ public class BenarSalah : MonoBehaviour
     public string jawabanYangBenar;
     public Text soalText;
 
-    public Image overlayImage, benarImage, salahImage;
+    public Image overlayImage, benarImage, salahImage, textBenar, textSalah;
 
     private void Start()
     {
@@ -46,12 +46,14 @@ public class BenarSalah : MonoBehaviour
             {
                 overlayImage.gameObject.SetActive(true);
                 overlayImage.color = InputColor.instance.greenTransparant;
+                textBenar.gameObject.SetActive(true);
                 GameplayBenarSalah.instance.benar++;
             }
             else
             {
                 overlayImage.gameObject.SetActive(true);
                 overlayImage.color = InputColor.instance.redTranparant;
+                textSalah.gameObject.SetActive(true);
                 GameplayBenarSalah.instance.salah++;
             }
 
