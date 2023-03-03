@@ -7,11 +7,24 @@ public class PlayerControllerMGPF : MonoBehaviour
 {
     public GameObject destinationPrefab;
     public NavMeshAgent navMeshAgent;
+    public Transform cameraMetaGame;
 
     public GameObject pria, wanita;
+    public AnimatorKarakter animatorKarakter;
 
-    public Transform cameraMetaGame;
+
     RaycastHit hit;
+    string conditionAnimasi;
+
+    //Anti typo
+    [HideInInspector]
+    public string 
+        _Idle = "Idle", 
+        _Walk = "Walk", 
+        _Tegak = "Tegak", 
+        _Interaksi = "Interaksi", 
+        _Senang = "Senang", 
+        _Sedih = "Sedih";
 
 
     private void Start()
@@ -30,6 +43,19 @@ public class PlayerControllerMGPF : MonoBehaviour
         else if (navMeshAgent.remainingDistance < 0.1f)
         {
             DestroyDestination();
+        }
+
+        //Animasi
+        if (navMeshAgent.remainingDistance == 0 && conditionAnimasi != "Idle")
+        {
+            conditionAnimasi = "Idle";
+            print("Idle");
+
+        }
+        else if (navMeshAgent.remainingDistance > 0.1f && conditionAnimasi != "Walk")
+        {
+            conditionAnimasi = "Walk";
+            print("Sedang jalan");
         }
 
     }

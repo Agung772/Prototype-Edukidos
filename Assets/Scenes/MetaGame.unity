@@ -495,7 +495,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e4119f57a2c22bf47b6a04e8a6a064c4, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e4119f57a2c22bf47b6a04e8a6a064c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2036,7 +2036,7 @@ GameObject:
   - component: {fileID: 724884962}
   - component: {fileID: 724884961}
   m_Layer: 0
-  m_Name: Wanita
+  m_Name: Cewek
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2049,11 +2049,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724884959}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1248278710}
+  m_Father: {fileID: 1200002077}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &724884961
@@ -2132,7 +2132,7 @@ GameObject:
   - component: {fileID: 900952182}
   - component: {fileID: 900952181}
   m_Layer: 0
-  m_Name: Pria
+  m_Name: Cowok
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2145,11 +2145,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 900952179}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1248278710}
+  m_Father: {fileID: 1200002077}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &900952181
@@ -2284,6 +2284,52 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8079d94a31a512347805a8d533f6f881, type: 3}
+--- !u!1 &1200002075
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1200002077}
+  - component: {fileID: 1200002076}
+  m_Layer: 0
+  m_Name: 3D Karakter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1200002076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200002075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c8a9f307c4092041b3de9661fb854bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+--- !u!4 &1200002077
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200002075}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 900952180}
+  - {fileID: 724884960}
+  m_Father: {fileID: 1248278710}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1248278705
 GameObject:
   m_ObjectHideFlags: 0
@@ -2295,7 +2341,6 @@ GameObject:
   - component: {fileID: 1248278710}
   - component: {fileID: 1248278707}
   - component: {fileID: 1248278706}
-  - component: {fileID: 1248278711}
   m_Layer: 0
   m_Name: PlayerControllerPF
   m_TagString: Player
@@ -2339,9 +2384,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destinationPrefab: {fileID: 2650126080066732844, guid: b5f7799bd399da54799b361b572c8eb9, type: 3}
   navMeshAgent: {fileID: 1248278706}
+  cameraMetaGame: {fileID: 1812720462}
   pria: {fileID: 900952179}
   wanita: {fileID: 724884959}
-  cameraMetaGame: {fileID: 1812720462}
+  animatorKarakter: {fileID: 1200002076}
+  _Idle: Idle
+  _Walk: Walk
+  _Tegak: Tegak
+  _Interaksi: Interaksi
+  _Senang: Senang
+  _Sedih: Sedih
 --- !u!4 &1248278710
 Transform:
   m_ObjectHideFlags: 0
@@ -2353,25 +2405,10 @@ Transform:
   m_LocalPosition: {x: -2.9, y: 1.97, z: -1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 900952180}
-  - {fileID: 724884960}
+  - {fileID: 1200002077}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1248278711
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1248278705}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1432188393
 GameObject:
   m_ObjectHideFlags: 0
@@ -2593,7 +2630,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 45, y: -45, z: 0}
 --- !u!114 &1812720463
 MonoBehaviour:
@@ -2701,7 +2738,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &1852786006002721725
 PrefabInstance:
