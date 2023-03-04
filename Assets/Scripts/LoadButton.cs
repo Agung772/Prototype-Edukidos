@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class LoadButton : MonoBehaviour
 {
     public int codeSave;
+    public string nama;
 
     public GameObject 
         dataProfil, 
@@ -96,6 +97,8 @@ public class LoadButton : MonoBehaviour
     void LoadText(int codeSave)
     {
         //Mengambil semua data
+        nama = SaveManager.instance.gameObject.transform.GetChild(codeSave).GetComponent<GameSave>().namaPlayer;
+
         int tempTotalSeluruh = 0;
         for (int i = 0; i < 11; i++)
         {
@@ -113,7 +116,7 @@ public class LoadButton : MonoBehaviour
             }
 
         }
-        print(tempTotalSeluruh);
+        print("Total bintang dari seluruh bab : " + tempTotalSeluruh);
 
         //Load text
         dataProfil.SetActive(true);
