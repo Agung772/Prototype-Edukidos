@@ -118,6 +118,7 @@ public class DotController : MonoBehaviour
             animasiTutupKotak.SetActive(true);
 
             lineRenderer.SetPosition(1, new Vector3(target.position.x, target.position.y, 0));
+            setPositionEnd.transform.position = new Vector3(target.position.x, target.position.y, 0);
 
             //Particle
             particleBenar.startColor = warnaLine;
