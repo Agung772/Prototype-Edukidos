@@ -1,19 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PilihanGanda : MonoBehaviour
 {
     public bool sudahDijawab;
-    public Text soalText;
+    public TextMeshProUGUI soalTextPro;
 
     public Image[] jawabanImage;
-    public Text[] jawabanText;
+    public TextMeshProUGUI[] jawabanText;
 
     public void SpawnPilihanGanda(string soal, string jawabanA, string jawabanB, string jawabanC)
     {
-        soalText.text = soal;
+        soalTextPro.text = soal;
         jawabanText[0].text = jawabanA;
         jawabanText[1].text = jawabanB;
         jawabanText[2].text = jawabanC;
@@ -48,12 +49,12 @@ public class PilihanGanda : MonoBehaviour
         {
             for (int i = 0; i < jawabanImage.Length; i++)
             {
-                jawabanImage[i].color = Color.white;
+                jawabanImage[i].color = InputColor.instance.blueButtonPG;
                 jawabanImage[i].gameObject.GetComponent<ButtonScript>().hasClick = false;
             }
 
             button.GetComponent<ButtonScript>().hasClick = true;
-            button.GetComponent<Image>().color = InputColor.instance.blue;
+            button.GetComponent<Image>().color = InputColor.instance.orange;
         }
 
         //Benar salah jawaban
