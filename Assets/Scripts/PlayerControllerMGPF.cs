@@ -9,7 +9,7 @@ public class PlayerControllerMGPF : MonoBehaviour
     public NavMeshAgent navMeshAgent;
     public Transform cameraMetaGame;
 
-    public GameObject pria, wanita;
+    public GameObject cowok, cewek;
     public AnimatorKarakter animatorKarakter;
 
 
@@ -50,12 +50,14 @@ public class PlayerControllerMGPF : MonoBehaviour
         {
             conditionAnimasi = "Idle";
             print("Idle");
+            animatorKarakter.animator.SetBool("Walk", false);
 
         }
         else if (navMeshAgent.remainingDistance > 0.1f && conditionAnimasi != "Walk")
         {
             conditionAnimasi = "Walk";
             print("Sedang jalan");
+            animatorKarakter.animator.SetBool("Walk", true);
         }
 
     }
@@ -100,13 +102,15 @@ public class PlayerControllerMGPF : MonoBehaviour
         //Ambil data jenis kelamin
         if (SaveManager.instance.GameSave.karakter == "Cowok")
         {
-            pria.SetActive(true);
-            wanita.SetActive(false);
+            cowok.SetActive(true);
+            cewek.SetActive(false);
+            animatorKarakter.animator = cowok.GetComponent<Animator>();
         }
         else
         {
-            pria.SetActive(false);
-            wanita.SetActive(true);
+            cowok.SetActive(false);
+            cewek.SetActive(true);
+            animatorKarakter.animator = cewek.GetComponent<Animator>();
         }
 
         //PosisiPlayer
