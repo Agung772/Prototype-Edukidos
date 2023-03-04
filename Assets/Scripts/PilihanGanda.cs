@@ -22,21 +22,21 @@ public class PilihanGanda : MonoBehaviour
 
         if (random == 0)
         {
-            jawabanImage[0].GetComponent<RectTransform>().anchoredPosition = new Vector2(-308, -95);
-            jawabanImage[1].GetComponent<RectTransform>().anchoredPosition = new Vector2(308, -95);
-            jawabanImage[2].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -350);
+            jawabanImage[0].GetComponent<RectTransform>().anchoredPosition = new Vector2(-550, -287);
+            jawabanImage[1].GetComponent<RectTransform>().anchoredPosition = new Vector2(550, -287);
+            jawabanImage[2].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -287);
         }
         else if (random == 1)
         {
-            jawabanImage[1].GetComponent<RectTransform>().anchoredPosition = new Vector2(-308, -95);
-            jawabanImage[2].GetComponent<RectTransform>().anchoredPosition = new Vector2(308, -95);
-            jawabanImage[0].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -350);
+            jawabanImage[1].GetComponent<RectTransform>().anchoredPosition = new Vector2(-550, -287);
+            jawabanImage[2].GetComponent<RectTransform>().anchoredPosition = new Vector2(550, -287);
+            jawabanImage[0].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -287);
         }
         else if (random == 2)
         {
-            jawabanImage[2].GetComponent<RectTransform>().anchoredPosition = new Vector2(-308, -95);
-            jawabanImage[0].GetComponent<RectTransform>().anchoredPosition = new Vector2(308, -95);
-            jawabanImage[1].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -350);
+            jawabanImage[2].GetComponent<RectTransform>().anchoredPosition = new Vector2(-550, -287);
+            jawabanImage[0].GetComponent<RectTransform>().anchoredPosition = new Vector2(550, -287);
+            jawabanImage[1].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -287);
         }
     }
 
