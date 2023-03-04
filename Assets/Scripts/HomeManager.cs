@@ -17,6 +17,10 @@ public class HomeManager : MonoBehaviour
     public GameObject loadButtonContent;
     public GameObject loadBabContent;
 
+    [Space]
+    public InputField namaInputField;
+    public InputField kelasInputField;
+    public Dropdown karakterDropdown;
 
     public void HomeButton(string namaButton)
     {
@@ -56,7 +60,7 @@ public class HomeManager : MonoBehaviour
                 SaveManager.instance.ChangeCodeSave(0);
                 SaveManager.instance.GameSave.SaveProfil(namaPlayer, karakter, kelas);
                 HomeButton("PilihBab");
-
+                ResetText();
             }
             else if (SaveManager.instance.gameObject.transform.GetChild(1).GetComponent<GameSave>().namaPlayer == "")
             {
@@ -64,6 +68,7 @@ public class HomeManager : MonoBehaviour
                 SaveManager.instance.ChangeCodeSave(1);
                 SaveManager.instance.GameSave.SaveProfil(namaPlayer, karakter, kelas);
                 HomeButton("PilihBab");
+                ResetText();
             }
             else if (SaveManager.instance.gameObject.transform.GetChild(2).GetComponent<GameSave>().namaPlayer == "")
             {
@@ -71,6 +76,7 @@ public class HomeManager : MonoBehaviour
                 SaveManager.instance.ChangeCodeSave(2);
                 SaveManager.instance.GameSave.SaveProfil(namaPlayer, karakter, kelas);
                 HomeButton("PilihBab");
+                ResetText();
             }
             else if (SaveManager.instance.gameObject.transform.GetChild(3).GetComponent<GameSave>().namaPlayer == "")
             {
@@ -78,6 +84,7 @@ public class HomeManager : MonoBehaviour
                 SaveManager.instance.ChangeCodeSave(3);
                 SaveManager.instance.GameSave.SaveProfil(namaPlayer, karakter, kelas);
                 HomeButton("PilihBab");
+                ResetText();
             }
             else
             {
@@ -134,6 +141,20 @@ public class HomeManager : MonoBehaviour
         }
 
     }
+
+    //Ngereset text field
+    void ResetText()
+    {
+        karakterDropdown.value = 0;
+
+        namaPlayer = "";
+        kelas = "";
+        karakter = "";
+
+        namaInputField.text = "";
+        kelasInputField.text = "";
+    }
+
 
     //Untuk pindah bab
     public void SaveBab(int Bab)
