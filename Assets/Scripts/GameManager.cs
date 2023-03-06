@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public GameObject notifTextUI;
     public OpeningTextMiniGame openingTextMiniGame;
+
     private void Awake()
     {
         instance = this;
