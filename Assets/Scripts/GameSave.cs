@@ -6,6 +6,8 @@ public class GameSave : MonoBehaviour
 {
     public int codeSave;
 
+    public int urutanSave;
+
     public string namaPlayer;
     public string karakter;
     public string kelas;
@@ -21,12 +23,15 @@ public class GameSave : MonoBehaviour
 
     public int totalScore;
 
-    public Vector3 posisiPlayer; 
+    public Vector3 posisiPlayer;
 
     [Space]
     [Space]
     [Space]
     //Anti typo
+    public string _UrutanSave = "UrutanSave";
+    public string _UrutanSaveGlobal = "UrutanSaveGlobal";
+
     public string _NamaPlayer = "NamaPlayer";
     public string _Karakter = "Karakter";
     public string _Kelas = "Kelas";
@@ -45,7 +50,7 @@ public class GameSave : MonoBehaviour
     public string _PosisiPlayerZ = "PosisiPlayerZ";
 
 
-    //Type save, Nama savean +/ Bab + Code save;
+    //Type save, Nama savean + Bab + Code save;
 
     private void Awake()
     {
@@ -54,6 +59,8 @@ public class GameSave : MonoBehaviour
 
     public void LoadGameData()
     {
+        urutanSave = PlayerPrefs.GetInt(_UrutanSave);
+
         namaPlayer = PlayerPrefs.GetString(_NamaPlayer + codeSave);
         karakter = PlayerPrefs.GetString(_Karakter + codeSave);
         kelas = PlayerPrefs.GetString(_Kelas + codeSave);
@@ -77,11 +84,18 @@ public class GameSave : MonoBehaviour
 
     public void SaveProfil(string nama, string jenisKelamin, string kelas)
     {
+        //Membuat uturan save
+        int tempUrutanS = PlayerPrefs.GetInt(_UrutanSaveGlobal);
+        PlayerPrefs.SetInt(_UrutanSave, tempUrutanS);
+        PlayerPrefs.SetInt(_UrutanSaveGlobal, tempUrutanS += 1);
+
+
         PlayerPrefs.SetString(_NamaPlayer + codeSave, nama);
         PlayerPrefs.SetString(_Karakter + codeSave, jenisKelamin);
         PlayerPrefs.SetString(_Kelas + codeSave, kelas);
 
         PlayerPrefs.SetString(_WaktuSave + codeSave, System.DateTime.Now.ToString());
+        
 
         LoadGameData();
     }

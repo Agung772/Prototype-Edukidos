@@ -131,6 +131,8 @@ public class LoadButton : MonoBehaviour
     public void DeleteSave()
     {
         SaveManager.instance.gameObject.transform.GetChild(codeSave).GetComponent<GameSave>().DeletaSave();
+        nama = "";
+        transform.parent.GetComponent<UrutkanLoadGame>().UrutkanLoad();
 
         LoadTextUI();
     }

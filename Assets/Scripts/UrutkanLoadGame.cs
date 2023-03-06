@@ -5,27 +5,51 @@ using UnityEngine;
 public class UrutkanLoadGame : MonoBehaviour
 {
     public GameObject[] childs;
-    public int[] nomorSave;
+    GameObject[] childsTemp;
+
+    int j;
     private void OnEnable()
     {
-        childs = new GameObject[transform.childCount];
-        nomorSave = new int[transform.childCount];
-        for (int i = 0; i < childs.Length; i++)
-        {
-            childs[i] = transform.GetChild(i).gameObject;
-
-            if (childs[i].GetComponent<LoadButton>().nama == "")
-            {
-                nomorSave[i] = i;
-            }
-        }
-
-        for (int i = 0; i < childs.Length; i++)
-        {
-
-        }
-        Debug.LogWarning("Urutkan");
+        UrutkanLoad();
     }
 
+    public void UrutkanLoad()
+    {
+        StartCoroutine(Coroutine());
+        IEnumerator Coroutine()
+        {
+            yield return new WaitForSeconds(0.01f);
+            j = 0;
+
+            childsTemp = new GameObject[childs.Length];
+
+            for (int i = 0; i < childs.Length; i++)
+            {
+                if (childs[i].GetComponent<LoadButton>().nama != "")
+                {
+                    childsTemp[j] = childs[i];
+                    j++;
+                }
+            }
+
+            for (int i = 0; i < childs.Length; i++)
+            {
+                if (childs[i].GetComponent<LoadButton>().nama == "")
+                {
+                    childsTemp[j] = childs[i];
+                    j++;
+                }
+            }
+
+            for (int i = 0; i < childs.Length; i++)
+            {
+                childsTemp[i].transform.SetParent(transform.parent);
+            }
+            for (int i = 0; i < childs.Length; i++)
+            {
+                childsTemp[i].transform.SetParent(transform);
+            }
+        }
+    }
 
 }
