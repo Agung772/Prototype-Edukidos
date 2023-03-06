@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class LoadButton : MonoBehaviour
 {
     public int codeSave;
+    public string nama;
     public string urutanSave;
 
     public GameObject 
@@ -19,6 +20,7 @@ public class LoadButton : MonoBehaviour
         waktuSave;
 
     public Button button;
+    public DeleteSaveUI deleteSaveUI;
 
     private void Start()
     {
@@ -125,17 +127,17 @@ public class LoadButton : MonoBehaviour
         kelas.text = "Kelas : " + SaveManager.instance.gameObject.transform.GetChild(codeSave).GetComponent<GameSave>().kelas;
         totalBintang.text = "Total bintang : " + tempTotalSeluruh;
         waktuSave.text = SaveManager.instance.gameObject.transform.GetChild(codeSave).GetComponent<GameSave>().waktuSave;
-
+        nama = SaveManager.instance.gameObject.transform.GetChild(codeSave).GetComponent<GameSave>().namaPlayer;
 
     }
 
     public void DeleteSave()
     {
-        SaveManager.instance.gameObject.transform.GetChild(codeSave).GetComponent<GameSave>().DeletaSave();
-        //transform.parent.GetComponent<UrutkanLoadButton>().UrutkanLoad();
-        urutanSave = "";
+        deleteSaveUI.gameObject.SetActive(true);
+        deleteSaveUI.codeSave = codeSave;
+        deleteSaveUI.loadButton = this;
 
-        LoadTextUI();
+        //transform.parent.GetComponent<UrutkanLoadButton>().UrutkanLoad();
     }
 
 }
