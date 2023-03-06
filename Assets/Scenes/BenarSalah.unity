@@ -863,8 +863,33 @@ MonoBehaviour:
     jawaban: SALAH
   - pertanyaan: Tertib shalat 5 waktu termasuk perilaku sikap disiplin
     jawaban: BENAR
-  listPertanyaanBab9: []
-  listPertanyaanBab10: []
+  listPertanyaanBab9:
+  - pertanyaan: 
+    jawaban: 
+  - pertanyaan: Orang yang selalu bersuci ciri dari orang yang beriman
+    jawaban: BENAR
+  - pertanyaan: Kita boleh bertayamum jika ada air
+    jawaban: SALAH
+  - pertanyaan: JIka tak sengaja kentut ketika shalat maka shalatnya tidak akan batal
+    jawaban: SALAH
+  - pertanyaan: Berwudu menggunakan air yang bersih dan suci
+    jawaban: BENAR
+  - pertanyaan: Bersuci juga disebut dengan bertaharah
+    jawaban: BENAR
+  listPertanyaanBab10:
+  - pertanyaan: 
+    jawaban: 
+  - pertanyaan: KIta harus meminta maad jika melakukan kesalahan
+    jawaban: BENAR
+  - pertanyaan: Nami muhammad SAW adalah manusia pertama
+    jawaban: SALAH
+  - pertanyaan: Ketika mendapat cobaan kita harus bersikap sabar dan ikhlas
+    jawaban: BENAR
+  - pertanyaan: Kita tidak boleh menggoda teman yang sedang shalat karena itu perbuatan
+      iblis
+    jawaban: BENAR
+  - pertanyaan: Iblis mau menghormati Nabi Adam dan Hawa
+    jawaban: SALAH
   jumlahSoal: 0
 --- !u!1 &1850229028
 GameObject:
