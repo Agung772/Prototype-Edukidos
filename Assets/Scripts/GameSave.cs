@@ -10,6 +10,8 @@ public class GameSave : MonoBehaviour
     public string karakter;
     public string kelas;
 
+    public string waktuSave;
+
     public int bab;
 
     public int scoreConnectingTheDot;
@@ -28,6 +30,8 @@ public class GameSave : MonoBehaviour
     public string _NamaPlayer = "NamaPlayer";
     public string _Karakter = "Karakter";
     public string _Kelas = "Kelas";
+
+    public string _WaktuSave = "WaktuSave";
 
     public string _Bab = "Bab";
 
@@ -54,6 +58,8 @@ public class GameSave : MonoBehaviour
         karakter = PlayerPrefs.GetString(_Karakter + codeSave);
         kelas = PlayerPrefs.GetString(_Kelas + codeSave);
 
+        waktuSave = PlayerPrefs.GetString(_WaktuSave + codeSave);
+
         bab = PlayerPrefs.GetInt(_Bab + codeSave);
 
         //print("Berikut profil kamu " + namaPlayer + ", " + jenisKelamin + ", " + kelas);
@@ -74,6 +80,8 @@ public class GameSave : MonoBehaviour
         PlayerPrefs.SetString(_NamaPlayer + codeSave, nama);
         PlayerPrefs.SetString(_Karakter + codeSave, jenisKelamin);
         PlayerPrefs.SetString(_Kelas + codeSave, kelas);
+
+        PlayerPrefs.SetString(_WaktuSave + codeSave, System.DateTime.Now.ToString());
 
         LoadGameData();
     }
@@ -99,4 +107,32 @@ public class GameSave : MonoBehaviour
         PlayerPrefs.SetFloat(_PosisiPlayerZ + bab + codeSave, posisiPlayer.z);
     }
 
+    public void DeletaSave()
+    {
+        PlayerPrefs.DeleteKey(_NamaPlayer + codeSave);
+        PlayerPrefs.DeleteKey(_Karakter + codeSave);
+        PlayerPrefs.DeleteKey(_Kelas + codeSave);
+
+        PlayerPrefs.DeleteKey(_WaktuSave + codeSave);
+
+        PlayerPrefs.DeleteKey(_Bab + codeSave);
+
+        for (int i = 0; i < 11; i++)
+        {
+            if (i != 0)
+            {
+                PlayerPrefs.DeleteKey(_ScoreConnectingTheDot + i + codeSave);
+                PlayerPrefs.DeleteKey(_ScoreSpellingBee + i + codeSave);
+                PlayerPrefs.DeleteKey(_ScoreBenarSalah + i + codeSave);
+                PlayerPrefs.DeleteKey(_ScorePilihanGanda + i + codeSave);
+
+                PlayerPrefs.DeleteKey(_PosisiPlayerX + i + codeSave);
+                PlayerPrefs.DeleteKey(_PosisiPlayerY + i + codeSave);
+                PlayerPrefs.DeleteKey(_PosisiPlayerZ + i + codeSave);
+            }
+        }
+
+        LoadGameData();
+
+    }
 }
