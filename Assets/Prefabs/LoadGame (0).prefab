@@ -227,6 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   codeSave: 0
+  urutanSave: 
   dataProfil: {fileID: 4275907053302049553}
   slotKosong: {fileID: 7786877403400511085}
   namaPlayer: {fileID: 3563227177718439663}
@@ -599,8 +600,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 91.02347, y: -49.338806}
-  m_SizeDelta: {x: 306.6821, y: -7.3234}
+  m_AnchoredPosition: {x: 91.026, y: -31.5}
+  m_SizeDelta: {x: 306.687, y: -31.335}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3160347258848516098
 CanvasRenderer:

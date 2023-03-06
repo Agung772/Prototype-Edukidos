@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class LoadButton : MonoBehaviour
 {
     public int codeSave;
-    public string nama;
+    public string urutanSave;
 
     public GameObject 
         dataProfil, 
@@ -22,6 +22,8 @@ public class LoadButton : MonoBehaviour
 
     private void Start()
     {
+
+
         LoadTextUI();
     }
 
@@ -97,8 +99,6 @@ public class LoadButton : MonoBehaviour
     void LoadText(int codeSave)
     {
         //Mengambil semua data
-        nama = SaveManager.instance.gameObject.transform.GetChild(codeSave).GetComponent<GameSave>().namaPlayer;
-
         int tempTotalSeluruh = 0;
         for (int i = 0; i < 11; i++)
         {
@@ -111,12 +111,12 @@ public class LoadButton : MonoBehaviour
 
 
                 int tempTotalBab = scoreConnectingTheDot + scoreSpellingBee + scoreBenarSalah + scorePilihanGanda;
-                print("Di bab " + i + " total bintangnya : " + tempTotalBab);
+                //print("Di bab " + i + " total bintangnya : " + tempTotalBab);
                 tempTotalSeluruh += tempTotalBab;
             }
 
         }
-        print("Total bintang dari seluruh bab : " + tempTotalSeluruh);
+        print("Total bintang dari " + codeSave + " seluruh bab : " + tempTotalSeluruh);
 
         //Load text
         dataProfil.SetActive(true);
@@ -124,16 +124,18 @@ public class LoadButton : MonoBehaviour
         namaPlayer.text = "Nama : " + SaveManager.instance.gameObject.transform.GetChild(codeSave).GetComponent<GameSave>().namaPlayer;
         kelas.text = "Kelas : " + SaveManager.instance.gameObject.transform.GetChild(codeSave).GetComponent<GameSave>().kelas;
         totalBintang.text = "Total bintang : " + tempTotalSeluruh;
-        waktuSave.text = "Waktu saat save : " + SaveManager.instance.gameObject.transform.GetChild(codeSave).GetComponent<GameSave>().waktuSave;
+        waktuSave.text = SaveManager.instance.gameObject.transform.GetChild(codeSave).GetComponent<GameSave>().waktuSave;
+
 
     }
 
     public void DeleteSave()
     {
         SaveManager.instance.gameObject.transform.GetChild(codeSave).GetComponent<GameSave>().DeletaSave();
-        nama = "";
-        transform.parent.GetComponent<UrutkanLoadGame>().UrutkanLoad();
+        //transform.parent.GetComponent<UrutkanLoadButton>().UrutkanLoad();
+        urutanSave = "";
 
         LoadTextUI();
     }
+
 }

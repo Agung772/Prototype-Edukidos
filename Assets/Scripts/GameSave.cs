@@ -6,13 +6,13 @@ public class GameSave : MonoBehaviour
 {
     public int codeSave;
 
-    public int urutanSave;
 
     public string namaPlayer;
     public string karakter;
     public string kelas;
 
     public string waktuSave;
+    public int waktuSaveInt;
 
     public int bab;
 
@@ -29,8 +29,6 @@ public class GameSave : MonoBehaviour
     [Space]
     [Space]
     //Anti typo
-    public string _UrutanSave = "UrutanSave";
-    public string _UrutanSaveGlobal = "UrutanSaveGlobal";
 
     public string _NamaPlayer = "NamaPlayer";
     public string _Karakter = "Karakter";
@@ -59,7 +57,6 @@ public class GameSave : MonoBehaviour
 
     public void LoadGameData()
     {
-        urutanSave = PlayerPrefs.GetInt(_UrutanSave);
 
         namaPlayer = PlayerPrefs.GetString(_NamaPlayer + codeSave);
         karakter = PlayerPrefs.GetString(_Karakter + codeSave);
@@ -85,9 +82,6 @@ public class GameSave : MonoBehaviour
     public void SaveProfil(string nama, string jenisKelamin, string kelas)
     {
         //Membuat uturan save
-        int tempUrutanS = PlayerPrefs.GetInt(_UrutanSaveGlobal);
-        PlayerPrefs.SetInt(_UrutanSave, tempUrutanS);
-        PlayerPrefs.SetInt(_UrutanSaveGlobal, tempUrutanS += 1);
 
 
         PlayerPrefs.SetString(_NamaPlayer + codeSave, nama);

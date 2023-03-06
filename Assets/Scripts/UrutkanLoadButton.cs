@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UrutkanLoadGame : MonoBehaviour
+public class UrutkanLoadButton : MonoBehaviour
 {
     public GameObject[] childs;
-    GameObject[] childsTemp;
+    public GameObject[] childsTemp;
 
     int j;
+    int k;
     private void OnEnable()
     {
-        UrutkanLoad();
+        //UrutkanLoad();
     }
 
     public void UrutkanLoad()
@@ -25,21 +26,31 @@ public class UrutkanLoadGame : MonoBehaviour
 
             for (int i = 0; i < childs.Length; i++)
             {
-                if (childs[i].GetComponent<LoadButton>().nama != "")
+                if (childs[i].GetComponent<LoadButton>().urutanSave != "")
                 {
-                    childsTemp[j] = childs[i];
-                    j++;
+                    childsTemp[int.Parse(childs[i].GetComponent<LoadButton>().urutanSave)] = childs[i];
+                    print(int.Parse(childs[i].GetComponent<LoadButton>().urutanSave));
+                    //j++;
                 }
             }
 
             for (int i = 0; i < childs.Length; i++)
             {
-                if (childs[i].GetComponent<LoadButton>().nama == "")
+                if (childs[i].GetComponent<LoadButton>().urutanSave == "")
                 {
-                    childsTemp[j] = childs[i];
-                    j++;
+                    if (childsTemp[i] == null)
+                    {
+                        childsTemp[i] = childs[j];
+                        print(j);
+
+                        j++;
+                    }
+                    //childsTemp[j] = childs[i];
+
+
                 }
             }
+            /*
 
             for (int i = 0; i < childs.Length; i++)
             {
@@ -49,6 +60,11 @@ public class UrutkanLoadGame : MonoBehaviour
             {
                 childsTemp[i].transform.SetParent(transform);
             }
+            */
+
+            //Urutkan save
+
+
         }
     }
 
