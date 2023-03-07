@@ -115,7 +115,7 @@ public class GameSave : MonoBehaviour
         PlayerPrefs.SetFloat(_PosisiPlayerZ + bab + codeSave, posisiPlayer.z);
     }
 
-    public void DeletaSave()
+    public void DeleteSave()
     {
         PlayerPrefs.DeleteKey(_NamaPlayer + codeSave);
         PlayerPrefs.DeleteKey(_Karakter + codeSave);
